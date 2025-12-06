@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 id: chapter-9-manipulation-control
 title: Chapter 9 - Manipulation Control
 sidebar_label: Chapter 9 - Manipulation Control
@@ -13,11 +12,10 @@ sidebar_label: Chapter 9 - Manipulation Control
 ## Exercises
 ## Summary
 ## Quiz
-=======
+
 sidbar_position: 2
 ---
 
 # Chapter 9: Robot Manipulation and Trajectory Control
 
 This is a placeholder for Chapter 9.
->>>>>>> 7569626419039b5d4323869afcce81ee346adf05

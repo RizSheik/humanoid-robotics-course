@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 id: chapter-8-motion-planning
 title: Chapter 8 - Motion Planning
 sidebar_label: Chapter 8 - Motion Planning
@@ -13,11 +12,10 @@ sidebar_label: Chapter 8 - Motion Planning
 ## Exercises
 ## Summary
 ## Quiz
-=======
+
 sidbar_position: 1
 ---
 
 # Chapter 8: Motion Planning
 
 This is a placeholder for Chapter 8.
->>>>>>> 7569626419039b5d4323869afcce81ee346adf05
