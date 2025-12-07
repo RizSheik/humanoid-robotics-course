@@ -1,24 +1,31 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 
 const config = {
-  title: 'Humanoid Robotics Course',
-  tagline: 'Advanced Robotics — Step by Step',
+  title: 'Physical AI & Humanoid Robotics',
+  tagline: 'Advanced Robotics Textbook — From Theory to Practice',
   favicon: 'img/favicon.ico',
 
   future: {
     v4: true,
   },
 
-  url: 'https://rizsheik.github.io',
-  baseUrl: '/humanoid-robotics-course/',
+  // Set the production url of your site here
+  url: 'https://your-organization.github.io',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages, this is usually '/<organization-name>.github.io/<repository-name>/'
+  baseUrl: '/physical-ai-humanoid-robotics-textbook/',
   trailingSlash: false,
 
-  organizationName: 'RizSheik',
-  projectName: 'humanoid-robotics-course',
+  // GitHub pages deployment configuration
+  organizationName: 'your-organization', // Usually your GitHub org/user name.
+  projectName: 'physical-ai-humanoid-robotics-textbook', // Usually your repo name.
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -30,19 +37,11 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
-          editUrl:
-            'https://github.com/RizSheik/humanoid-robotics-course/tree/main/',
+          // Adjust this to your repository
+          editUrl: 'https://github.com/your-organization/physical-ai-humanoid-robotics-textbook/edit/main/',
         },
 
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/RizSheik/humanoid-robotics-course/tree/main/',
-        },
+        blog: false, // Disable blog functionality as per requirements
 
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -59,21 +58,20 @@ const config = {
     },
 
     navbar: {
-      title: 'Humanoid Robotics',
+      title: 'Physical AI & Humanoid Robotics',
       logo: {
         alt: 'Humanoid Robotics Logo',
-        src: 'img/logo.svg',
+        src: 'img/robot-head.svg',
       },
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'textbookSidebar',
           position: 'left',
-          label: 'Course Modules',
+          label: 'Textbook Modules',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/RizSheik/humanoid-robotics-course',
+          href: 'https://github.com/your-organization/physical-ai-humanoid-robotics-textbook',
           label: 'GitHub',
           position: 'right',
         },
@@ -84,43 +82,41 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Textbook',
           items: [
             {
-              label: 'Module 1 – Intro',
-              to: '/docs/module-1-foundational/chapter-1-intro',
+              label: 'Module 1 – The Robotic Nervous System',
+              to: '/docs/module-1-the-robotic-nervous-system/module-1-intro',
+            },
+            {
+              label: 'Module 2 – The Digital Twin',
+              to: '/docs/module-2-the-digital-twin/module-2-intro',
+            },
+            {
+              label: 'Module 3 – The AI Robot Brain',
+              to: '/docs/module-3-the-ai-robot-brain/module-3-intro',
+            },
+            {
+              label: 'Module 4 – Vision-Language-Action Systems',
+              to: '/docs/module-4-vision-language-action-systems/module-4-intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Resources',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Appendices',
+              to: '/docs/appendices/hardware-requirements',
             },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            { label: 'Blog', to: '/blog' },
             {
               label: 'GitHub',
-              href: 'https://github.com/RizSheik/humanoid-robotics-course',
+              href: 'https://github.com/your-organization/physical-ai-humanoid-robotics-textbook',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Humanoid Robotics Course. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
     },
 
     prism: {
