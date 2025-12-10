@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 4 — Simulation-to-Real Transfer",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter 4 — Simulation-to-Real Transfer",
+    "description": "Techniques for transferring robot behaviors from simulation to real-world deployment.",
+    "slug": "/module-3/chapter-4"
+  }
+}

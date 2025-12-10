@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 2 — Topics, Services & Actions",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter 2 — Topics, Services & Actions",
+    "description": "Understanding communication patterns in ROS 2: topics, services, and actions.",
+    "slug": "/module-1/chapter-2"
+  }
+}

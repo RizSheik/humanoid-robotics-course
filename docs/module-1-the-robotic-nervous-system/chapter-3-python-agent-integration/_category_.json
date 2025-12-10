@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 3 — Python Agent Integration (rclpy)",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter 3 — Python Agent Integration (rclpy)",
+    "description": "Integrating Python agents with ROS 2 using the rclpy client library.",
+    "slug": "/module-1/chapter-3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 3 — Nav2 Path Planning",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter 3 — Nav2 Path Planning",
+    "description": "Navigation 2 stack for path planning and autonomous navigation.",
+    "slug": "/module-3/chapter-3"
+  }
+}

@@ -343,6 +343,7 @@
   box-shadow: 0 0 30px rgba(4, 246, 240, 0.3);
   border: 1px solid rgba(4, 246, 240, 0.2);
   flex-shrink: 0;
+  margin: 0 auto;
 }
 
 .imageSlider .slide {
@@ -353,10 +354,46 @@
   height: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageSlider .slide.active {
   opacity: 1;
+}
+
+/* Enhanced robot-themed animations */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0.5deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(4, 246, 240, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(4, 246, 240, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(4, 246, 240, 0.5);
+  }
+}
+
+.robotFloating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.robotGlowing {
+  animation: glow 3s ease-in-out infinite;
 }
 
 /* Responsive adjustments */

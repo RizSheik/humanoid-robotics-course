@@ -1,5 +1,5 @@
 import type {ReactNode} from 'react';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -9,18 +9,31 @@ import Heading from '@theme/Heading';
 // Robot image slider component
 function ImageSlider() {
   const images = [
-    { src: 'img/hero/robot.png.svg', alt: 'Humanoid Robot Standing' },
-    { src: 'img/module/humanoid-robot-ros2.svg', alt: 'ROS 2 Architecture' },
-    { src: 'img/module/ai-brain-nn.svg', alt: 'AI Brain Neural Network' },
-    { src: 'img/module/vla-system.svg', alt: 'Vision-Language-Action System' }
+    { src: 'img/hero/Hero Section Cover The_Course_DetailsPhysical_AI_Humanoid_0.jpg', alt: 'Humanoid Robot Standing' },
+    { src: 'img/Architecture_diagram_cloud_workstation_A_0.jpg', alt: 'ROS 2 Architecture' },
+    { src: 'img/Closeup_illustration_of_humanoid_robot_h_0.jpg', alt: 'AI Brain Neural Network' },
+    { src: 'img/Ultrarealistic_Gazebo_simulation_scene_w_0.jpg', alt: 'Vision-Language-Action System' }
+    { src: 'img/Ultrarealistic_textbook_cover_design_for_0.jpg', alt: 'Vision-Language-Action System' }
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="imageSlider">
       {images.map((image, index) => (
         <div
           key={index}
-          className={`slide ${index === 0 ? 'active' : ''}`}
+          className={`slide ${index === currentIndex ? 'active' : ''}`}
         >
           <img
             src={image.src}
@@ -145,16 +158,14 @@ function HomepageHeader() {
               <Link
                 className="button button--secondary button--lg"
                 to="/docs/intro">
-                Start Learning - 5min ⏱️
+                Start Reading 📖
               </Link>
             </div>
           </div>
           <div style={{ zIndex: 2, width: '100%', maxWidth: '600px' }}>
-            <img
-              src="/img/hero/robot.png.svg"
-              alt="Humanoid Robot"
-              style={{ width: '100%', height: 'auto', borderRadius: '16px' }}
-            />
+            <div className="robotFloating">
+              <ImageSlider />
+            </div>
           </div>
         </div>
       </div>

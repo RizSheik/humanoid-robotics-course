@@ -1,7 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 
 const config = {
-  title: 'Physical AI & Humanoid Robotics',
+  title: 'Physical AI & Humanoid Robotics — AI Systems in the Physical World',
   tagline: 'Advanced Robotics Textbook — From Theory to Practice',
   favicon: 'img/favicon.ico',
 
@@ -10,15 +10,15 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-organization.github.io',
+  url: 'https://RizSheik.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages, this is usually '/<organization-name>.github.io/<repository-name>/'
-  baseUrl: '/physical-ai-humanoid-robotics-textbook/',
+  baseUrl: '/humanoid-robotics-course/',
   trailingSlash: false,
 
   // GitHub pages deployment configuration
-  organizationName: 'your-organization', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-humanoid-robotics-textbook', // Usually your repo name.
+  organizationName: 'RizSheik', // Usually your GitHub org/user name.
+  projectName: 'humanoid-robotics-course', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -38,7 +38,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
           // Adjust this to your repository
-          editUrl: 'https://github.com/your-organization/physical-ai-humanoid-robotics-textbook/edit/main/',
+          editUrl: 'https://github.com/your-organization/humanoid-robotics-course/edit/main/',
         },
 
         blog: false, // Disable blog functionality as per requirements
@@ -71,7 +71,7 @@ const config = {
           label: 'Textbook Modules',
         },
         {
-          href: 'https://github.com/your-organization/physical-ai-humanoid-robotics-textbook',
+          href: 'https://github.com/RizSheik/humanoid-robotics-course',
           label: 'GitHub',
           position: 'right',
         },
@@ -93,13 +93,17 @@ const config = {
               to: '/docs/module-2-the-digital-twin/module-2-intro',
             },
             {
-              label: 'Module 3 – The AI Robot Brain',
+              label: 'Module 3 – The AI-Robot Brain',
               to: '/docs/module-3-the-ai-robot-brain/module-3-intro',
             },
             {
               label: 'Module 4 – Vision-Language-Action Systems',
               to: '/docs/module-4-vision-language-action-systems/module-4-intro',
             },
+            {
+              label: 'Capstone: The Autonomous Humanoid',
+              to: '/docs/capstone-the-autonomous-humanoid/capstone-overview',
+            }
           ],
         },
         {
@@ -111,12 +115,12 @@ const config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/your-organization/physical-ai-humanoid-robotics-textbook',
+              href: 'https://github.com/RizSheik/humanoid-robotics-course',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics — AI Systems in the Physical World. Built with Docusaurus.`,
     },
 
     prism: {

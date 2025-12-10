@@ -1,0 +1,21 @@
+{
+  "chatbot": {
+    "name": "Physical AI & Humanoid Robotics RAG Chatbot",
+    "version": "1.0.0",
+    "description": "Retrieval-Augmented Generation chatbot for the Physical AI & Humanoid Robotics textbook",
+    "model": {
+      "provider": "openai",
+      "name": "gpt-4-turbo"
+    },
+    "retrieval": {
+      "vector_store": "qdrant",
+      "similarity_threshold": 0.7,
+      "top_k": 5
+    },
+    "database": {
+      "type": "neon",
+      "host": "localhost",
+      "port": 5432
+    }
+  }
+}

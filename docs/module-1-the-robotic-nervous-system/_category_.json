@@ -3,6 +3,7 @@
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Covers the foundational elements of robot control and communication."
+    "description": "Covers the foundational elements of robot control and communication.",
+    "slug": "/module-1-the-robotic-nervous-system"
   }
 }

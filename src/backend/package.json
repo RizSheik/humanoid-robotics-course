@@ -1,0 +1,14 @@
+{
+  "name": "humanoid-robotics-rag-api",
+  "version": "1.0.0",
+  "description": "RAG API for Physical AI & Humanoid Robotics textbook",
+  "main": "server.js",
+  "scripts": {
+    "start": "python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000",
+    "dev": "python -m uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000",
+    "test": "pytest"
+  },
+  "keywords": ["rag", "chatbot", "ai", "robotics", "docusaurus"],
+  "author": "Physical AI & Humanoid Robotics Course",
+  "license": "MIT"
+}
