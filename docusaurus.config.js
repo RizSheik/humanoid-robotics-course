@@ -9,23 +9,20 @@ const config = {
     v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://RizSheik.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages, this is usually '/<organization-name>.github.io/<repository-name>/'
+  // Production URL
+  url: 'https://rizsheik.github.io',
+
+  // Base URL for GitHub Pages
   baseUrl: '/humanoid-robotics-course/',
   trailingSlash: false,
 
   // GitHub pages deployment configuration
-  organizationName: 'RizSheik', // Usually your GitHub org/user name.
-  projectName: 'humanoid-robotics-course', // Usually your repo name.
+  organizationName: 'RizSheik',
+  projectName: 'humanoid-robotics-course',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -37,11 +34,13 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
-          // Adjust this to your repository
-          editUrl: 'https://github.com/your-organization/humanoid-robotics-course/edit/main/',
+
+          // FIXED: correct edit URL for your repo
+          editUrl:
+            'https://github.com/RizSheik/humanoid-robotics-course/edit/main/',
         },
 
-        blog: false, // Disable blog functionality as per requirements
+        blog: false,
 
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -97,13 +96,14 @@ const config = {
               to: '/docs/module-3-the-ai-robot-brain/module-3-intro',
             },
             {
-              label: 'Module 4 – Vision-Language-Action Systems',
+              label:
+                'Module 4 – Vision-Language-Action Systems',
               to: '/docs/module-4-vision-language-action-systems/module-4-intro',
             },
             {
               label: 'Capstone: The Autonomous Humanoid',
               to: '/docs/capstone-the-autonomous-humanoid/capstone-overview',
-            }
+            },
           ],
         },
         {

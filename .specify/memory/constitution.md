@@ -1,55 +1,97 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 0.0.0 → 0.1.0
+Modified principles: N/A (new constitution)
+Added sections: Core Principles, Standards, Constraints, Governance
+Removed sections: N/A
+Templates requiring updates:
+  - .specify/templates/plan-template.md: ⚠ pending
+  - .specify/templates/spec-template.md: ⚠ pending
+  - .specify/templates/tasks-template.md: ⚠ pending
+  - .specify/templates/commands/sp.adr.md: ⚠ pending
+  - .specify/templates/commands/sp.analyze.md: ⚠ pending
+  - .specify/templates/commands/sp.checklist.md: ⚠ pending
+  - .specify/templates/commands/sp.clarify.md: ⚠ pending
+  - .specify/templates/commands/sp.constitution.md: ⚠ pending
+  - .specify/templates/commands/sp.git.commit_pr.md: ⚠ pending
+  - .specify/templates/commands/sp.implement.md: ⚠ pending
+  - .specify/templates/commands/sp.phr.md: ⚠ pending
+  - .specify/templates/commands/sp.plan.md: ⚠ pending
+  - .specify/templates/commands/sp.specify.md: ⚠ pending
+  - .specify/templates/commands/sp.tasks.md: ⚠ pending
+Follow-up TODOs: N/A
+-->
+# Textbook for Physical AI & Humanoid Robotics Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Technical Accuracy
+Robotics, AI, perception, control, and hardware details MUST be verified using
+authoritative sources (peer-reviewed papers, robotics textbooks, SDK
+documentation, manufacturer manuals). Mathematical models, kinematics, and
+control theory MUST be correct and internally consistent.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Pedagogical Clarity
+Content MUST be written for undergraduate/early-graduate learners. Complex topics
+(RL for control, SLAM, dynamics, VLA) MUST be simplified without losing rigor.
+Provide intuitive explanations, diagrams, and step-by-step reasoning.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Hands-On Practicality
+Every chapter MUST tie theory to real robotic tasks. Content MUST include labs,
+example code (Python/ROS 2), simulation workflows (Gazebo, Isaac), and hardware
+notes (Jetson, RealSense, Unitree).
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Interdisciplinary Integration
+Content MUST combine AI agents, Physical AI, perception, control, LLM-based
+planning, and human-robot interaction into a unified learning pathway.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Standards
 
-### [PRINCIPLE_6_NAME]
+### Sources & Citations
+All claims MUST be traceable to primary/credible sources. APA 7th edition
+MUST be used for citations. At least 50% of sources MUST be peer-reviewed
+robotics/AI sources (ICRA, IROS, RSS, CoRL, NeurIPS). Non-peer-reviewed sources
+(SDK docs, APIs, hardware manuals, university lecture notes) are allowed.
 
+### Content Quality
+Content MUST have a clear structure, diagrams, conceptual frameworks, and
+pseudocode. Reproducibility (code, configs, lab requirements) MUST be ensured.
 
-[PRINCIPLE__DESCRIPTION]
+### Safety & Ethics
+Robotics safety (ISO 10218, ISO/TS 15066) and ethical AI guidelines MUST be
+included. No unsafe or harmful robot instructions are permitted.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Length
+The textbook length MUST be between 40k–80k words, chapter-based.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Format
+The format MUST be Docusaurus + Spec-Kit-Plus (Markdown-first, GitHub Pages).
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Code
+Code examples MUST be in Python, ROS 2, C++, Isaac/Gazebo.
+
+### Diagrams
+Diagrams MUST use Mermaid, draw.io, or local assets.
+
+### Zero Plagiarism
+All content MUST be original and free of plagiarism.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution supersedes all other practices. Amendments require
+documentation, approval, and a migration plan.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### Success Criteria
+- **Technical Quality**: Accurate, current robotics & AI content with
+  correct equations & algorithms.
+- **Educational Value**: Students MUST be able to learn Physical AI & humanoid
+  robotics from scratch; includes exercises & labs.
+- **Reproducibility**: Code and workflows MUST run on common platforms (ROS 2,
+  Jetson, Isaac, Gazebo).
+- **Coherence**: Content MUST have a logical flow from fundamentals → control
+  → perception → AI → humanoids → capstone.
+- **Deployment**: The book MUST build cleanly in Docusaurus and be ready for
+  GitHub Pages.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 0.1.0 | **Ratified**: 2025-12-05 | **Last Amended**: 2025-12-05

@@ -214,21 +214,9 @@ Ready for code and diagram generation"
 ## 2. Section Structure
 
 ### Module and Chapter Structure
--   **Module Organization**: The textbook will be structured into four distinct modules:
-    1.  **The Robotic Nervous System (ROS 2)**
-    2.  **The Digital Twin (Gazebo & Unity)**
-    3.  **The AI-Robot Brain (NVIDIA Isaac)**
-    4.  **Vision-Language-Action Systems (VLA)**
--   **Chapter Sections**: Each module will contain chapters, and each chapter will consist of logical sections, starting with learning outcomes, followed by theoretical content, hands-on labs, example pipelines (ROS graphs, SLAM diagrams, Nav2 flows), and capstone progression checkpoints.
--   **Required Content Files per Module**: Each module's directory (`docs/module-<number>-<slug>/`) will contain the following markdown files:
-    -   `overview.md`: High-level introduction and learning objectives for the module.
-    -   `weekly-breakdown.md`: A detailed breakdown of topics and activities for each week covered by the module.
-    -   `deep-dive.md`: In-depth explanations of core concepts, theories, and advanced topics within the module.
-    -   `practical-lab.md`: Hands-on laboratory exercises and tutorials related to the module's content.
-    -   `simulation.md`: Content focused on simulation aspects, including setup, usage, and analysis within relevant simulation environments (e.g., Gazebo, Unity, Isaac Sim).
-    -   `assignment.md`: Programming assignments or project tasks to reinforce learning and assess understanding.
--   **Content Placement**: Diagrams, code snippets, and lab instructions will be strategically inserted to enhance understanding and practical application.
--   **Alignment**: The overall structure will align with a 13-week academic schedule, a 4-module course design, and the high-level outline defined in the `/sp.spec`.
+- **Chapter Sections**: Each chapter will consist of logical sections, starting with learning outcomes, followed by theoretical content, hands-on labs, example pipelines (ROS graphs, SLAM diagrams, Nav2 flows), and capstone progression checkpoints.
+- **Content Placement**: Diagrams, code snippets, and lab instructions will be strategically inserted to enhance understanding and practical application.
+- **Alignment**: The overall structure will align with a 13-week academic schedule, a 4-module course design, and the high-level outline defined in the `/sp.spec`.
 
 ## 3. Research Approach
 
@@ -275,86 +263,24 @@ Ready for code and diagram generation"
 ## 6. Testing Strategy
 
 ### Structural Validation
--   All 4 modules and their respective required content files (overview.md, weekly-breakdown.md, deep-dive.md, practical-lab.md, simulation.md, assignment.md) MUST exist.
--   Chapter structure MUST match the outline requirements (learning outcomes, labs, pipelines).
--   **Docusaurus Configuration Validation**:
-    -   `docusaurus.config.js` MUST be syntactically correct and contain essential configurations.
-    -   `sidebars.ts` MUST have valid paths and correctly defined categories.
-    -   `package.json` MUST have consistent dependency versions and correct script definitions.
-    -   `tsconfig.json` MUST be properly configured for TypeScript files.
--   **File System Structure Validation**:
-    -   The `docs/` and `category.json` structure MUST align with the defined modules and chapters.
-    -   The `static/` and `src/` directories MUST maintain their correct organization.
+- All 4 modules and their respective chapters MUST exist.
+- Chapter structure MUST match the outline requirements (learning outcomes, labs, pipelines).
 
 ### Technical Accuracy Validation
--   ROS 2, Gazebo, Isaac Sim, and Unity claims MUST be verified against primary documentation.
--   Hardware specifications and configurations referenced in labs MUST be confirmed for accuracy.
--   VLA pipeline logic MUST be validated for correctness and expected behavior.
+- ROS 2, Gazebo, Isaac Sim, and Unity claims MUST be verified against primary documentation.
+- Hardware specifications and configurations referenced in labs MUST be confirmed for accuracy.
+- VLA pipeline logic MUST be validated for correctness and expected behavior.
 
 ### Pedagogical Validation
--   The learning flow MUST be checked to ensure a smooth progression from beginner to advanced topics.
--   Labs MUST build progressively towards the capstone project, reinforcing learned concepts.
+- The learning flow MUST be checked to ensure a smooth progression from beginner to advanced topics.
+- Labs MUST build progressively towards the capstone project, reinforcing learned concepts.
 
 ### Docusaurus Build Validation
--   The Docusaurus site MUST build without errors.
--   Page structure and navigation MUST be checked for usability and correctness.
--   All assets (diagrams, images) MUST load correctly, and internal/external links MUST resolve.
+- The Docusaurus site MUST build without errors.
+- Page structure and navigation MUST be checked for usability and correctness.
+- All assets (diagrams, images) MUST load correctly, and internal/external links MUST resolve.
 
 ### Final Acceptance Criteria
--   The technical plan fully meets the course requirements.
--   The plan is ready for deep chapter specifications (Iteration 2).
--   The plan is ready for code and diagram generation.
-
-## 7. Continuous Integration and Deployment (CI/CD) Plan
-
-This section outlines the strategy for enabling continuous project synchronization and automated GitHub updates for the Docusaurus project. The goal is to ensure consistency, validate content and configuration, and automate deployment to GitHub Pages.
-
-#### 7.1. Continuous Validation Tasks
-
-Automated checks will be implemented to ensure the integrity and correctness of the Docusaurus project configuration and content structure.
-
--   **Validate `docusaurus.config.js`**: Verify correct syntax, essential configurations (e.g., `baseUrl`, `projectName`, `organizationName`), and absence of critical errors.
--   **Validate `sidebars.ts`**: Ensure all referenced paths exist, categories are correctly defined, and no broken links are present within the sidebar navigation.
--   **Validate `package.json`**: Check for consistent dependency versions, correct script definitions, and overall project metadata integrity.
--   **Validate `tsconfig.json`**: Ensure proper TypeScript configuration, including `paths` and `include` directives, to support Docusaurus and project-specific TypeScript files.
--   **Validate `docs/` and `category.json`**: Verify that all expected module and chapter folders/files exist, `category.json` files are correctly structured for Docusaurus, and content files adhere to naming conventions.
--   **Validate `static/` and `src/` structure**: Confirm the presence and correct organization of static assets and custom React components/pages.
-
-#### 7.2. Auto-Fix Tasks
-
-Automated scripts will address common structural and configuration discrepancies to maintain project health.
-
--   **Create missing module folders**: Automatically generate directories for any missing core modules (e.g., `the-robotic-nervous-system`).
--   **Create missing markdown chapter files**: For each module, ensure all required chapter markdown files (e.g., `overview.md`, `weekly-breakdown.md`) are present, creating them with boilerplate if missing.
--   **Sync sidebar paths with file system**: Update `sidebars.ts` entries to reflect actual file system paths, adding new entries for recently created files/folders and removing stale ones.
--   **Fix `baseUrl`, `projectName`, `organizationName`**: Automatically correct these critical Docusaurus configuration parameters in `docusaurus.config.js` based on GitHub repository details.
--   **Add GitHub Pages deploy workflow**: Ensure a GitHub Actions workflow (`.github/workflows/deploy.yml`) is present and correctly configured for Docusaurus deployment to GitHub Pages.
-
-#### 7.3. Git Tasks
-
-Automated Git operations will manage changes and ensure the project repository remains updated.
-
--   **Auto commit meaningful changes**: Automatically stage and commit changes resulting from auto-fix tasks or content generation. Commit messages will be descriptive and indicate automated actions.
--   **Auto push to the connected GitHub repo**: Push committed changes to the configured remote GitHub repository, typically the `main` or `gh-pages` branch depending on the deployment strategy.
-
-## 8. Module Structure
-
-The textbook will be organized into four distinct modules, each with a standardized set of content files to ensure comprehensive coverage and consistency.
-
-#### 8.1. Defined Modules
-
-1.  **The Robotic Nervous System (ROS 2)**
-2.  **The Digital Twin (Gazebo & Unity)**
-3.  **The AI-Robot Brain (NVIDIA Isaac)**
-4.  **Vision-Language-Action Systems (VLA)**
-
-#### 8.2. Required Content Files per Module
-
-Each module's directory (`docs/module-<number>-<slug>/`) will contain the following markdown files:
-
--   `overview.md`: High-level introduction and learning objectives for the module.
--   `weekly-breakdown.md`: A detailed breakdown of topics and activities for each week covered by the module.
--   `deep-dive.md`: In-depth explanations of core concepts, theories, and advanced topics within the module.
--   `practical-lab.md`: Hands-on laboratory exercises and tutorials related to the module's content.
--   `simulation.md`: Content focused on simulation aspects, including setup, usage, and analysis within relevant simulation environments (e.g., Gazebo, Unity, Isaac Sim).
--   `assignment.md`: Programming assignments or project tasks to reinforce learning and assess understanding.
+- The technical plan fully meets the course requirements.
+- The plan is ready for deep chapter specifications (Iteration 2).
+- The plan is ready for code and diagram generation.
