@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/humanoid-robotics-course/:path*",
+      "destination": "/:path*"
+    }
+  ]
+}
