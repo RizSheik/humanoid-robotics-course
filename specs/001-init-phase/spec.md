@@ -52,3 +52,13 @@ As a project maintainer, I want to have the basic Docusaurus project structure, 
 - **SC-003**: All 13 chapter placeholder `.md` files are created as listed in `sidebars.ts`.
 - **SC-004**: The Docusaurus project successfully completes a simulated build (`npm run build`) without errors.
 - **SC-005**: The Docusaurus project successfully completes a simulated start (`npm run start`) without port binding issues.
+
+## Clarifications
+
+### Session 2025-12-11
+
+- Q: What specific structure should be followed for the chapter placeholder files that will be created in each module? Should they include just minimal content, formal textbook sections with exercises, or detailed content with code examples and diagrams? → A: Content should follow formal textbook structure with sections, subsections, and exercises
+- Q: What are the performance and scalability requirements for the Docusaurus site? Should we define specific targets for build times and concurrent user support? → A: Target <5 second build times for content changes, support 1000+ concurrent users
+- Q: What security and authentication requirements should be implemented for the Docusaurus site and any associated admin functionality? → A: Multi-factor authentication, role-based access control
+- Q: What specific technology stack and version requirements should be used for the Docusaurus project? Should we define specific versions for Node.js, Docusaurus, and allowed plugins? → A: Docusaurus v3, Node.js 18+, standard plugins only
+- Q: What deployment and hosting solution should be used for the final Docusaurus site? Should we specify a particular platform or approach for publishing the content? → A: GitHub Pages with custom domain, automated via GitHub Actions

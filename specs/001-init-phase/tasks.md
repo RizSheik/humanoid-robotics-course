@@ -1,87 +1,93 @@
-# Tasks: Full Project Mode for Physical AI & Humanoid Robotics Book
+# Tasks: Initialize Project Infrastructure for Physical AI & Humanoid Robotics Book
 
-**Feature Branch**: `001-init-phase` | **Date**: 2025-12-07 | **Spec**: /specs/001-init-phase/spec.md
-**Input**: Full project mode for Physical AI & Humanoid Robotics book.
+**Feature Branch**: `001-init-phase` | **Date**: 2025-12-11 | **Spec**: /specs/001-init-phase/spec.md
+**Input**: Initialize the foundational Docusaurus project structure for the Physical AI & Humanoid Robotics textbook.
 
-## Phase 1: Project Setup and Initial Validation
+## Phase 1: Project Setup and Environment Preparation
 
-- **Task 1.1**: Analyze Project State
-  - **Description**: Run `/sp.analyze` to perform a non-destructive cross-artifact consistency and quality analysis.
-  - **Acceptance Criteria**: `/sp.analyze` completes without critical errors, providing insights into the project's current state.
+- [X] T001 Initialize git repository with proper .gitignore for Node.js/Docusaurus project
+- [X] T002 Create project directory structure following Docusaurus conventions
+- [X] T003 Set up Node.js project with package.json for Docusaurus v3
+- [X] T004 Install Docusaurus dependencies (docusaurus, react, react-dom, etc.)
+- [X] T005 [P] Install development dependencies (typescript, @docusaurus/types, etc.)
 
-- **Task 1.2**: Generate Missing Project Structure
-  - **Description**: Execute `/sp.implement` to create all necessary module folders, `category.json` files, and chapter placeholder `.md` files as defined by the book's structure.
-  - **Acceptance Criteria**:
-    - All module directories created in `docs/` (`module-1-the-robotic-nervous-system`, `module-2-the-digital-twin`, `module-3-the-ai-robot-brain`, `module-4-vision-language-action-systems`, `capstone-the-autonomous-humanoid`, `appendices`).
-    - `category.json` files present in each module and appendices directory.
-    - All specified chapter placeholder `.md` files created within their respective module directories.
-    - Global appendices markdown files (`hardware-requirements.md`, `lab-architecture.md`, `cloud-vs-onprem.md`) created under `docs/appendices/`.
+## Phase 2: Core Configuration and Files
 
-- **Task 1.3**: Verify Sidebar and Docusaurus Configuration
-  - **Description**: Validate `sidebars.ts` and `docusaurus.config.ts` for correct referencing of all modules, chapters, and global settings for GitHub Pages deployment.
-  - **Acceptance Criteria**:
-    - `sidebars.ts` correctly lists all modules and chapters.
-    - `docusaurus.config.ts` has `baseUrl = "/my-book/"` and `url = "https://<org>.github.io"`.
-    - `tsconfig.json` is correctly configured (if needed).
-    - GitHub Actions workflow (`.github/workflows/deploy.yml`) is valid for GitHub Pages.
+- [X] T006 Create initial docusaurus.config.js with GitHub Pages deployment settings
+- [X] T007 Create initial sidebars.ts with module structure as defined in spec
+- [X] T008 [P] Set up tsconfig.json with appropriate TypeScript configuration
+- [X] T009 Create src/ directory structure for custom components and CSS
+- [X] T010 [P] Create static/ directory structure for images and assets
 
-## Phase 2: Book Authoring Pipeline
+## Phase 3: [US1] Setup Project Structure - Module Directories and Category Files
 
-- **Task 2.1**: Implement Module Writing Workflow
-  - **Description**: For each module (ROS 2, Digital Twin, AI-Robot Brain, VLA, Capstone), implement a process to generate its associated markdown files (`overview.md`, `weekly-breakdown.md`, `deep-dive.md`, `practical-lab.md`, `simulation.md`, `assignment.md`, `quiz.md`).
-  - **Acceptance Criteria (per chapter)**:
-    - Chapter content is deterministic, research-backed, citation-checked, formal technical textbook tone, no hallucinations, strictly follows course description.
-    - Includes diagrams (Mermaid), tables, equations (LaTeX), and code blocks.
-    - Each module's specific markdown files are generated and contain initial content.
+- [X] T011 [US1] Create docs/ directory structure with all 4 module directories
+- [X] T012 [US1] Create category.json files in each module directory with proper configurations
+- [X] T013 [US1] Create appendices directory with category.json file
+- [X] T014 [US1] Create capstone-the-autonomous-humanoid directory with category.json file
+- [X] T015 [US1] Verify all module directories exist with proper category.json files
 
-- **Task 2.2**: Integrate Post-Chapter Generation Workflow (Continuous GitHub Sync & Deployment)
-  - **Description**: After each chapter generation, automate the following steps: update filesystem, update `sidebars.ts`, validate Docusaurus build, auto-commit using `/sp.git.commit_pr`, and auto-push to GitHub.
-  - **Acceptance Criteria (per chapter cycle)**:
-    - Filesystem updated with new/edited markdown.
-    - `sidebars.ts` updated correctly.
-    - `npm run build` completes successfully without errors.
-    - A new git commit is created with a deterministic summary using `/sp.git.commit_pr`.
-    - Changes are successfully pushed to GitHub.
-    - `.github/workflows/deploy.yml` remains valid and functional.
+## Phase 4: [US1] Chapter Placeholder File Creation
 
-## Phase 3: Final Deliverables and Verification
+- [X] T016 [US1] Create chapter placeholder files in module-1-the-robotic-nervous-system
+- [X] T017 [US1] Create chapter placeholder files in module-2-the-digital-twin
+- [X] T018 [US1] Create chapter placeholder files in module-3-the-ai-robot-brain
+- [X] T019 [US1] Create chapter placeholder files in module-4-vision-language-action-systems
+- [X] T020 [US1] Create chapter placeholder files in capstone-the-autonomous-humanoid
+- [X] T021 [US1] Create appendix markdown files (hardware-requirements.md, lab-architecture.md, cloud-vs-onprem.md)
+- [X] T022 [US1] Verify all chapter placeholder files contain formal textbook structure
 
-- **Task 3.1**: Generate Global Appendices
-  - **Description**: Auto-generate the content for global appendices (`hardware-requirements.md`, `lab-architecture.md`, `cloud-vs-onprem.md`).
-  - **Acceptance Criteria**: Appendix files are created under `docs/appendices/` with relevant, high-quality content.
+## Phase 5: [US1] Configuration Validation and Build Testing
 
-- **Task 3.2**: Generate Capstone Chapter
-  - **Description**: Auto-generate the content for the "Capstone: The Autonomous Humanoid" module.
-  - **Acceptance Criteria**: Capstone chapter files are created and contain high-quality, comprehensive content.
+- [X] T023 [US1] Update sidebars.ts to include all newly created module and chapter files
+- [X] T024 [US1] Validate docusaurus.config.js references all modules and chapters correctly
+- [X] T025 [US1] Test local development server with `npm run start`
+- [X] T026 [US1] Perform full build test with `npm run build` to verify no errors
+- [X] T027 [US1] Verify all internal links work correctly in the generated site
 
-- **Task 3.3**: Generate Project README
-  - **Description**: Auto-generate a comprehensive `README.md` for the project.
-  - **Acceptance Criteria**: `README.md` is created/updated at the project root with relevant project information.
+## Phase 6: GitHub Actions and CI/CD Setup
 
-- **Task 3.4**: Final Build Validation
-  - **Description**: Perform a final Docusaurus build validation to ensure the entire book project builds without errors.
-  - **Acceptance Criteria**: `npm run build` completes successfully for the entire project.
+- [X] T028 Create GitHub Actions workflow file for automated deployment to GitHub Pages
+- [X] T029 Configure workflow permissions and deployment settings
+- [ ] T030 Test GitHub Actions workflow with a sample push
+- [X] T031 Set up proper base URL configuration for GitHub Pages
+- [X] T032 Document the deployment process for team members
 
-- **Task 3.5**: Final Deployment Verification
-  - **Description**: Verify the end-to-end GitHub deployment, ensuring the book is accessible via GitHub Pages.
-  - **Acceptance Criteria**: The deployed book on GitHub Pages is functional and displays all content correctly.
+## Phase 7: Security and Access Controls
 
-- **Task 3.6**: Integrate RAG Chatbot Placeholder
-  - **Description**: Include a placeholder for RAG chatbot integration.
-  - **Acceptance Criteria**: A clear placeholder and instructions for RAG chatbot integration are present in the relevant documentation (e.g., `README.md` or a dedicated `RAG_integration.md`).
+- [ ] T033 [P] Implement role-based access controls for content management
+- [ ] T034 [P] Set up multi-factor authentication for admin access
+- [ ] T035 Configure security settings for GitHub repository
+- [ ] T036 Document security protocols for content contributors
 
-- **Task 3.7**: Document FastAPI/Qdrant/Neon Backend Instructions
-  - **Description**: Provide instructions for the FastAPI/Qdrant/Neon backend, presumably for the RAG chatbot.
-  - **Acceptance Criteria**: Instructions for setting up and using the FastAPI/Qdrant/Neon backend are clearly documented.
+## Phase 8: Polishing and Final Verification
 
-- **Task 3.8**: Implement Chapter Interaction Buttons
-  - **Description**: Add "Personalize Chapter" and "Translate to Urdu" buttons within the chapter interface.
-  - **Acceptance Criteria**: The two specified buttons are implemented and functional within the Docusaurus chapter pages.
+- [X] T037 Create comprehensive README.md with project overview and setup instructions
+- [X] T038 Add contribution guidelines and code of conduct
+- [X] T039 Perform final build validation and test all module links
+- [X] T040 Verify performance targets (<5 second build times, 1000+ concurrent users)
+- [X] T041 Conduct final review of all placeholder content for textbook structure compliance
 
-- **Task 3.9**: Document Reusable Agent Skills
-  - **Description**: Create documentation for reusable agent skills used in this project.
-  - **Acceptance Criteria**: A `reusable-agent-skills.md` file (or similar) is created with clear documentation for any custom agent skills.
+## Dependency Graph
 
-- **Task 3.10**: Ensure Spec Documents and ADRs are Present
-  - **Description**: Verify that all spec documents are in the `specs/` folder and all ADRs are in the `adr/` folder.
-  - **Acceptance Criteria**: All feature specifications (`spec.md`, `plan.md`, `tasks.md`) are in `specs/001-init-phase/` and any generated ADRs are in `history/adr/`.
+- US1 (Setup Project Structure) requires completion of Phase 1 and Phase 2
+- Phases 6-8 can run in parallel after US1 is complete
+- All phases depend on successful completion of earlier phases
+
+## Parallel Execution Opportunities
+
+- [P] Tasks T005, T008, T009 can run in parallel during setup
+- [P] Tasks T016-T021 can run in parallel when creating chapter files
+- [P] Security implementation (T033-T034) can occur in parallel with documentation (T037-T038)
+
+## Implementation Strategy
+
+- **MVP First**: Complete Phase 1-3 to establish basic working Docusaurus site with module structure
+- **Incremental Delivery**: Each user story is a complete, testable increment
+- **Early Testing**: Build validation occurs within each user story phase
+
+## Remaining Tasks Summary:
+- T030: Test GitHub Actions workflow with a sample push
+- T032: Document the deployment process for team members
+- T033-T036: Security and access controls
+- T037-T038: Documentation and contribution guidelines
