@@ -20,7 +20,8 @@ const config = {
   organizationName: 'RizSheik',
   projectName: 'humanoid-robotics-course',
 
-  onBrokenLinks: 'ignore',  // Changed from 'throw' to 'warn' to allow build to continue with broken links
+  // Broken links settings
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
 
   i18n: {
@@ -35,7 +36,6 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
 
-          // FIXED: correct edit URL for your repo
           editUrl:
             'https://github.com/RizSheik/humanoid-robotics-course/edit/main/',
         },
@@ -96,8 +96,7 @@ const config = {
               to: '/docs/module-3-the-ai-robot-brain/module-3-intro',
             },
             {
-              label:
-                'Module 4 – Vision-Language-Action Systems',
+              label: 'Module 4 – Vision-Language-Action Systems',
               to: '/docs/module-4-vision-language-action-systems/module-4-intro',
             },
             {
