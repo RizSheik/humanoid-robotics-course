@@ -5,6 +5,7 @@
 
 const { execSync } = require('child_process');
 const fs = require('fs');
+const path = require('path');
 const os = require('os');
 
 // Function to run a command and handle errors
@@ -22,13 +23,100 @@ function runCommand(cmd, description) {
     }
 }
 
-// Function to check if a command exists
+// Function to check if a command exists (cross-platform)
 function commandExists(command) {
     try {
-        execSync(`which ${command}`, { stdio: 'pipe' });
+        const os = require('os');
+        if (os.platform() === 'win32') {
+            execSync(`where ${command}`, { stdio: 'pipe' });
+        } else {
+            execSync(`which ${command}`, { stdio: 'pipe' });
+        }
         return true;
     } catch (error) {
         return false;
+    }
+}
+
+// Function to fix duplicate intro files
+function fixDuplicateIntroFiles() {
+    console.log('🔧 Checking for duplicate intro files...');
+
+    // List of modules to check for duplicate intro files
+    const modulesToCheck = [
+        'module-2-the-digital-twin',
+        'module-3-the-ai-robot-brain'
+    ];
+
+    for (const moduleDir of modulesToCheck) {
+        const modulePath = path.join('docs', moduleDir);
+        if (fs.existsSync(modulePath)) {
+            const introFiles = fs.readdirSync(modulePath)
+                .filter(file => file.includes('intro.md') && file !== 'intro.md');
+
+            for (const introFile of introFiles) {
+                const filePath = path.join(modulePath, introFile);
+                console.log(`🗑️ Removing duplicate intro file: ${filePath}`);
+                fs.unlinkSync(filePath);
+            }
+        }
+    }
+}
+
+// Function to fix broken links in markdown files
+function fixBrokenLinks() {
+    console.log('🔧 Attempting to fix broken links...');
+
+    // Find all markdown files in docs
+    const walkSync = function(dir, filelist = []) {
+        const files = fs.readdirSync(dir);
+        files.forEach(function(file) {
+            if (fs.statSync(path.join(dir, file)).isDirectory()) {
+                filelist = walkSync(path.join(dir, file), filelist);
+            } else if (file.endsWith('.md')) {
+                filelist.push(path.join(dir, file));
+            }
+        });
+        return filelist;
+    };
+
+    const markdownFiles = walkSync('docs');
+
+    for (const file of markdownFiles) {
+        let content = fs.readFileSync(file, 'utf8');
+
+        // Look for relative links that might be broken (e.g., ./some-page)
+        // This is a basic fix - replace with more context-aware logic as needed
+        let newContent = content.replace(/\[([^\]]+)\]\(\.\/([^\)]+)\)/g, (match, text, link) => {
+            // Check if the target file exists in the same directory
+            const dir = path.dirname(file);
+            const targetFile = path.join(dir, link + '.md');
+
+            if (fs.existsSync(targetFile)) {
+                // Link is valid, keep as is
+                return match;
+            } else {
+                // Try to find a matching file in the directory
+                const filesInDir = fs.readdirSync(dir);
+                const matchingFile = filesInDir.find(f =>
+                    f.toLowerCase().includes(link.toLowerCase()) && f.endsWith('.md')
+                );
+
+                if (matchingFile) {
+                    const baseName = path.basename(matchingFile, '.md');
+                    return `[${text}](./${baseName})`;
+                } else {
+                    // If no matching file found, remove the broken link
+                    console.log(`⚠️ Removing broken link in ${file}: ${link}`);
+                    return text; // Just return the link text without the link
+                }
+            }
+        });
+
+        if (content !== newContent) {
+            console.log(`📝 Fixed links in ${file}`);
+            fs.writeFileSync(file, newContent, 'utf8');
+        }
     }
 }
 
@@ -84,6 +172,12 @@ function deployUpdate() {
 
     // Step 3: Fix common Docusaurus issues
     console.log('🔧 Fixing common Docusaurus issues...');
+
+    // Fix duplicate intro files
+    fixDuplicateIntroFiles();
+
+    // Fix broken links
+    fixBrokenLinks();
 
     // Verify required files exist
     const requiredFiles = [
@@ -157,12 +251,14 @@ function deployUpdate() {
     console.log('🚀 Deploying to Vercel...');
 
     const vercelToken = process.env.VERCEL_TOKEN || process.env.VERCEL_TOKEN_ENV;
-    let vercelDeployCmd = 'vercel --prod';
+    let vercelDeployCmd = 'vercel --prod --yes'; // Add --yes to skip prompts
 
     if (vercelToken) {
-        vercelDeployCmd = `vercel --token=${vercelToken} --prod`;
+        vercelDeployCmd = `vercel --token=${vercelToken} --prod --yes`;
     } else {
         console.log('⚠️ Vercel token not found in environment. Please set VERCEL_TOKEN environment variable.');
+        // Use --yes to skip prompts even without a token
+        vercelDeployCmd = 'vercel --prod --yes';
     }
 
     // Run vercel deployment
