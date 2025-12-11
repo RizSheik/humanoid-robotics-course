@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 4 — URDF for Humanoids",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter 4 — URDF for Humanoids",
+    "description": "Creating Unified Robot Description Format files specifically for humanoid robots.",
+    "slug": "/module-1/chapter-4"
+  }
+}

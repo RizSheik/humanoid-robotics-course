@@ -1,0 +1,27 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Digital Twin (Gazebo & Unity) icon -->
+  <g stroke="#04F6F0" stroke-width="2" fill="none">
+    <!-- Real robot -->
+    <g transform="translate(25, 30)">
+      <rect x="0" y="0" width="20" height="30" rx="3" />
+      <circle cx="10" cy="-5" r="8" />
+      <line x1="5" y1="5" x2="15" y2="5" />
+      <line x1="5" y1="10" x2="15" y2="10" />
+    </g>
+    
+    <!-- Twin robot (dashed) -->
+    <g transform="translate(55, 30)">
+      <rect x="0" y="0" width="20" height="30" rx="3" stroke-dasharray="3,3" />
+      <circle cx="10" cy="-5" r="8" stroke-dasharray="3,3" />
+      <line x1="5" y1="5" x2="15" y2="5" stroke-dasharray="3,3" />
+      <line x1="5" y1="10" x2="15" y2="10" stroke-dasharray="3,3" />
+    </g>
+    
+    <!-- Connection -->
+    <path d="M45,45 Q50,35 55,45" stroke="#7C4DFF" stroke-width="1.5" stroke-dasharray="2,2" />
+    <path d="M45,55 Q50,65 55,55" stroke="#7C4DFF" stroke-width="1.5" stroke-dasharray="2,2" />
+    
+    <!-- Mirror/reflection effect -->
+    <path d="M20,70 Q50,90 80,70" stroke="#04F6F0" stroke-width="1.5" fill="none" />
+  </g>
+</svg>

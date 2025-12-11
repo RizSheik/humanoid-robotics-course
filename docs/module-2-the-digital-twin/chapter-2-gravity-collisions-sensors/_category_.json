@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 2 — Gravity, Collisions & Sensors",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter 2 — Gravity, Collisions & Sensors",
+    "description": "Implementing gravity, collision detection, and sensor systems in simulation.",
+    "slug": "/module-2/chapter-2"
+  }
+}

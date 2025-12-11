@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 4 — LiDAR, Depth Cameras, IMUs",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter 4 — LiDAR, Depth Cameras, IMUs",
+    "description": "Implementing and simulating various robotic sensors: LiDAR, depth cameras, and IMUs.",
+    "slug": "/module-2/chapter-4"
+  }
+}

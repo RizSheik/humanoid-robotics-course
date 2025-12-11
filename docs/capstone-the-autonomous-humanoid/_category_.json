@@ -1,0 +1,8 @@
+{
+  "label": "Capstone: The Autonomous Humanoid",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Integrates all concepts from previous modules into a comprehensive autonomous humanoid project."
+  }
+}

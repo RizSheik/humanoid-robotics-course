@@ -1,0 +1,10 @@
+{
+  "label": "Chapter 1 — OpenAI Whisper Voice-to-Action",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter 1 — OpenAI Whisper Voice-to-Action",
+    "description": "Using OpenAI Whisper for voice recognition and converting speech to robotic actions.",
+    "slug": "/module-4/chapter-1"
+  }
+}
