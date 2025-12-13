@@ -1,0 +1,112 @@
+.moduleCards {
+  padding: 4rem 0;
+  background-color: var(--robotics-card-bg);
+  margin: 2rem 0;
+  border-radius: 12px;
+}
+
+.moduleCardCol {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.moduleCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.moduleCard {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--robotics-card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--robotics-neon-cyan);
+  box-shadow: 0 10px 25px rgba(4, 246, 240, 0.2);
+}
+
+.moduleCard::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg,
+    var(--robotics-neon-cyan),
+    var(--robotics-electric-teal),
+    var(--robotics-accent-purple),
+    var(--robotics-neon-cyan));
+  z-index: -1;
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.moduleCard:hover::before {
+  opacity: 1;
+}
+
+.moduleCardHeader {
+  margin-bottom: 1rem;
+}
+
+.moduleCardTitle {
+  margin-bottom: 0.5rem;
+  color: var(--robotics-neon-cyan);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.moduleCardBody {
+  margin-bottom: 1rem;
+}
+
+.moduleCardDescription {
+  color: var(--robotics-soft-sky-white);
+  opacity: 0.9;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.moduleCardFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.moduleCardLinkText {
+  color: var(--robotics-neon-cyan);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .moduleCardCol {
+    col: 6; /* Two cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .moduleCardCol {
+    col: 12; /* One card per row on small screens */
+  }
+  
+  .moduleCards {
+    padding: 2rem 0;
+  }
+}

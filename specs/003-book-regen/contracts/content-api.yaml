@@ -1,0 +1,252 @@
+# Educational Content API Contract
+
+## Overview
+This contract defines the structure and format for educational content in the Physical AI & Humanoid Robotics book project. Although this is a static documentation site, the contract establishes the API-like interface for content generation and consumption.
+
+## Content Entity Schema
+
+### Chapter Content Schema
+```
+{
+  "id": "string (e.g., module-1-chapter-1)",
+  "title": "string",
+  "module": "string",
+  "content": "markdown string with min 500 words",
+  "objectives": [
+    "string"
+  ],
+  "examples": [
+    {
+      "title": "string",
+      "description": "string",
+      "implementation": "string (code or steps)"
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "string",
+      "altText": "string",
+      "caption": "string",
+      "path": "string (relative path from static/img/)"
+    }
+  ],
+  "tables": [
+    {
+      "title": "string",
+      "headers": ["string"],
+      "rows": [
+        ["string"]
+      ]
+    }
+  ],
+  "mathematicalModels": [
+    {
+      "title": "string",
+      "equation": "string (LaTeX format)",
+      "description": "string"
+    }
+  ],
+  "references": [
+    {
+      "title": "string",
+      "url": "string",
+      "type": "string (e.g., research-paper, documentation)"
+    }
+  ],
+  "createdAt": "date",
+  "updatedAt": "date",
+  "version": "string"
+}
+```
+
+### Supporting Document Schema
+```
+{
+  "id": "string (e.g., module-1-overview)",
+  "title": "string",
+  "type": "string (one of: overview, weekly-breakdown, deep-dive, practical-lab, simulation, assignment, quiz)",
+  "module": "string",
+  "content": "markdown string",
+  "objectives": [
+    "string (only for relevant document types)"
+  ],
+  "requirements": [
+    "string (only for lab/simulation docs)"
+  ],
+  "exercises": [
+    {
+      "question": "string",
+      "type": "string (e.g., multiple-choice, short-answer, coding)",
+      "difficulty": "string (beginner, intermediate, advanced)",
+      "solution": "string (for assignment/quiz types)"
+    }
+  ],
+  "references": [
+    {
+      "title": "string",
+      "url": "string",
+      "type": "string"
+    }
+  ],
+  "createdAt": "date",
+  "updatedAt": "date",
+  "version": "string"
+}
+```
+
+## Content Generation API
+
+### POST /content/generate/chapter
+Generate a new chapter based on specified parameters.
+
+**Request Body:**
+```
+{
+  "moduleId": "string",
+  "chapterNumber": "number (1-4)",
+  "topic": "string",
+  "technicalFocus": "string",
+  "targetAudience": "string (undergraduate/graduate)",
+  "prerequisites": [
+    "string"
+  ]
+}
+```
+
+**Response:**
+```
+{
+  "success": "boolean",
+  "chapter": "Chapter Content Schema object",
+  "message": "string"
+}
+```
+
+### POST /content/generate/supporting-document
+Generate a new supporting document.
+
+**Request Body:**
+```
+{
+  "moduleId": "string",
+  "documentType": "string (overview, weekly-breakdown, deep-dive, practical-lab, simulation, assignment, quiz)",
+  "topic": "string",
+  "technicalFocus": "string",
+  "targetAudience": "string (undergraduate/graduate)"
+}
+```
+
+**Response:**
+```
+{
+  "success": "boolean",
+  "document": "Supporting Document Schema object",
+  "message": "string"
+}
+```
+
+### PUT /content/update/{id}
+Update existing content.
+
+**Request Body:**
+```
+{
+  "content": "updated markdown string",
+  "title": "string (optional)",
+  "examples": [
+    { ... }
+  ],
+  "diagrams": [
+    { ... }
+  ],
+  "tables": [
+    { ... }
+  ]
+}
+```
+
+**Response:**
+```
+{
+  "success": "boolean",
+  "updatedContent": "updated content object",
+  "message": "string"
+}
+```
+
+## Content Validation Rules
+
+1. All content must meet constitutional requirements for technical accuracy
+2. Chapters must be at least 500 words
+3. Supporting documents must be at least 200 words (except for quiz types)
+4. All images must reference files in the /static/img/ directory
+5. All content must follow APA 7th edition citation format
+6. Content must be original and free of plagiarism
+7. At least 50% of sources must be peer-reviewed robotics/AI sources
+
+## Navigation API
+
+### GET /navigation/sidebar
+Retrieve the sidebar navigation structure.
+
+**Response:**
+```
+{
+  "navigation": [
+    {
+      "id": "string",
+      "title": "string",
+      "path": "string",
+      "order": "number",
+      "children": [
+        { ... }
+      ]
+    }
+  ]
+}
+```
+
+## Content Delivery API
+
+### GET /content/{module}/{document}
+Retrieve specific content document by module and document name.
+
+**Response:**
+```
+{
+  "document": "content object based on type",
+  "metadata": {
+    "readTime": "number (minutes)",
+    "wordCount": "number",
+    "relatedDocuments": [
+      "string (document IDs)"
+    ]
+  }
+}
+```
+
+### GET /search
+Search across all content.
+
+**Query Parameters:**
+- `q`: search query
+- `module`: optional filter by module
+- `type`: optional filter by document type
+
+**Response:**
+```
+{
+  "results": [
+    {
+      "id": "string",
+      "title": "string",
+      "type": "string",
+      "module": "string",
+      "path": "string",
+      "excerpt": "string (relevant text snippet)",
+      "relevance": "number"
+    }
+  ],
+  "totalResults": "number"
+}
+```

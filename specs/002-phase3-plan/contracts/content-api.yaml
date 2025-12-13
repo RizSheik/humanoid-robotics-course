@@ -1,0 +1,198 @@
+# API Contracts: Physical AI & Humanoid Robotics Book
+
+## Contract: Content Access API
+
+### GET /api/content/{module}/{chapter}
+**Description**: Retrieve specific chapter content from the textbook
+**Purpose**: Allow systems (like RAG chatbots) to access specific content
+
+**Request Parameters**:
+- module (string, path): Module identifier (e.g., "module-1-the-robotic-nervous-system")
+- chapter (string, path): Chapter type (e.g., "overview", "practical-lab")
+
+**Response**:
+```json
+{
+  "moduleId": "string",
+  "moduleName": "string",
+  "chapterId": "string",
+  "chapterType": "string",
+  "title": "string",
+  "content": "string (markdown format)",
+  "learningOutcomes": ["string"],
+  "relatedImages": [
+    {
+      "imageId": "string",
+      "altText": "string",
+      "relativePath": "string"
+    }
+  ],
+  "citations": [
+    {
+      "citationId": "string",
+      "text": "string",
+      "url": "string (optional)"
+    }
+  ],
+  "lastModified": "ISO 8601 timestamp"
+}
+```
+
+**Success Response (200)**: Content retrieved successfully
+**Error Response (404)**: Module or chapter not found
+
+## Contract: Content Search API
+
+### POST /api/search
+**Description**: Search across all textbook content
+**Purpose**: Enable semantic search for students and RAG systems
+
+**Request Body**:
+```json
+{
+  "query": "string",
+  "filters": {
+    "modules": ["string (optional)"],
+    "chapterTypes": ["string (optional)"],
+    "maxResults": "integer (default 10)"
+  }
+}
+```
+
+**Response**:
+```json
+{
+  "query": "string",
+  "results": [
+    {
+      "contentId": "string",
+      "moduleId": "string",
+      "moduleName": "string",
+      "chapterId": "string",
+      "chapterType": "string",
+      "title": "string",
+      "preview": "string (shortened content preview)",
+      "relevanceScore": "number (0-1)",
+      "url": "string (relative path to content)"
+    }
+  ],
+  "totalResults": "integer",
+  "executionTimeMs": "integer"
+}
+```
+
+**Success Response (200)**: Search completed successfully
+
+## Contract: Content Metadata API
+
+### GET /api/metadata
+**Description**: Retrieve metadata about all textbook content
+**Purpose**: Allow systems to understand the complete structure of the book
+
+**Response**:
+```json
+{
+  "bookTitle": "Physical AI & Humanoid Robotics",
+  "modules": [
+    {
+      "moduleId": "string",
+      "title": "string",
+      "description": "string",
+      "position": "integer",
+      "chapters": [
+        {
+          "chapterId": "string",
+          "type": "string",
+          "title": "string",
+          "position": "integer",
+          "learningOutcomes": ["string"]
+        }
+      ]
+    }
+  ],
+  "capstone": {
+    "projectId": "string",
+    "title": "string",
+    "description": "string",
+    "chapters": ["same structure as module chapters"]
+  },
+  "appendices": [
+    {
+      "appendixId": "string",
+      "title": "string",
+      "type": "string",
+      "description": "string"
+    }
+  ],
+  "lastUpdated": "ISO 8601 timestamp"
+}
+```
+
+**Success Response (200)**: Metadata retrieved successfully
+
+## Contract: Content Validation API
+
+### POST /api/validate
+**Description**: Validate content against textbook standards
+**Purpose**: Ensure content meets academic and formatting requirements
+
+**Request Body**:
+```json
+{
+  "content": "string (markdown content to validate)",
+  "contentType": "enum (module|chapter|appendix)",
+  "requirements": [
+    "RAG_GROUNDABLE_FORMAT",
+    "ACADEMIC_ACCURACY",
+    "PROPER_CITATIONS",
+    "IMAGE_REFERENCES_VALID",
+    "HEADING_HIERARCHY"
+  ]
+}
+```
+
+**Response**:
+```json
+{
+  "isValid": "boolean",
+  "validationResults": [
+    {
+      "requirement": "string",
+      "status": "enum (PASS|FAIL|WARNING)",
+      "message": "string (details about validation result)"
+    }
+  ],
+  "suggestions": ["string (improvement suggestions)"]
+}
+```
+
+**Success Response (200)**: Validation completed
+
+## Contract: Image Management API
+
+### GET /api/images/{module}
+**Description**: Retrieve images associated with a specific module
+**Purpose**: Help systems access relevant images for content display
+
+**Request Parameters**:
+- module (string, path): Module identifier to get images for
+
+**Response**:
+```json
+{
+  "moduleId": "string",
+  "images": [
+    {
+      "imageId": "string",
+      "filename": "string",
+      "altText": "string",
+      "caption": "string",
+      "relativePath": "string",
+      "contentType": "enum (diagram|photo|illustration)",
+      "topics": ["string (relevant topics)"]
+    }
+  ]
+}
+```
+
+**Success Response (200)**: Images retrieved successfully
