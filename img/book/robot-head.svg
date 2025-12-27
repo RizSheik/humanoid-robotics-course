@@ -1,0 +1,18 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Robot head background -->
+  <rect x="20" y="25" width="60" height="50" rx="15" fill="none" stroke="#04F6F0" stroke-width="2"/>
+  
+  <!-- Robot face details -->
+  <circle cx="40" cy="45" r="5" fill="#04F6F0"/> <!-- Left eye -->
+  <circle cx="60" cy="45" r="5" fill="#04F6F0"/> <!-- Right eye -->
+  
+  <!-- Mouth -->
+  <rect x="45" y="60" width="10" height="3" rx="1" fill="#04F6F0"/>
+  
+  <!-- Head top detail -->
+  <path d="M35,25 L35,15 M65,25 L65,15" stroke="#04F6F0" stroke-width="2" stroke-linecap="round"/>
+  <path d="M30,15 Q50,5 70,15" stroke="#04F6F0" stroke-width="2" fill="none"/>
+  
+  <!-- Neck -->
+  <rect x="40" y="75" width="20" height="10" fill="none" stroke="#04F6F0" stroke-width="2"/>
+</svg>

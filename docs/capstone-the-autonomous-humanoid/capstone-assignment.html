@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-capstone-the-autonomous-humanoid/capstone-assignment" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Capstone — The Autonomous Humanoid | Chapter 6 — Assignment | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rizsheik.github.io/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-assignment"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Capstone — The Autonomous Humanoid | Chapter 6 — Assignment | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World"><meta data-rh="true" name="description" content="Capstone: Complete Autonomous Humanoid Integration and Demonstration"><meta data-rh="true" property="og:description" content="Capstone: Complete Autonomous Humanoid Integration and Demonstration"><link data-rh="true" rel="icon" href="/humanoid-robotics-course/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rizsheik.github.io/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-assignment"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-assignment" hreflang="en"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-assignment" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Capstone: The Autonomous Humanoid","item":"https://rizsheik.github.io/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid"},{"@type":"ListItem","position":2,"name":"Chapter 6 — Assignment","item":"https://rizsheik.github.io/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-assignment"}]}</script><link rel="stylesheet" href="/humanoid-robotics-course/assets/css/styles.50e26d9c.css">
+<script src="/humanoid-robotics-course/assets/js/runtime~main.209958ed.js" defer="defer"></script>
+<script src="/humanoid-robotics-course/assets/js/main.92ab7bb3.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/humanoid-robotics-course/img/robot-head.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/humanoid-robotics-course/"><div class="navbar__logo"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/humanoid-robotics-course/docs/intro">Textbook Modules</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/humanoid-robotics-course/docs/intro"><span title="Introduction to Humanoid Robotics" class="linkLabel_WmDU">Introduction to Humanoid Robotics</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid"><span title="Capstone: The Autonomous Humanoid" class="categoryLinkLabel_W154">Capstone: The Autonomous Humanoid</span></a><button aria-label="Collapse sidebar category &#x27;Capstone: The Autonomous Humanoid&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-overview"><span title="Chapter 1 — Overview" class="linkLabel_WmDU">Chapter 1 — Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-weekly-breakdown"><span title="Chapter 2 — Weekly Breakdown" class="linkLabel_WmDU">Chapter 2 — Weekly Breakdown</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-deep-dive"><span title="Chapter 3 — Deep-Dive Theory" class="linkLabel_WmDU">Chapter 3 — Deep-Dive Theory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-practical-lab"><span title="Chapter 4 — Practical Lab" class="linkLabel_WmDU">Chapter 4 — Practical Lab</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-simulation"><span title="Chapter 5 — Simulation" class="linkLabel_WmDU">Chapter 5 — Simulation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-assignment"><span title="Chapter 6 — Assignment" class="linkLabel_WmDU">Chapter 6 — Assignment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-quiz"><span title="Chapter 7 — Quiz" class="linkLabel_WmDU">Chapter 7 — Quiz</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/humanoid-robotics-course/docs/appendices"><span title="Appendices" class="categoryLinkLabel_W154">Appendices</span></a><button aria-label="Expand sidebar category &#x27;Appendices&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/humanoid-robotics-course/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid"><span>Capstone: The Autonomous Humanoid</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Chapter 6 — Assignment</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Chapter 6 — Assignment</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="capstone-complete-autonomous-humanoid-integration-and-demonstration">Capstone: Complete Autonomous Humanoid Integration and Demonstration<a href="#capstone-complete-autonomous-humanoid-integration-and-demonstration" class="hash-link" aria-label="Direct link to Capstone: Complete Autonomous Humanoid Integration and Demonstration" title="Direct link to Capstone: Complete Autonomous Humanoid Integration and Demonstration" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-overview">Assignment Overview<a href="#assignment-overview" class="hash-link" aria-label="Direct link to Assignment Overview" title="Direct link to Assignment Overview" translate="no">​</a></h3>
+<p>In this capstone assignment, you will design, implement, and demonstrate a complete autonomous humanoid system that integrates all components developed throughout the Physical AI &amp; Humanoid Robotics program. Your system must demonstrate advanced capabilities including perception, reasoning, navigation, manipulation, human interaction, and safe autonomous operation in complex environments.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-objectives">Learning Objectives<a href="#learning-objectives" class="hash-link" aria-label="Direct link to Learning Objectives" title="Direct link to Learning Objectives" translate="no">​</a></h3>
+<p>By completing this assignment, you will demonstrate the ability to:</p>
+<ul>
+<li class="">Integrate all four major subsystems (nervous system, digital twin, AI brain, VLA) into a unified system</li>
+<li class="">Design and implement a complete autonomous humanoid architecture</li>
+<li class="">Demonstrate advanced autonomous capabilities (navigation, manipulation, interaction)</li>
+<li class="">Validate system performance, safety, and reliability</li>
+<li class="">Present and document a complex integrated system</li>
+<li class="">Identify and resolve integration challenges between subsystems</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-requirements">Assignment Requirements<a href="#assignment-requirements" class="hash-link" aria-label="Direct link to Assignment Requirements" title="Direct link to Assignment Requirements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-complete-system-integration">1. Complete System Integration<a href="#1-complete-system-integration" class="hash-link" aria-label="Direct link to 1. Complete System Integration" title="Direct link to 1. Complete System Integration" translate="no">​</a></h4>
+<p>Design and implement a fully integrated autonomous humanoid system that includes:</p>
+<ol>
+<li class="">
+<p><strong>Nervous System Integration (ROS 2)</strong>:</p>
+<ul>
+<li class="">Comprehensive communication architecture connecting all subsystems</li>
+<li class="">Real-time message passing and data synchronization</li>
+<li class="">Hardware abstraction and device driver integration</li>
+<li class="">Lifecycle management for all system components</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Digital Twin Integration (Simulation)</strong>:</p>
+<ul>
+<li class="">High-fidelity simulation environment for validation</li>
+<li class="">Physics-accurate modeling of humanoid dynamics</li>
+<li class="">Photorealistic rendering for vision system training</li>
+<li class="">Comprehensive testing and validation environment</li>
+</ul>
+</li>
+<li class="">
+<p><strong>AI-Brain Integration (NVIDIA Isaac)</strong>:</p>
+<ul>
+<li class="">Perception system for environment understanding</li>
+<li class="">Reasoning and planning for task execution</li>
+<li class="">Learning systems for adaptation and improvement</li>
+<li class="">Memory systems for experience retention</li>
+</ul>
+</li>
+<li class="">
+<p><strong>VLA System Integration</strong>:</p>
+<ul>
+<li class="">Vision system for object detection and recognition</li>
+<li class="">Language understanding for natural interaction</li>
+<li class="">Action generation for robot control</li>
+<li class="">Multimodal coordination and grounding</li>
+</ul>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-autonomous-capabilities">2. Autonomous Capabilities<a href="#2-autonomous-capabilities" class="hash-link" aria-label="Direct link to 2. Autonomous Capabilities" title="Direct link to 2. Autonomous Capabilities" translate="no">​</a></h4>
+<p>Your integrated system must demonstrate:</p>
+<ol>
+<li class="">
+<p><strong>Perception and Understanding</strong>:</p>
+<ul>
+<li class="">360-degree environmental modeling with multiple sensors</li>
+<li class="">Real-time object detection and tracking (minimum 5 object categories)</li>
+<li class="">Spatial and semantic scene understanding</li>
+<li class="">Multimodal sensor fusion for robust perception</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Navigation and Mobility</strong>:</p>
+<ul>
+<li class="">Whole-body locomotion planning and execution</li>
+<li class="">Dynamic obstacle avoidance in populated environments</li>
+<li class="">Navigation in complex human environments</li>
+<li class="">Stair climbing and uneven terrain navigation (simulated)</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Manipulation and Dexterity</strong>:</p>
+<ul>
+<li class="">Human-like bimanual manipulation</li>
+<li class="">Tool use and object affordance understanding</li>
+<li class="">Adaptive grasping based on object properties</li>
+<li class="">Complex multi-step manipulation tasks</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Human Interaction</strong>:</p>
+<ul>
+<li class="">Natural language dialogue and understanding</li>
+<li class="">Social interaction and collaboration</li>
+<li class="">Emotional recognition and appropriate response</li>
+<li class="">Adaptive behavior based on human feedback</li>
+</ul>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-safety-and-reliability">3. Safety and Reliability<a href="#3-safety-and-reliability" class="hash-link" aria-label="Direct link to 3. Safety and Reliability" title="Direct link to 3. Safety and Reliability" translate="no">​</a></h4>
+<p>Implement comprehensive safety and reliability measures:</p>
+<ol>
+<li class="">
+<p><strong>Safety Systems</strong>:</p>
+<ul>
+<li class="">Multiple safety layers and checks</li>
+<li class="">Emergency stop and fail-safe mechanisms</li>
+<li class="">Safe interaction protocols with humans and environment</li>
+<li class="">Comprehensive safety validation procedures</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Reliability Measures</strong>:</p>
+<ul>
+<li class="">Graceful degradation when components fail</li>
+<li class="">Error handling and recovery mechanisms</li>
+<li class="">Validation and verification of outputs</li>
+<li class="">System health monitoring and diagnostics</li>
+</ul>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-performance-requirements">4. Performance Requirements<a href="#4-performance-requirements" class="hash-link" aria-label="Direct link to 4. Performance Requirements" title="Direct link to 4. Performance Requirements" translate="no">​</a></h4>
+<p>Your system must meet:</p>
+<ol>
+<li class="">
+<p><strong>Real-time Performance</strong>:</p>
+<ul>
+<li class="">Perception pipeline at 10Hz or above</li>
+<li class="">High-level decision making at 1Hz or above</li>
+<li class="">Control loops at 50Hz or above</li>
+<li class="">Language understanding with less than 2 seconds response time</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Reliability</strong>:</p>
+<ul>
+<li class="">System should operate for 30 or more minutes without critical failure</li>
+<li class="">Task success rate greater than 80% for demonstrated capabilities</li>
+<li class="">Human interaction quality rating greater than 4/5 from evaluators</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Robustness</strong>:</p>
+<ul>
+<li class="">Handle lighting changes and environmental variations</li>
+<li class="">Operate effectively with sensor noise and uncertainty</li>
+<li class="">Adapt to new objects and environments</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-specifications">Technical Specifications<a href="#technical-specifications" class="hash-link" aria-label="Direct link to Technical Specifications" title="Direct link to Technical Specifications" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-architecture-requirements">System Architecture Requirements<a href="#system-architecture-requirements" class="hash-link" aria-label="Direct link to System Architecture Requirements" title="Direct link to System Architecture Requirements" translate="no">​</a></h4>
+<ul>
+<li class="">ROS 2 Humble Hawksbill as the primary communication framework</li>
+<li class="">NVIDIA GPU (RTX 4090 or equivalent) for AI acceleration</li>
+<li class="">Isaac ROS packages for GPU-accelerated perception and control</li>
+<li class="">Isaac Sim for comprehensive testing and validation</li>
+<li class="">Isaac Lab for robot learning and adaptation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware-simulation-model">Hardware Simulation Model<a href="#hardware-simulation-model" class="hash-link" aria-label="Direct link to Hardware Simulation Model" title="Direct link to Hardware Simulation Model" translate="no">​</a></h4>
+<ul>
+<li class="">Humanoid robot with 20+ DOF for full body operation</li>
+<li class="">RGB-D camera for vision processing</li>
+<li class="">2D LIDAR for navigation</li>
+<li class="">IMU for balance and orientation</li>
+<li class="">Multi-fingered hands for dexterous manipulation</li>
+<li class="">Accurate kinematic chain with collision geometry</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-benchmarks">Performance Benchmarks<a href="#performance-benchmarks" class="hash-link" aria-label="Direct link to Performance Benchmarks" title="Direct link to Performance Benchmarks" translate="no">​</a></h4>
+<ul>
+<li class="">Navigation success rate &gt;90% in test environments</li>
+<li class="">Object manipulation success rate &gt;80% for basic tasks</li>
+<li class="">Language understanding accuracy &gt;85% for common commands</li>
+<li class="">Real-time factor &gt;0.8x in simulation for complex tasks</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-guidelines">Implementation Guidelines<a href="#implementation-guidelines" class="hash-link" aria-label="Direct link to Implementation Guidelines" title="Direct link to Implementation Guidelines" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-package-structure">1. Package Structure<a href="#1-package-structure" class="hash-link" aria-label="Direct link to 1. Package Structure" title="Direct link to 1. Package Structure" translate="no">​</a></h4>
+<p>Organize your implementation with the following structure:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">integrated_humanoid_system/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── CMakeLists.txt</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── package.xml</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── config/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── nervous_system.yaml</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── ai_brain.yaml</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── vla_system.yaml</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── safety.yaml</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── launch/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── full_system.launch.py</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── subsystem_tests.launch.py</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── safety_validation.launch.py</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── models/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── perception/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── language/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── manipulation/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── navigation/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── scripts/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── src/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── integration/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── nervous_system/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── ai_brain/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── vla_system/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── safety/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── urdf/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── humanoid_robot.urdf.xacro</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── worlds/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── household_env.sdf</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── office_env.sdf</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── test_env.sdf</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── tests/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ├── unit_tests/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ├── integration_tests/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    └── safety_tests/</span><br></span></code></pre></div></div>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-documentation-requirements">2. Documentation Requirements<a href="#2-documentation-requirements" class="hash-link" aria-label="Direct link to 2. Documentation Requirements" title="Direct link to 2. Documentation Requirements" translate="no">​</a></h4>
+<p>Provide comprehensive documentation:</p>
+<ul>
+<li class="">Complete system architecture with detailed component diagrams</li>
+<li class="">Integration methodology and approach</li>
+<li class="">Setup and installation instructions for full system</li>
+<li class="">Performance evaluation results and analysis</li>
+<li class="">Safety analysis and validation reports</li>
+<li class="">User manual for operating and extending the system</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-testing-and-validation">3. Testing and Validation<a href="#3-testing-and-validation" class="hash-link" aria-label="Direct link to 3. Testing and Validation" title="Direct link to 3. Testing and Validation" translate="no">​</a></h4>
+<p>Include comprehensive validation procedures:</p>
+<ul>
+<li class="">Unit tests for individual components</li>
+<li class="">Integration tests for subsystem connections</li>
+<li class="">Performance benchmarks in simulation and reality</li>
+<li class="">Safety validation for all autonomous capabilities</li>
+<li class="">Human-robot interaction quality assessment</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-criteria">Evaluation Criteria<a href="#evaluation-criteria" class="hash-link" aria-label="Direct link to Evaluation Criteria" title="Direct link to Evaluation Criteria" translate="no">​</a></h3>
+<p>Your assignment will be evaluated based on:</p>
+<ol>
+<li class="">
+<p><strong>System Integration</strong> (30%):</p>
+<ul>
+<li class="">Completeness of integration across all subsystems</li>
+<li class="">Quality of communication and data flow</li>
+<li class="">Proper implementation of safety mechanisms</li>
+<li class="">Performance optimization and efficiency</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Autonomous Capabilities</strong> (25%):</p>
+<ul>
+<li class="">Demonstration of all required capabilities</li>
+<li class="">Quality and sophistication of autonomous behaviors</li>
+<li class="">Integration of perception, reasoning, and action</li>
+<li class="">Performance in complex scenarios</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Safety and Reliability</strong> (20%):</p>
+<ul>
+<li class="">Implementation of comprehensive safety measures</li>
+<li class="">System reliability and robustness</li>
+<li class="">Error handling and recovery mechanisms</li>
+<li class="">Safe human-robot interaction</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Technical Innovation</strong> (15%):</p>
+<ul>
+<li class="">Creative solutions to integration challenges</li>
+<li class="">Novel approaches to system design</li>
+<li class="">Advanced techniques in perception, planning, or control</li>
+<li class="">Effective use of NVIDIA Isaac technologies</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Documentation and Presentation</strong> (10%):</p>
+<ul>
+<li class="">Clear and comprehensive technical documentation</li>
+<li class="">Understanding of design choices and trade-offs</li>
+<li class="">Quality of performance evaluation</li>
+<li class="">Professional presentation of results</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="submission-requirements">Submission Requirements<a href="#submission-requirements" class="hash-link" aria-label="Direct link to Submission Requirements" title="Direct link to Submission Requirements" translate="no">​</a></h3>
+<p>Submit the following:</p>
+<ol>
+<li class="">
+<p><strong>Complete Source Code</strong>:</p>
+<ul>
+<li class="">All ROS 2 packages and configurations</li>
+<li class="">Trained models and parameters</li>
+<li class="">Launch files and scripts</li>
+<li class="">Isaac Sim environments and assets</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Technical Documentation</strong>:</p>
+<ul>
+<li class="">Complete system architecture and design documentation</li>
+<li class="">Integration methodology and approach</li>
+<li class="">Performance evaluation results</li>
+<li class="">Safety analysis and validation reports</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Video Demonstration</strong> (20-25 minutes):</p>
+<ul>
+<li class="">System architecture overview</li>
+<li class="">Demonstration of all autonomous capabilities</li>
+<li class="">Complex task execution showing integration</li>
+<li class="">Safety features and fail-safe mechanisms</li>
+<li class="">Human interaction capabilities</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Written Report</strong> (15-20 pages):</p>
+<ul>
+<li class="">Detailed system description and architecture</li>
+<li class="">Technical challenges and innovative solutions</li>
+<li class="">Evaluation methodology and comprehensive results</li>
+<li class="">Performance analysis and lessons learned</li>
+<li class="">Future improvements and scalability</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-constraints-and-guidelines">Technical Constraints and Guidelines<a href="#technical-constraints-and-guidelines" class="hash-link" aria-label="Direct link to Technical Constraints and Guidelines" title="Direct link to Technical Constraints and Guidelines" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-constraints">Performance Constraints<a href="#performance-constraints" class="hash-link" aria-label="Direct link to Performance Constraints" title="Direct link to Performance Constraints" translate="no">​</a></h4>
+<ul>
+<li class="">Maintain real-time performance for critical functions</li>
+<li class="">Optimize for the specified hardware configuration</li>
+<li class="">Ensure system stability during extended operation</li>
+<li class="">Meet response time requirements for human interaction</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-constraints">Safety Constraints<a href="#safety-constraints" class="hash-link" aria-label="Direct link to Safety Constraints" title="Direct link to Safety Constraints" translate="no">​</a></h4>
+<ul>
+<li class="">Implement multiple safety layers and checks</li>
+<li class="">Ensure all autonomous behaviors are safe</li>
+<li class="">Include comprehensive emergency procedures</li>
+<li class="">Provide manual override capabilities</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="quality-requirements">Quality Requirements<a href="#quality-requirements" class="hash-link" aria-label="Direct link to Quality Requirements" title="Direct link to Quality Requirements" translate="no">​</a></h4>
+<ul>
+<li class="">Implement comprehensive logging and diagnostics</li>
+<li class="">Follow ROS 2 coding standards (ament_lint_auto)</li>
+<li class="">Include unit and integration tests</li>
+<li class="">Document all interfaces and APIs</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="optional-enhancements-extra-credit">Optional Enhancements (Extra Credit)<a href="#optional-enhancements-extra-credit" class="hash-link" aria-label="Direct link to Optional Enhancements (Extra Credit)" title="Direct link to Optional Enhancements (Extra Credit)" translate="no">​</a></h3>
+<p>For students seeking additional challenge, consider implementing:</p>
+<ol>
+<li class="">
+<p><strong>Advanced Learning Capabilities</strong>:</p>
+<ul>
+<li class="">Continual learning from human demonstrations</li>
+<li class="">Reinforcement learning for skill improvement</li>
+<li class="">Transfer learning between tasks</li>
+<li class="">Meta-learning for rapid adaptation</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Complex Social Interaction</strong>:</p>
+<ul>
+<li class="">Theory of mind capabilities</li>
+<li class="">Collaborative task planning with humans</li>
+<li class="">Emotional intelligence and empathy</li>
+<li class="">Multi-modal social communication</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Collective Intelligence</strong>:</p>
+<ul>
+<li class="">Multi-robot coordination</li>
+<li class="">Distributed learning and skill sharing</li>
+<li class="">Swarm intelligence behaviors</li>
+<li class="">Human-robot teaming capabilities</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Advanced Manipulation</strong>:</p>
+<ul>
+<li class="">Tool use and manufacturing skills</li>
+<li class="">Deformable object manipulation</li>
+<li class="">Complex bimanual assembly tasks</li>
+<li class="">Haptic feedback integration</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources">Resources<a href="#resources" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://nvidia-isaac-ros.github.io/" target="_blank" rel="noopener noreferrer" class="">NVIDIA Isaac ROS Documentation</a></li>
+<li class=""><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/what_isaac_sim.html" target="_blank" rel="noopener noreferrer" class="">Isaac Sim Documentation</a></li>
+<li class=""><a href="https://navigation.ros.org/" target="_blank" rel="noopener noreferrer" class="">ROS 2 Navigation Stack</a></li>
+<li class=""><a href="https://arxiv.org/list/cs.RO/recent" target="_blank" rel="noopener noreferrer" class="">Humanoid Robotics Research Papers</a></li>
+<li class=""><a href="https://www.iso.org/standard/63571.html" target="_blank" rel="noopener noreferrer" class="">Safety Standards for Robotics</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deadline">Deadline<a href="#deadline" class="hash-link" aria-label="Direct link to Deadline" title="Direct link to Deadline" translate="no">​</a></h3>
+<p>This assignment is due at the end of Week 8 of the module. Late submissions will be penalized at a rate of 5% per day.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="support">Support<a href="#support" class="hash-link" aria-label="Direct link to Support" title="Direct link to Support" translate="no">​</a></h3>
+<p>For technical support with this assignment:</p>
+<ul>
+<li class="">Office Hours: Tuesdays and Thursdays, 2-4 PM</li>
+<li class="">Course Forum: Post questions with tag #capstone-assignment</li>
+<li class="">Slack Channel: #capstone-project in the course workspace</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assessment-rubric">Assessment Rubric<a href="#assessment-rubric" class="hash-link" aria-label="Direct link to Assessment Rubric" title="Direct link to Assessment Rubric" translate="no">​</a></h2>
+<table><thead><tr><th>Criteria</th><th>Excellent (A)</th><th>Good (B)</th><th>Satisfactory (C)</th><th>Needs Improvement (D)</th></tr></thead><tbody><tr><td>System Integration</td><td>Complete, robust integration; exceeds requirements</td><td>Good integration; meets all requirements</td><td>Basic integration; meets minimum requirements</td><td>Missing key integrations or major issues</td></tr><tr><td>Autonomous Capabilities</td><td>Sophisticated autonomous behaviors; exceeds requirements</td><td>Good autonomous capabilities; meets requirements</td><td>Basic autonomous capabilities; meets minimum</td><td>Limited or basic capabilities</td></tr><tr><td>Safety and Reliability</td><td>Comprehensive safety; highly reliable</td><td>Good safety measures; reliable</td><td>Basic safety; adequate reliability</td><td>Insufficient safety; unreliable</td></tr><tr><td>Technical Innovation</td><td>Innovative solutions; advanced techniques</td><td>Good technical solutions</td><td>Adequate technical approach</td><td>Limited technical sophistication</td></tr><tr><td>Documentation</td><td>Comprehensive, clear, professional</td><td>Good documentation quality</td><td>Adequate documentation</td><td>Poor or incomplete documentation</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tips-for-success">Tips for Success<a href="#tips-for-success" class="hash-link" aria-label="Direct link to Tips for Success" title="Direct link to Tips for Success" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p><strong>Start Early</strong>: Begin with system architecture and integration planning before implementing complex features.</p>
+</li>
+<li class="">
+<p><strong>Incremental Development</strong>: Integrate subsystems incrementally, testing each connection thoroughly.</p>
+</li>
+<li class="">
+<p><strong>Simulation First</strong>: Validate complex behaviors in simulation before attempting real-world deployment.</p>
+</li>
+<li class="">
+<p><strong>Safety First</strong>: Implement safety measures from the beginning rather than adding them later.</p>
+</li>
+<li class="">
+<p><strong>Performance Monitoring</strong>: Continuously profile your system to identify bottlenecks and optimize.</p>
+</li>
+<li class="">
+<p><strong>Comprehensive Testing</strong>: Test all integrated capabilities thoroughly before demonstration.</p>
+</li>
+<li class="">
+<p><strong>Documentation as You Go</strong>: Document your implementation as you develop to avoid last-minute rushes.</p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
+<p>This capstone assignment represents the culmination of the Physical AI &amp; Humanoid Robotics program. It challenges you to integrate all knowledge and skills acquired throughout the program into a unified, functional autonomous humanoid system.</p>
+<p>Successfully completing this assignment will demonstrate your ability to design, implement, and validate sophisticated integrated robotic systems, preparing you for advanced work in humanoid robotics and autonomous systems. The knowledge and experience gained through this capstone will serve as a foundation for future work in this rapidly advancing field.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/RizSheik/humanoid-robotics-course/edit/main/docs/capstone-the-autonomous-humanoid/capstone-assignment.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-simulation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Chapter 5 — Simulation</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-quiz"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Chapter 7 — Quiz</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#capstone-complete-autonomous-humanoid-integration-and-demonstration" class="table-of-contents__link toc-highlight">Capstone: Complete Autonomous Humanoid Integration and Demonstration</a><ul><li><a href="#assignment-overview" class="table-of-contents__link toc-highlight">Assignment Overview</a></li><li><a href="#learning-objectives" class="table-of-contents__link toc-highlight">Learning Objectives</a></li><li><a href="#assignment-requirements" class="table-of-contents__link toc-highlight">Assignment Requirements</a></li><li><a href="#technical-specifications" class="table-of-contents__link toc-highlight">Technical Specifications</a></li><li><a href="#implementation-guidelines" class="table-of-contents__link toc-highlight">Implementation Guidelines</a></li><li><a href="#evaluation-criteria" class="table-of-contents__link toc-highlight">Evaluation Criteria</a></li><li><a href="#submission-requirements" class="table-of-contents__link toc-highlight">Submission Requirements</a></li><li><a href="#technical-constraints-and-guidelines" class="table-of-contents__link toc-highlight">Technical Constraints and Guidelines</a></li><li><a href="#optional-enhancements-extra-credit" class="table-of-contents__link toc-highlight">Optional Enhancements (Extra Credit)</a></li><li><a href="#resources" class="table-of-contents__link toc-highlight">Resources</a></li><li><a href="#deadline" class="table-of-contents__link toc-highlight">Deadline</a></li><li><a href="#support" class="table-of-contents__link toc-highlight">Support</a></li></ul></li><li><a href="#assessment-rubric" class="table-of-contents__link toc-highlight">Assessment Rubric</a></li><li><a href="#tips-for-success" class="table-of-contents__link toc-highlight">Tips for Success</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-1-the-robotic-nervous-system/module-1-intro">Module 1 – The Robotic Nervous System</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-2-the-digital-twin/module-2-intro">Module 2 – The Digital Twin</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-3-the-ai-robot-brain/module-3-intro">Module 3 – The AI-Robot Brain</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-4-vision-language-action-systems/module-4-intro">Module 4 – Vision-Language-Action Systems</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-overview">Capstone: The Autonomous Humanoid</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/appendices/hardware-requirements">Appendices</a></li><li class="footer__item"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics — AI Systems in the Physical World. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

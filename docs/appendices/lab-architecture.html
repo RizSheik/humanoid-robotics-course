@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-appendices/lab-architecture" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Appendix B — Lab Architecture | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rizsheik.github.io/humanoid-robotics-course/docs/appendices/lab-architecture"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Appendix B — Lab Architecture | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/humanoid-robotics-course/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rizsheik.github.io/humanoid-robotics-course/docs/appendices/lab-architecture"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/appendices/lab-architecture" hreflang="en"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/appendices/lab-architecture" hreflang="x-default"><link rel="stylesheet" href="/humanoid-robotics-course/assets/css/styles.50e26d9c.css">
+<script src="/humanoid-robotics-course/assets/js/runtime~main.209958ed.js" defer="defer"></script>
+<script src="/humanoid-robotics-course/assets/js/main.92ab7bb3.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/humanoid-robotics-course/img/robot-head.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/humanoid-robotics-course/"><div class="navbar__logo"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/humanoid-robotics-course/docs/intro">Textbook Modules</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Appendix B — Lab Architecture</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>This appendix details the recommended laboratory architecture for implementing and testing humanoid robotics systems. The architecture encompasses both physical infrastructure and computational resources needed to support the development, testing, and demonstration of humanoid robots across all modules of this textbook.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="physical-lab-space-requirements">Physical Lab Space Requirements<a href="#physical-lab-space-requirements" class="hash-link" aria-label="Direct link to Physical Lab Space Requirements" title="Direct link to Physical Lab Space Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-lab-layout">Basic Lab Layout<a href="#basic-lab-layout" class="hash-link" aria-label="Direct link to Basic Lab Layout" title="Direct link to Basic Lab Layout" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Minimum Area</strong>: 4m x 4m (16 sqm) for small-scale humanoid testing</li>
+<li class=""><strong>Recommended Area</strong>: 8m x 6m (48 sqm) for full-size humanoid testing</li>
+<li class=""><strong>Ceiling Height</strong>: Minimum 3m (10ft) for safe operation</li>
+<li class=""><strong>Flooring</strong>: Non-slip, durable surface suitable for robot movement</li>
+<li class=""><strong>Safety Barriers</strong>: Adjustable barriers for creating safe testing zones</li>
+<li class=""><strong>Power Outlets</strong>: Multiple 120V/240V outlets distributed throughout the space</li>
+<li class=""><strong>Lighting</strong>: Adjustable LED lighting to minimize vision system interference</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-lab-layout">Advanced Lab Layout<a href="#advanced-lab-layout" class="hash-link" aria-label="Direct link to Advanced Lab Layout" title="Direct link to Advanced Lab Layout" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Minimum Area</strong>: 12m x 10m (120 sqm) for multi-robot scenarios</li>
+<li class=""><strong>Modular Zones</strong>: Configurable testing environments</li>
+<li class=""><strong>Obstacle Course</strong>: Various terrains and obstacles for testing</li>
+<li class=""><strong>Safety Equipment</strong>: Emergency stop buttons, safety curtains, protective gear</li>
+<li class=""><strong>Storage</strong>: Dedicated areas for robot components, spare parts, and tools</li>
+<li class=""><strong>Workstations</strong>: Multiple workbenches for robot assembly and maintenance</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="network-infrastructure">Network Infrastructure<a href="#network-infrastructure" class="hash-link" aria-label="Direct link to Network Infrastructure" title="Direct link to Network Infrastructure" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wired-network">Wired Network<a href="#wired-network" class="hash-link" aria-label="Direct link to Wired Network" title="Direct link to Wired Network" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Ethernet</strong>: Gigabit (1000BASE-T) throughout the lab space</li>
+<li class=""><strong>Rack System</strong>: For organizing network switches and computing equipment</li>
+<li class=""><strong>Cable Management</strong>: Properly labeled and organized cabling system</li>
+<li class=""><strong>UPS</strong>: Uninterruptible Power Supply for critical network infrastructure</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wireless-network">Wireless Network<a href="#wireless-network" class="hash-link" aria-label="Direct link to Wireless Network" title="Direct link to Wireless Network" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>WiFi 6</strong>: Latest standard for high-bandwidth robot communications</li>
+<li class=""><strong>Multiple APs</strong>: Access points positioned to eliminate dead zones</li>
+<li class=""><strong>Network Segmentation</strong>: Separate networks for different robot systems</li>
+<li class=""><strong>Bandwidth Management</strong>: Prioritization to ensure critical systems have needed resources</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="network-security">Network Security<a href="#network-security" class="hash-link" aria-label="Direct link to Network Security" title="Direct link to Network Security" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>VLANs</strong>: Virtual LANs to isolate robot networks from administrative systems</li>
+<li class=""><strong>Firewall</strong>: Hardware firewall with specific rules for robot communication</li>
+<li class=""><strong>Authentication</strong>: WPA3 or higher for wireless security</li>
+<li class=""><strong>Monitoring</strong>: Network monitoring tools to detect issues proactively</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="computing-infrastructure">Computing Infrastructure<a href="#computing-infrastructure" class="hash-link" aria-label="Direct link to Computing Infrastructure" title="Direct link to Computing Infrastructure" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="central-computing-resources">Central Computing Resources<a href="#central-computing-resources" class="hash-link" aria-label="Direct link to Central Computing Resources" title="Direct link to Central Computing Resources" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>High-Performance Servers</strong>: For complex simulation and computation tasks</li>
+<li class=""><strong>GPU Cluster</strong>: NVIDIA-based systems for AI and computer vision processing</li>
+<li class=""><strong>Cloud Integration</strong>: Hybrid cloud connectivity for resource-intensive tasks</li>
+<li class=""><strong>Load Balancing</strong>: To distribute computational load effectively</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-computing-nodes">Edge Computing Nodes<a href="#edge-computing-nodes" class="hash-link" aria-label="Direct link to Edge Computing Nodes" title="Direct link to Edge Computing Nodes" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Robotic Workstations</strong>: Specialized computers optimized for robot control</li>
+<li class=""><strong>Real-time Systems</strong>: For time-critical robot control operations</li>
+<li class=""><strong>Edge GPUs</strong>: For processing vision and sensor data close to the robot</li>
+<li class=""><strong>Communication Gateways</strong>: To integrate robots with central systems</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="storage-architecture">Storage Architecture<a href="#storage-architecture" class="hash-link" aria-label="Direct link to Storage Architecture" title="Direct link to Storage Architecture" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>High-Speed Storage</strong>: NVMe SSD arrays for simulation and data processing</li>
+<li class=""><strong>Shared File Systems</strong>: For collaborative development</li>
+<li class=""><strong>Archival Storage</strong>: For storing large datasets and simulation logs</li>
+<li class=""><strong>Backup Systems</strong>: Automated backup for critical code and data</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="safety-infrastructure">Safety Infrastructure<a href="#safety-infrastructure" class="hash-link" aria-label="Direct link to Safety Infrastructure" title="Direct link to Safety Infrastructure" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="physical-safety">Physical Safety<a href="#physical-safety" class="hash-link" aria-label="Direct link to Physical Safety" title="Direct link to Physical Safety" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Emergency Systems</strong>: Emergency stop buttons accessible throughout the lab</li>
+<li class=""><strong>Safety Monitoring</strong>: Sensors to detect unsafe conditions</li>
+<li class=""><strong>Protective Barriers</strong>: For separating operational robots from personnel</li>
+<li class=""><strong>First Aid</strong>: Emergency supplies and procedures for robot-related injuries</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-safety">Operational Safety<a href="#operational-safety" class="hash-link" aria-label="Direct link to Operational Safety" title="Direct link to Operational Safety" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Access Control</strong>: RFID or keycard systems to control lab access</li>
+<li class=""><strong>Safety Protocols</strong>: Standardized procedures for robot testing</li>
+<li class=""><strong>Training Programs</strong>: Mandatory training for all lab users</li>
+<li class=""><strong>Incident Response</strong>: Procedures for handling robot malfunctions or accidents</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="simulation-environment">Simulation Environment<a href="#simulation-environment" class="hash-link" aria-label="Direct link to Simulation Environment" title="Direct link to Simulation Environment" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-fidelity-simulators">High-Fidelity Simulators<a href="#high-fidelity-simulators" class="hash-link" aria-label="Direct link to High-Fidelity Simulators" title="Direct link to High-Fidelity Simulators" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Gazebo Integration</strong>: Full integration with ROS-based development</li>
+<li class=""><strong>Unity Robotics Kit</strong>: For advanced graphics and visualization</li>
+<li class=""><strong>NVIDIA Isaac Sim</strong>: For AI and perception development</li>
+<li class=""><strong>V-REP/CoppeliaSim</strong>: For algorithm development and testing</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="simulation-infrastructure">Simulation Infrastructure<a href="#simulation-infrastructure" class="hash-link" aria-label="Direct link to Simulation Infrastructure" title="Direct link to Simulation Infrastructure" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>High-Performance Computing</strong>: For complex physics simulations</li>
+<li class=""><strong>Real-time Synchronization</strong>: For hardware-in-the-loop testing</li>
+<li class=""><strong>Multi-Robot Simulation</strong>: For testing interaction scenarios</li>
+<li class=""><strong>Environmental Modeling</strong>: Tools for creating realistic simulation environments</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sensor-infrastructure">Sensor Infrastructure<a href="#sensor-infrastructure" class="hash-link" aria-label="Direct link to Sensor Infrastructure" title="Direct link to Sensor Infrastructure" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixed-sensors">Fixed Sensors<a href="#fixed-sensors" class="hash-link" aria-label="Direct link to Fixed Sensors" title="Direct link to Fixed Sensors" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Overhead Cameras</strong>: Multiple cameras for tracking robot position</li>
+<li class=""><strong>LiDAR Arrays</strong>: For comprehensive environment mapping</li>
+<li class=""><strong>IMU Networks</strong>: For precise motion tracking</li>
+<li class=""><strong>Acoustic Sensors</strong>: For audio environment analysis</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="communication-systems">Communication Systems<a href="#communication-systems" class="hash-link" aria-label="Direct link to Communication Systems" title="Direct link to Communication Systems" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Wireless Sensing</strong>: Networks of environmental sensors</li>
+<li class=""><strong>Data Aggregation</strong>: Systems to collect sensor data from multiple sources</li>
+<li class=""><strong>Real-time Processing</strong>: For immediate environmental awareness</li>
+<li class=""><strong>Historical Analysis</strong>: For understanding environmental patterns</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="control-and-monitoring-systems">Control and Monitoring Systems<a href="#control-and-monitoring-systems" class="hash-link" aria-label="Direct link to Control and Monitoring Systems" title="Direct link to Control and Monitoring Systems" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="central-control">Central Control<a href="#central-control" class="hash-link" aria-label="Direct link to Central Control" title="Direct link to Central Control" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Master Control Station</strong>: For managing multiple robots simultaneously</li>
+<li class=""><strong>Monitoring Dashboards</strong>: Real-time displays of robot status</li>
+<li class=""><strong>Remote Operation</strong>: For teleoperation and emergency control</li>
+<li class=""><strong>Data Recording</strong>: Comprehensive logging of all robot activities</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visualization-systems">Visualization Systems<a href="#visualization-systems" class="hash-link" aria-label="Direct link to Visualization Systems" title="Direct link to Visualization Systems" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Large Displays</strong>: For real-time robot visualization</li>
+<li class=""><strong>Augmented Reality</strong>: For overlaying robot data on real-world views</li>
+<li class=""><strong>3D Visualization</strong>: For complex robot state representation</li>
+<li class=""><strong>Interactive Interfaces</strong>: For human-robot interaction research</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="laboratory-zones">Laboratory Zones<a href="#laboratory-zones" class="hash-link" aria-label="Direct link to Laboratory Zones" title="Direct link to Laboratory Zones" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="development-zone">Development Zone<a href="#development-zone" class="hash-link" aria-label="Direct link to Development Zone" title="Direct link to Development Zone" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Workbenches</strong>: For robot assembly and maintenance</li>
+<li class=""><strong>Testing Areas</strong>: Small, controlled environments for partial robot testing</li>
+<li class=""><strong>Tool Storage</strong>: Organized storage for tools and components</li>
+<li class=""><strong>Computer Terminals</strong>: For development and debugging</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-zone">Testing Zone<a href="#testing-zone" class="hash-link" aria-label="Direct link to Testing Zone" title="Direct link to Testing Zone" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Controlled Environments</strong>: Various surfaces and obstacles for testing</li>
+<li class=""><strong>Safety Barriers</strong>: To protect operators during testing</li>
+<li class=""><strong>Data Collection</strong>: Systems for recording test results</li>
+<li class=""><strong>Calibration Areas</strong>: For precise robot calibration</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="demonstration-zone">Demonstration Zone<a href="#demonstration-zone" class="hash-link" aria-label="Direct link to Demonstration Zone" title="Direct link to Demonstration Zone" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Audience Space</strong>: Areas for observing robot demonstrations</li>
+<li class=""><strong>Presentation Equipment</strong>: For educational presentations</li>
+<li class=""><strong>Safety Barriers</strong>: To protect observers</li>
+<li class=""><strong>Recording Equipment</strong>: For documenting demonstrations</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="maintenance-infrastructure">Maintenance Infrastructure<a href="#maintenance-infrastructure" class="hash-link" aria-label="Direct link to Maintenance Infrastructure" title="Direct link to Maintenance Infrastructure" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tool-storage">Tool Storage<a href="#tool-storage" class="hash-link" aria-label="Direct link to Tool Storage" title="Direct link to Tool Storage" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Calibration Tools</strong>: For maintaining sensor and actuator accuracy</li>
+<li class=""><strong>Repair Equipment</strong>: For on-site robot repairs</li>
+<li class=""><strong>Spare Parts</strong>: Organized storage for replacement components</li>
+<li class=""><strong>Documentation</strong>: Maintenance manuals and procedures</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="environmental-controls">Environmental Controls<a href="#environmental-controls" class="hash-link" aria-label="Direct link to Environmental Controls" title="Direct link to Environmental Controls" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Temperature Control</strong>: To maintain optimal operating conditions</li>
+<li class=""><strong>Humidity Control</strong>: To protect sensitive electronic components</li>
+<li class=""><strong>Air Filtration</strong>: To keep sensitive systems clean</li>
+<li class=""><strong>EMI Shielding</strong>: To reduce interference with sensors</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="integration-with-course-modules">Integration with Course Modules<a href="#integration-with-course-modules" class="hash-link" aria-label="Direct link to Integration with Course Modules" title="Direct link to Integration with Course Modules" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-1-robotic-nervous-system">Module 1 (Robotic Nervous System)<a href="#module-1-robotic-nervous-system" class="hash-link" aria-label="Direct link to Module 1 (Robotic Nervous System)" title="Direct link to Module 1 (Robotic Nervous System)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>ROS Infrastructure</strong>: Full ROS/ROS2 setup with networking</li>
+<li class=""><strong>Communication Tests</strong>: Areas for testing robot-to-robot and robot-to-infrastructure communication</li>
+<li class=""><strong>Development Workstations</strong>: Configured for ROS development</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-2-digital-twin">Module 2 (Digital Twin)<a href="#module-2-digital-twin" class="hash-link" aria-label="Direct link to Module 2 (Digital Twin)" title="Direct link to Module 2 (Digital Twin)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>High-Performance Computing</strong>: For running detailed simulations</li>
+<li class=""><strong>Visualization Systems</strong>: For displaying digital twin interfaces</li>
+<li class=""><strong>Synchronization Infrastructure</strong>: For real-time digital twin updates</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-3-ai-robot-brain">Module 3 (AI-Robot Brain)<a href="#module-3-ai-robot-brain" class="hash-link" aria-label="Direct link to Module 3 (AI-Robot Brain)" title="Direct link to Module 3 (AI-Robot Brain)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>GPU Resources</strong>: For training and running AI models</li>
+<li class=""><strong>Sensor Integration</strong>: For AI perception development</li>
+<li class=""><strong>Cloud Connectivity</strong>: For distributed AI processing</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="module-4-vision-language-action">Module 4 (Vision-Language-Action)<a href="#module-4-vision-language-action" class="hash-link" aria-label="Direct link to Module 4 (Vision-Language-Action)" title="Direct link to Module 4 (Vision-Language-Action)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Audio Systems</strong>: For voice interaction testing</li>
+<li class=""><strong>Advanced Vision</strong>: For complex visual scene understanding</li>
+<li class=""><strong>Natural Language</strong>: Infrastructure for linguistic processing</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="budget-considerations">Budget Considerations<a href="#budget-considerations" class="hash-link" aria-label="Direct link to Budget Considerations" title="Direct link to Budget Considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-implementation">Basic Implementation<a href="#basic-implementation" class="hash-link" aria-label="Direct link to Basic Implementation" title="Direct link to Basic Implementation" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Cost Range</strong>: $50,000 - $150,000</li>
+<li class=""><strong>Best Use</strong>: Single-module courses and basic robot development</li>
+<li class=""><strong>Scalability</strong>: Designed for gradual expansion</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-implementation">Advanced Implementation<a href="#advanced-implementation" class="hash-link" aria-label="Direct link to Advanced Implementation" title="Direct link to Advanced Implementation" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Cost Range</strong>: $200,000 - $500,000</li>
+<li class=""><strong>Best Use</strong>: Full course implementation with advanced research</li>
+<li class=""><strong>Future-Proofing</strong>: Designed for 5-10 year operational life</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="premium-implementation">Premium Implementation<a href="#premium-implementation" class="hash-link" aria-label="Direct link to Premium Implementation" title="Direct link to Premium Implementation" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Cost Range</strong>: $500,000 - $1,500,000</li>
+<li class=""><strong>Best Use</strong>: Advanced research and commercial development</li>
+<li class=""><strong>Full Capability</strong>: All features and redundancy included</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="operations-and-maintenance">Operations and Maintenance<a href="#operations-and-maintenance" class="hash-link" aria-label="Direct link to Operations and Maintenance" title="Direct link to Operations and Maintenance" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-operations">Daily Operations<a href="#daily-operations" class="hash-link" aria-label="Direct link to Daily Operations" title="Direct link to Daily Operations" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>System Checks</strong>: Daily verification of all safety systems</li>
+<li class=""><strong>Equipment Status</strong>: Monitoring of all computing and network infrastructure</li>
+<li class=""><strong>Safety Inspections</strong>: Regular checks of physical safety measures</li>
+<li class=""><strong>User Training</strong>: Ongoing safety and usage training</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="preventive-maintenance">Preventive Maintenance<a href="#preventive-maintenance" class="hash-link" aria-label="Direct link to Preventive Maintenance" title="Direct link to Preventive Maintenance" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Weekly Checks</strong>: Inspection of robot components and systems</li>
+<li class=""><strong>Monthly Maintenance</strong>: More detailed inspections and calibration</li>
+<li class=""><strong>Quarterly Updates</strong>: Software and security updates</li>
+<li class=""><strong>Annual Overhaul</strong>: Comprehensive maintenance and upgrades</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="documentation-and-procedures">Documentation and Procedures<a href="#documentation-and-procedures" class="hash-link" aria-label="Direct link to Documentation and Procedures" title="Direct link to Documentation and Procedures" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Standard Operating Procedures</strong>: Detailed procedures for all activities</li>
+<li class=""><strong>Emergency Protocols</strong>: Clear instructions for handling various emergency scenarios</li>
+<li class=""><strong>Training Materials</strong>: Comprehensive materials for new users</li>
+<li class=""><strong>Maintenance Logs</strong>: Detailed records of all maintenance activities</li>
+</ul>
+<p>This lab architecture provides the foundation for successfully implementing and operating humanoid robotics systems across all modules of this textbook. The architecture is designed to grow with the needs of the program and accommodate both educational and research activities.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/RizSheik/humanoid-robotics-course/edit/main/docs/appendices/lab-architecture.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#physical-lab-space-requirements" class="table-of-contents__link toc-highlight">Physical Lab Space Requirements</a><ul><li><a href="#basic-lab-layout" class="table-of-contents__link toc-highlight">Basic Lab Layout</a></li><li><a href="#advanced-lab-layout" class="table-of-contents__link toc-highlight">Advanced Lab Layout</a></li></ul></li><li><a href="#network-infrastructure" class="table-of-contents__link toc-highlight">Network Infrastructure</a><ul><li><a href="#wired-network" class="table-of-contents__link toc-highlight">Wired Network</a></li><li><a href="#wireless-network" class="table-of-contents__link toc-highlight">Wireless Network</a></li><li><a href="#network-security" class="table-of-contents__link toc-highlight">Network Security</a></li></ul></li><li><a href="#computing-infrastructure" class="table-of-contents__link toc-highlight">Computing Infrastructure</a><ul><li><a href="#central-computing-resources" class="table-of-contents__link toc-highlight">Central Computing Resources</a></li><li><a href="#edge-computing-nodes" class="table-of-contents__link toc-highlight">Edge Computing Nodes</a></li><li><a href="#storage-architecture" class="table-of-contents__link toc-highlight">Storage Architecture</a></li></ul></li><li><a href="#safety-infrastructure" class="table-of-contents__link toc-highlight">Safety Infrastructure</a><ul><li><a href="#physical-safety" class="table-of-contents__link toc-highlight">Physical Safety</a></li><li><a href="#operational-safety" class="table-of-contents__link toc-highlight">Operational Safety</a></li></ul></li><li><a href="#simulation-environment" class="table-of-contents__link toc-highlight">Simulation Environment</a><ul><li><a href="#high-fidelity-simulators" class="table-of-contents__link toc-highlight">High-Fidelity Simulators</a></li><li><a href="#simulation-infrastructure" class="table-of-contents__link toc-highlight">Simulation Infrastructure</a></li></ul></li><li><a href="#sensor-infrastructure" class="table-of-contents__link toc-highlight">Sensor Infrastructure</a><ul><li><a href="#fixed-sensors" class="table-of-contents__link toc-highlight">Fixed Sensors</a></li><li><a href="#communication-systems" class="table-of-contents__link toc-highlight">Communication Systems</a></li></ul></li><li><a href="#control-and-monitoring-systems" class="table-of-contents__link toc-highlight">Control and Monitoring Systems</a><ul><li><a href="#central-control" class="table-of-contents__link toc-highlight">Central Control</a></li><li><a href="#visualization-systems" class="table-of-contents__link toc-highlight">Visualization Systems</a></li></ul></li><li><a href="#laboratory-zones" class="table-of-contents__link toc-highlight">Laboratory Zones</a><ul><li><a href="#development-zone" class="table-of-contents__link toc-highlight">Development Zone</a></li><li><a href="#testing-zone" class="table-of-contents__link toc-highlight">Testing Zone</a></li><li><a href="#demonstration-zone" class="table-of-contents__link toc-highlight">Demonstration Zone</a></li></ul></li><li><a href="#maintenance-infrastructure" class="table-of-contents__link toc-highlight">Maintenance Infrastructure</a><ul><li><a href="#tool-storage" class="table-of-contents__link toc-highlight">Tool Storage</a></li><li><a href="#environmental-controls" class="table-of-contents__link toc-highlight">Environmental Controls</a></li></ul></li><li><a href="#integration-with-course-modules" class="table-of-contents__link toc-highlight">Integration with Course Modules</a><ul><li><a href="#module-1-robotic-nervous-system" class="table-of-contents__link toc-highlight">Module 1 (Robotic Nervous System)</a></li><li><a href="#module-2-digital-twin" class="table-of-contents__link toc-highlight">Module 2 (Digital Twin)</a></li><li><a href="#module-3-ai-robot-brain" class="table-of-contents__link toc-highlight">Module 3 (AI-Robot Brain)</a></li><li><a href="#module-4-vision-language-action" class="table-of-contents__link toc-highlight">Module 4 (Vision-Language-Action)</a></li></ul></li><li><a href="#budget-considerations" class="table-of-contents__link toc-highlight">Budget Considerations</a><ul><li><a href="#basic-implementation" class="table-of-contents__link toc-highlight">Basic Implementation</a></li><li><a href="#advanced-implementation" class="table-of-contents__link toc-highlight">Advanced Implementation</a></li><li><a href="#premium-implementation" class="table-of-contents__link toc-highlight">Premium Implementation</a></li></ul></li><li><a href="#operations-and-maintenance" class="table-of-contents__link toc-highlight">Operations and Maintenance</a><ul><li><a href="#daily-operations" class="table-of-contents__link toc-highlight">Daily Operations</a></li><li><a href="#preventive-maintenance" class="table-of-contents__link toc-highlight">Preventive Maintenance</a></li><li><a href="#documentation-and-procedures" class="table-of-contents__link toc-highlight">Documentation and Procedures</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-1-the-robotic-nervous-system/module-1-intro">Module 1 – The Robotic Nervous System</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-2-the-digital-twin/module-2-intro">Module 2 – The Digital Twin</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-3-the-ai-robot-brain/module-3-intro">Module 3 – The AI-Robot Brain</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-4-vision-language-action-systems/module-4-intro">Module 4 – Vision-Language-Action Systems</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-overview">Capstone: The Autonomous Humanoid</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/appendices/hardware-requirements">Appendices</a></li><li class="footer__item"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics — AI Systems in the Physical World. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
