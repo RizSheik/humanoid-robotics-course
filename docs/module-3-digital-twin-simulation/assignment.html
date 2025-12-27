@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-3-digital-twin-simulation/assignment" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Module 3: Assignment - Digital Twin Simulation Environments for Robotics | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rizsheik.github.io/humanoid-robotics-course/docs/module-3-digital-twin-simulation/assignment"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Module 3: Assignment - Digital Twin Simulation Environments for Robotics | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World"><meta data-rh="true" name="description" content="Assignment Overview"><meta data-rh="true" property="og:description" content="Assignment Overview"><link data-rh="true" rel="icon" href="/humanoid-robotics-course/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-3-digital-twin-simulation/assignment"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-3-digital-twin-simulation/assignment" hreflang="en"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-3-digital-twin-simulation/assignment" hreflang="x-default"><link rel="stylesheet" href="/humanoid-robotics-course/assets/css/styles.50e26d9c.css">
+<script src="/humanoid-robotics-course/assets/js/runtime~main.29b207dd.js" defer="defer"></script>
+<script src="/humanoid-robotics-course/assets/js/main.b8200acf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/humanoid-robotics-course/img/robot-head.svg"><link rel="preload" as="image" href="../../../img/book-image/Leonardo_Lightning_XL_Ultrarealistic_NVIDIA_Isaac_Sim_interfac_0.jpg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/humanoid-robotics-course/"><div class="navbar__logo"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/humanoid-robotics-course/docs/intro">Textbook Modules</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Module 3: Assignment - Digital Twin Simulation Environments for Robotics</h1></header>
+<div class="robotDiagram"><img src="../../../img/book-image/Leonardo_Lightning_XL_Ultrarealistic_NVIDIA_Isaac_Sim_interfac_0.jpg" alt="Humanoid Robot" style="border-radius:50px;width:900px;height:350px;margin:10px auto;display:block"></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-overview">Assignment Overview<a href="#assignment-overview" class="hash-link" aria-label="Direct link to Assignment Overview" title="Direct link to Assignment Overview" translate="no">​</a></h2>
+<p>This assignment challenges students to design and implement a comprehensive digital twin simulation environment using Gazebo, Unity, and/or Isaac Sim for a humanoid robotics application. Students will create realistic simulation models, implement advanced simulation techniques, and validate their simulation systems against real-world data or realistic mock data.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-objectives">Learning Objectives<a href="#learning-objectives" class="hash-link" aria-label="Direct link to Learning Objectives" title="Direct link to Learning Objectives" translate="no">​</a></h3>
+<p>After completing this assignment, students will be able to:</p>
+<ol>
+<li class="">Design and implement realistic simulation environments across multiple platforms</li>
+<li class="">Create accurate robot models with physics and sensor simulation</li>
+<li class="">Apply advanced simulation techniques like domain randomization and system identification</li>
+<li class="">Validate simulation models using appropriate metrics and analysis</li>
+<li class="">Design and execute simulation experiments that provide meaningful insights for robotics development</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-components">Assignment Components<a href="#assignment-components" class="hash-link" aria-label="Direct link to Assignment Components" title="Direct link to Assignment Components" translate="no">​</a></h3>
+<p>This assignment consists of four main components:</p>
+<ol>
+<li class=""><strong>Simulation Architecture Design Document</strong> (20%): A detailed document outlining the simulation architecture</li>
+<li class=""><strong>Implementation</strong> (50%): Implementation of the digital twin simulation system</li>
+<li class=""><strong>Validation and Analysis Report</strong> (25%): Analysis of simulation performance and validation</li>
+<li class=""><strong>Technical Presentation</strong> (5%): Summary presentation of key findings</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-brief">Assignment Brief<a href="#assignment-brief" class="hash-link" aria-label="Direct link to Assignment Brief" title="Direct link to Assignment Brief" translate="no">​</a></h2>
+<p>Design and implement a digital twin simulation environment for a humanoid robot that includes:</p>
+<ol>
+<li class=""><strong>Realistic Physics Simulation</strong>: Accurate modeling of humanoid robot dynamics and environmental interactions</li>
+<li class=""><strong>Advanced Sensor Simulation</strong>: Realistic simulation of various sensors (cameras, LIDAR, IMU, force/torque)</li>
+<li class=""><strong>Perception Pipeline</strong>: Implementation of perception algorithms that work in simulation</li>
+<li class=""><strong>Control Integration</strong>: Connection between simulation and control algorithms</li>
+<li class=""><strong>Validation Framework</strong>: Methods to validate simulation accuracy and effectiveness</li>
+</ol>
+<p>Your system should demonstrate proficiency in at least two of the three simulation platforms: Gazebo, Unity, and Isaac Sim.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="simulation-architecture-design-document-requirements">Simulation Architecture Design Document Requirements<a href="#simulation-architecture-design-document-requirements" class="hash-link" aria-label="Direct link to Simulation Architecture Design Document Requirements" title="Direct link to Simulation Architecture Design Document Requirements" translate="no">​</a></h2>
+<p>Your design document should include the following sections:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-system-overview-10-of-design-document">1. System Overview (10% of Design Document)<a href="#1-system-overview-10-of-design-document" class="hash-link" aria-label="Direct link to 1. System Overview (10% of Design Document)" title="Direct link to 1. System Overview (10% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Description of the humanoid robot and its intended applications</li>
+<li class="">Overview of the simulation environment requirements</li>
+<li class="">Justification for choosing specific simulation platforms</li>
+<li class="">High-level architecture of the digital twin system</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-robot-model-design-15-of-design-document">2. Robot Model Design (15% of Design Document)<a href="#2-robot-model-design-15-of-design-document" class="hash-link" aria-label="Direct link to 2. Robot Model Design (15% of Design Document)" title="Direct link to 2. Robot Model Design (15% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Detailed robot kinematic and dynamic models</li>
+<li class="">Sensor placement and specifications</li>
+<li class="">Actuator models and limitations</li>
+<li class="">Realistic physical properties and constraints</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-physics-simulation-design-15-of-design-document">3. Physics Simulation Design (15% of Design Document)<a href="#3-physics-simulation-design-15-of-design-document" class="hash-link" aria-label="Direct link to 3. Physics Simulation Design (15% of Design Document)" title="Direct link to 3. Physics Simulation Design (15% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Physics engine selection and configuration</li>
+<li class="">Contact modeling approach</li>
+<li class="">Collision detection and response</li>
+<li class="">Computational performance requirements</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-sensor-simulation-design-15-of-design-document">4. Sensor Simulation Design (15% of Design Document)<a href="#4-sensor-simulation-design-15-of-design-document" class="hash-link" aria-label="Direct link to 4. Sensor Simulation Design (15% of Design Document)" title="Direct link to 4. Sensor Simulation Design (15% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Camera models with realistic noise and distortion</li>
+<li class="">LIDAR simulation with beam divergence and multiple returns</li>
+<li class="">IMU simulation with bias, scale factor, and noise</li>
+<li class="">Force/torque sensor simulation</li>
+<li class="">Integration with perception algorithms</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-advanced-techniques-design-20-of-design-document">5. Advanced Techniques Design (20% of Design Document)<a href="#5-advanced-techniques-design-20-of-design-document" class="hash-link" aria-label="Direct link to 5. Advanced Techniques Design (20% of Design Document)" title="Direct link to 5. Advanced Techniques Design (20% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Domain randomization strategy</li>
+<li class="">System identification approach</li>
+<li class="">Sim-to-real transfer methodology</li>
+<li class="">Performance validation plan</li>
+<li class="">Error correction and adaptation mechanisms</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-implementation-plan-25-of-design-document">6. Implementation Plan (25% of Design Document)<a href="#6-implementation-plan-25-of-design-document" class="hash-link" aria-label="Direct link to 6. Implementation Plan (25% of Design Document)" title="Direct link to 6. Implementation Plan (25% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Platform-specific implementation details</li>
+<li class="">Integration with ROS/ROS 2</li>
+<li class="">Performance optimization strategies</li>
+<li class="">Validation experiments design</li>
+<li class="">Timeline and milestones</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-requirements">Implementation Requirements<a href="#implementation-requirements" class="hash-link" aria-label="Direct link to Implementation Requirements" title="Direct link to Implementation Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="code-structure">Code Structure<a href="#code-structure" class="hash-link" aria-label="Direct link to Code Structure" title="Direct link to Code Structure" translate="no">​</a></h3>
+<p>Your implementation should follow a modular architecture:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">digital_twin_system/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── gazebo_sim/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── models/                 # Gazebo robot and environment models</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── worlds/                 # Gazebo world files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── launch/                 # ROS launch files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── src/                    # Custom plugins and nodes</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── config/                 # Configuration files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── unity_sim/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── Assets/                 # Unity project assets</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── ProjectSettings/        # Unity project settings</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── Packages/               # Unity packages</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── isaac_sim/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── configs/                # Isaac Sim configurations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── scripts/                # Python/USD scripts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── extensions/             # Custom extensions</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── validation/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── scripts/                # Validation scripts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── data/                   # Validation data</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── docs/                       # Documentation</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── tests/                      # Unit and integration tests</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── CMakeLists.txt              # Build configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── package.xml                 # ROS package manifest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── README.md                   # Project documentation</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-components">Required Components<a href="#required-components" class="hash-link" aria-label="Direct link to Required Components" title="Direct link to Required Components" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-robot-model-implementation">1. Robot Model Implementation<a href="#1-robot-model-implementation" class="hash-link" aria-label="Direct link to 1. Robot Model Implementation" title="Direct link to 1. Robot Model Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Create accurate 3D models of the humanoid robot</li>
+<li class="">Implement kinematic and dynamic properties</li>
+<li class="">Add realistic physical materials and properties</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-physics-simulation">2. Physics Simulation<a href="#2-physics-simulation" class="hash-link" aria-label="Direct link to 2. Physics Simulation" title="Direct link to 2. Physics Simulation" translate="no">​</a></h4>
+<ul>
+<li class="">Implement realistic physics using appropriate engines</li>
+<li class="">Configure contact properties and friction models</li>
+<li class="">Optimize for real-time performance</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-sensor-simulation">3. Sensor Simulation<a href="#3-sensor-simulation" class="hash-link" aria-label="Direct link to 3. Sensor Simulation" title="Direct link to 3. Sensor Simulation" translate="no">​</a></h4>
+<ul>
+<li class="">Implement realistic camera models with noise and distortion</li>
+<li class="">Create LIDAR simulation with appropriate parameters</li>
+<li class="">Add IMU and other sensor simulation</li>
+<li class="">Validate sensor data accuracy</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-perception-pipeline">4. Perception Pipeline<a href="#4-perception-pipeline" class="hash-link" aria-label="Direct link to 4. Perception Pipeline" title="Direct link to 4. Perception Pipeline" translate="no">​</a></h4>
+<ul>
+<li class="">Implement perception algorithms that work in simulation</li>
+<li class="">Validate perception accuracy with synthetic data</li>
+<li class="">Demonstrate perception in various environmental conditions</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-control-integration">5. Control Integration<a href="#5-control-integration" class="hash-link" aria-label="Direct link to 5. Control Integration" title="Direct link to 5. Control Integration" translate="no">​</a></h4>
+<ul>
+<li class="">Connect simulation to control algorithms</li>
+<li class="">Implement ROS/ROS 2 interfaces</li>
+<li class="">Validate control performance in simulation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="platform-specific-requirements">Platform-Specific Requirements<a href="#platform-specific-requirements" class="hash-link" aria-label="Direct link to Platform-Specific Requirements" title="Direct link to Platform-Specific Requirements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gazebo-implementation">Gazebo Implementation<a href="#gazebo-implementation" class="hash-link" aria-label="Direct link to Gazebo Implementation" title="Direct link to Gazebo Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Create detailed URDF/SDF robot model</li>
+<li class="">Implement Gazebo plugins for control and sensing</li>
+<li class="">Configure realistic physics parameters</li>
+<li class="">Demonstrate ROS 2 integration</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="unity-implementation">Unity Implementation<a href="#unity-implementation" class="hash-link" aria-label="Direct link to Unity Implementation" title="Direct link to Unity Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Create 3D robot model with realistic components</li>
+<li class="">Implement physics using Unity&#x27;s physics engine</li>
+<li class="">Create perception pipeline using Unity Perception</li>
+<li class="">Connect to ROS using TCP connector</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="isaac-sim-implementation">Isaac Sim Implementation<a href="#isaac-sim-implementation" class="hash-link" aria-label="Direct link to Isaac Sim Implementation" title="Direct link to Isaac Sim Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Create USD robot model with accurate properties</li>
+<li class="">Implement advanced physics and sensor simulation</li>
+<li class="">Use Isaac ROS integration tools</li>
+<li class="">Demonstrate AI training capabilities</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-and-analysis-report-requirements">Validation and Analysis Report Requirements<a href="#validation-and-analysis-report-requirements" class="hash-link" aria-label="Direct link to Validation and Analysis Report Requirements" title="Direct link to Validation and Analysis Report Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-implementation-summary-15-of-report">1. Implementation Summary (15% of Report)<a href="#1-implementation-summary-15-of-report" class="hash-link" aria-label="Direct link to 1. Implementation Summary (15% of Report)" title="Direct link to 1. Implementation Summary (15% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Summary of implemented features and components</li>
+<li class="">Challenges faced and solutions implemented</li>
+<li class="">Performance characteristics achieved</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-physics-validation-analysis-20-of-report">2. Physics Validation Analysis (20% of Report)<a href="#2-physics-validation-analysis-20-of-report" class="hash-link" aria-label="Direct link to 2. Physics Validation Analysis (20% of Report)" title="Direct link to 2. Physics Validation Analysis (20% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Validation of physics simulation accuracy</li>
+<li class="">Analysis of real-time performance (RTF, frame rates)</li>
+<li class="">Comparison of physics behavior across platforms where applicable</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-sensor-simulation-validation-20-of-report">3. Sensor Simulation Validation (20% of Report)<a href="#3-sensor-simulation-validation-20-of-report" class="hash-link" aria-label="Direct link to 3. Sensor Simulation Validation (20% of Report)" title="Direct link to 3. Sensor Simulation Validation (20% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Analysis of sensor data quality and accuracy</li>
+<li class="">Comparison of simulated vs expected sensor behavior</li>
+<li class="">Evaluation of noise and distortion models</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-advanced-techniques-analysis-25-of-report">4. Advanced Techniques Analysis (25% of Report)<a href="#4-advanced-techniques-analysis-25-of-report" class="hash-link" aria-label="Direct link to 4. Advanced Techniques Analysis (25% of Report)" title="Direct link to 4. Advanced Techniques Analysis (25% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Domain randomization effectiveness</li>
+<li class="">System identification results</li>
+<li class="">Sim-to-real transfer validation</li>
+<li class="">Performance improvements achieved</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-platform-comparison-analysis-20-of-report">5. Platform Comparison Analysis (20% of Report)<a href="#5-platform-comparison-analysis-20-of-report" class="hash-link" aria-label="Direct link to 5. Platform Comparison Analysis (20% of Report)" title="Direct link to 5. Platform Comparison Analysis (20% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Qualitative comparison of different simulation platforms</li>
+<li class="">Quantitative performance metrics</li>
+<li class="">Recommendations for platform selection based on application</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grading-rubric">Grading Rubric<a href="#grading-rubric" class="hash-link" aria-label="Direct link to Grading Rubric" title="Direct link to Grading Rubric" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="simulation-architecture-design-document-20-points-total">Simulation Architecture Design Document (20 points total)<a href="#simulation-architecture-design-document-20-points-total" class="hash-link" aria-label="Direct link to Simulation Architecture Design Document (20 points total)" title="Direct link to Simulation Architecture Design Document (20 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">System Overview: 2 points</li>
+<li class="">Robot Model Design: 3 points</li>
+<li class="">Physics Simulation Design: 3 points</li>
+<li class="">Sensor Simulation Design: 3 points</li>
+<li class="">Advanced Techniques Design: 4 points</li>
+<li class="">Implementation Plan: 5 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-50-points-total">Implementation (50 points total)<a href="#implementation-50-points-total" class="hash-link" aria-label="Direct link to Implementation (50 points total)" title="Direct link to Implementation (50 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">Robot Model Implementation: 10 points</li>
+<li class="">Physics Simulation: 10 points</li>
+<li class="">Sensor Simulation: 10 points</li>
+<li class="">Perception Pipeline: 10 points</li>
+<li class="">Control Integration: 10 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-and-analysis-report-25-points-total">Validation and Analysis Report (25 points total)<a href="#validation-and-analysis-report-25-points-total" class="hash-link" aria-label="Direct link to Validation and Analysis Report (25 points total)" title="Direct link to Validation and Analysis Report (25 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">Implementation Summary: 4 points</li>
+<li class="">Physics Validation Analysis: 5 points</li>
+<li class="">Sensor Simulation Validation: 5 points</li>
+<li class="">Advanced Techniques Analysis: 6 points</li>
+<li class="">Platform Comparison Analysis: 5 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-presentation-5-points-total">Technical Presentation (5 points total)<a href="#technical-presentation-5-points-total" class="hash-link" aria-label="Direct link to Technical Presentation (5 points total)" title="Direct link to Technical Presentation (5 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">Technical clarity: 2 points</li>
+<li class="">Key findings presentation: 2 points</li>
+<li class="">Practical recommendations: 1 point</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-requirements">Technical Requirements<a href="#technical-requirements" class="hash-link" aria-label="Direct link to Technical Requirements" title="Direct link to Technical Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="software">Software<a href="#software" class="hash-link" aria-label="Direct link to Software" title="Direct link to Software" translate="no">​</a></h3>
+<ul>
+<li class="">Gazebo Harmonic or later with ROS 2 integration</li>
+<li class="">Unity Hub with Unity 2021.3 LTS and robotics packages</li>
+<li class="">NVIDIA Isaac Sim with Omniverse (if selected)</li>
+<li class="">ROS 2 Humble Hawksbill or later</li>
+<li class="">Python 3.11+ and C++17 for custom implementations</li>
+<li class="">Git for version control</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-requirements">Architecture Requirements<a href="#architecture-requirements" class="hash-link" aria-label="Direct link to Architecture Requirements" title="Direct link to Architecture Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Modular design for simulation components</li>
+<li class="">Proper documentation and code quality</li>
+<li class="">Integration with ROS 2 for robot control</li>
+<li class="">Validation of simulation accuracy</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-requirements">Performance Requirements<a href="#performance-requirements" class="hash-link" aria-label="Direct link to Performance Requirements" title="Direct link to Performance Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Real-time simulation capability where applicable</li>
+<li class="">Accurate physics simulation with stable behavior</li>
+<li class="">Proper sensor modeling with realistic noise characteristics</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="submission-requirements">Submission Requirements<a href="#submission-requirements" class="hash-link" aria-label="Direct link to Submission Requirements" title="Direct link to Submission Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deadline">Deadline<a href="#deadline" class="hash-link" aria-label="Direct link to Deadline" title="Direct link to Deadline" translate="no">​</a></h3>
+<p>The assignment is due 5 weeks from the assignment date. Late submissions will be penalized at 5% per day.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-to-submit">What to Submit<a href="#what-to-submit" class="hash-link" aria-label="Direct link to What to Submit" title="Direct link to What to Submit" translate="no">​</a></h3>
+<ol>
+<li class="">Simulation Architecture Design Document (PDF format)</li>
+<li class="">Complete source code in a Git repository</li>
+<li class="">Validation and Analysis Report (PDF format)</li>
+<li class="">Technical Presentation slides (PDF format)</li>
+<li class="">Video demonstration of the simulation system (5-10 minutes)</li>
+<li class="">README with setup and execution instructions</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="code-submission">Code Submission<a href="#code-submission" class="hash-link" aria-label="Direct link to Code Submission" title="Direct link to Code Submission" translate="no">​</a></h3>
+<ul>
+<li class="">Host code in a publicly accessible Git repository</li>
+<li class="">Include comprehensive README with setup instructions</li>
+<li class="">Tag the final submission as &quot;module3-assignment&quot;</li>
+<li class="">Ensure the repository includes all required dependencies and assets</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-project-humanoid-manipulation-digital-twin">Example Project: Humanoid Manipulation Digital Twin<a href="#example-project-humanoid-manipulation-digital-twin" class="hash-link" aria-label="Direct link to Example Project: Humanoid Manipulation Digital Twin" title="Direct link to Example Project: Humanoid Manipulation Digital Twin" translate="no">​</a></h2>
+<p>To clarify expectations, here&#x27;s an outline of a potential project:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-components">System Components:<a href="#system-components" class="hash-link" aria-label="Direct link to System Components:" title="Direct link to System Components:" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Humanoid Robot Model</strong>: Detailed model of a humanoid robot with arms and sensors</li>
+<li class=""><strong>Manipulation Environment</strong>: Environment with objects for manipulation tasks</li>
+<li class=""><strong>Physics Simulation</strong>: Realistic simulation of grasping and manipulation</li>
+<li class=""><strong>Perception System</strong>: Object detection and pose estimation in simulation</li>
+<li class=""><strong>Control System</strong>: Integration with manipulation control algorithms</li>
+<li class=""><strong>Validation Framework</strong>: Methods to validate simulation accuracy</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-architecture">Implementation Architecture:<a href="#implementation-architecture" class="hash-link" aria-label="Direct link to Implementation Architecture:" title="Direct link to Implementation Architecture:" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Gazebo</strong>: For physics accuracy and ROS integration</li>
+<li class=""><strong>Unity</strong>: For photorealistic rendering of manipulation environment</li>
+<li class=""><strong>Isaac Sim</strong>: For AI training and synthetic data generation</li>
+</ul>
+<p>This project demonstrates all required components while showcasing the strengths of different simulation platforms.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-and-references">Resources and References<a href="#resources-and-references" class="hash-link" aria-label="Direct link to Resources and References" title="Direct link to Resources and References" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="simulation-platform-documentation">Simulation Platform Documentation<a href="#simulation-platform-documentation" class="hash-link" aria-label="Direct link to Simulation Platform Documentation" title="Direct link to Simulation Platform Documentation" translate="no">​</a></h3>
+<ul>
+<li class="">Gazebo Harmonic: <a href="http://gazebosim.org/" target="_blank" rel="noopener noreferrer" class="">http://gazebosim.org/</a></li>
+<li class="">Unity Robotics: <a href="https://unity.com/solutions/robotics" target="_blank" rel="noopener noreferrer" class="">https://unity.com/solutions/robotics</a></li>
+<li class="">Isaac Sim: <a href="https://docs.omniverse.nvidia.com/isaacsim/" target="_blank" rel="noopener noreferrer" class="">https://docs.omniverse.nvidia.com/isaacsim/</a></li>
+<li class="">ROS 2: <a href="https://docs.ros.org/" target="_blank" rel="noopener noreferrer" class="">https://docs.ros.org/</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recommended-reading">Recommended Reading<a href="#recommended-reading" class="hash-link" aria-label="Direct link to Recommended Reading" title="Direct link to Recommended Reading" translate="no">​</a></h3>
+<ul>
+<li class="">Virtual Robot Experimentation Platform (V-REP) and CoppeliaSim documentation</li>
+<li class="">Research papers on sim-to-real transfer in robotics</li>
+<li class="">Domain randomization techniques in robotics simulation</li>
+<li class="">System identification methods for robotics</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-techniques">Validation Techniques<a href="#validation-techniques" class="hash-link" aria-label="Direct link to Validation Techniques" title="Direct link to Validation Techniques" translate="no">​</a></h3>
+<ul>
+<li class="">Kolmogorov-Smirnov test for distribution comparison</li>
+<li class="">Cross-validation methods for simulation accuracy</li>
+<li class="">Statistical analysis of simulation vs real data</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="academic-integrity">Academic Integrity<a href="#academic-integrity" class="hash-link" aria-label="Direct link to Academic Integrity" title="Direct link to Academic Integrity" translate="no">​</a></h2>
+<p>This assignment must be completed individually. All code must be your own work, properly documented and cited. You may use existing libraries and frameworks but must clearly indicate what you implemented versus what you used from existing sources.</p>
+<p>Plagiarism will result in a zero for the assignment and may lead to additional academic sanctions.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="questions-and-support">Questions and Support<a href="#questions-and-support" class="hash-link" aria-label="Direct link to Questions and Support" title="Direct link to Questions and Support" translate="no">​</a></h2>
+<p>If you have questions about the assignment:</p>
+<ol>
+<li class="">Check the course discussion forum</li>
+<li class="">Attend office hours</li>
+<li class="">Contact the instructor via email</li>
+<li class="">Form study groups to discuss concepts (but write code individually)</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructor-feedback">Instructor Feedback<a href="#instructor-feedback" class="hash-link" aria-label="Direct link to Instructor Feedback" title="Direct link to Instructor Feedback" translate="no">​</a></h2>
+<p>The instructor will provide feedback on:</p>
+<ul>
+<li class="">Architecture design document (within 1 week of submission)</li>
+<li class="">Implementation progress (mid-assignment check-in)</li>
+<li class="">Final submission (within 2 weeks of deadline)</li>
+</ul>
+<p>This assignment is designed to give you comprehensive experience with digital twin simulation for robotics, emphasizing practical implementation skills that are essential for modern robotics development.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/RizSheik/humanoid-robotics-course/edit/main/docs/module-3-digital-twin-simulation/assignment.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#assignment-overview" class="table-of-contents__link toc-highlight">Assignment Overview</a><ul><li><a href="#learning-objectives" class="table-of-contents__link toc-highlight">Learning Objectives</a></li><li><a href="#assignment-components" class="table-of-contents__link toc-highlight">Assignment Components</a></li></ul></li><li><a href="#assignment-brief" class="table-of-contents__link toc-highlight">Assignment Brief</a></li><li><a href="#simulation-architecture-design-document-requirements" class="table-of-contents__link toc-highlight">Simulation Architecture Design Document Requirements</a><ul><li><a href="#1-system-overview-10-of-design-document" class="table-of-contents__link toc-highlight">1. System Overview (10% of Design Document)</a></li><li><a href="#2-robot-model-design-15-of-design-document" class="table-of-contents__link toc-highlight">2. Robot Model Design (15% of Design Document)</a></li><li><a href="#3-physics-simulation-design-15-of-design-document" class="table-of-contents__link toc-highlight">3. Physics Simulation Design (15% of Design Document)</a></li><li><a href="#4-sensor-simulation-design-15-of-design-document" class="table-of-contents__link toc-highlight">4. Sensor Simulation Design (15% of Design Document)</a></li><li><a href="#5-advanced-techniques-design-20-of-design-document" class="table-of-contents__link toc-highlight">5. Advanced Techniques Design (20% of Design Document)</a></li><li><a href="#6-implementation-plan-25-of-design-document" class="table-of-contents__link toc-highlight">6. Implementation Plan (25% of Design Document)</a></li></ul></li><li><a href="#implementation-requirements" class="table-of-contents__link toc-highlight">Implementation Requirements</a><ul><li><a href="#code-structure" class="table-of-contents__link toc-highlight">Code Structure</a></li><li><a href="#required-components" class="table-of-contents__link toc-highlight">Required Components</a></li><li><a href="#platform-specific-requirements" class="table-of-contents__link toc-highlight">Platform-Specific Requirements</a></li></ul></li><li><a href="#validation-and-analysis-report-requirements" class="table-of-contents__link toc-highlight">Validation and Analysis Report Requirements</a><ul><li><a href="#1-implementation-summary-15-of-report" class="table-of-contents__link toc-highlight">1. Implementation Summary (15% of Report)</a></li><li><a href="#2-physics-validation-analysis-20-of-report" class="table-of-contents__link toc-highlight">2. Physics Validation Analysis (20% of Report)</a></li><li><a href="#3-sensor-simulation-validation-20-of-report" class="table-of-contents__link toc-highlight">3. Sensor Simulation Validation (20% of Report)</a></li><li><a href="#4-advanced-techniques-analysis-25-of-report" class="table-of-contents__link toc-highlight">4. Advanced Techniques Analysis (25% of Report)</a></li><li><a href="#5-platform-comparison-analysis-20-of-report" class="table-of-contents__link toc-highlight">5. Platform Comparison Analysis (20% of Report)</a></li></ul></li><li><a href="#grading-rubric" class="table-of-contents__link toc-highlight">Grading Rubric</a><ul><li><a href="#simulation-architecture-design-document-20-points-total" class="table-of-contents__link toc-highlight">Simulation Architecture Design Document (20 points total)</a></li><li><a href="#implementation-50-points-total" class="table-of-contents__link toc-highlight">Implementation (50 points total)</a></li><li><a href="#validation-and-analysis-report-25-points-total" class="table-of-contents__link toc-highlight">Validation and Analysis Report (25 points total)</a></li><li><a href="#technical-presentation-5-points-total" class="table-of-contents__link toc-highlight">Technical Presentation (5 points total)</a></li></ul></li><li><a href="#technical-requirements" class="table-of-contents__link toc-highlight">Technical Requirements</a><ul><li><a href="#software" class="table-of-contents__link toc-highlight">Software</a></li><li><a href="#architecture-requirements" class="table-of-contents__link toc-highlight">Architecture Requirements</a></li><li><a href="#performance-requirements" class="table-of-contents__link toc-highlight">Performance Requirements</a></li></ul></li><li><a href="#submission-requirements" class="table-of-contents__link toc-highlight">Submission Requirements</a><ul><li><a href="#deadline" class="table-of-contents__link toc-highlight">Deadline</a></li><li><a href="#what-to-submit" class="table-of-contents__link toc-highlight">What to Submit</a></li><li><a href="#code-submission" class="table-of-contents__link toc-highlight">Code Submission</a></li></ul></li><li><a href="#example-project-humanoid-manipulation-digital-twin" class="table-of-contents__link toc-highlight">Example Project: Humanoid Manipulation Digital Twin</a><ul><li><a href="#system-components" class="table-of-contents__link toc-highlight">System Components:</a></li><li><a href="#implementation-architecture" class="table-of-contents__link toc-highlight">Implementation Architecture:</a></li></ul></li><li><a href="#resources-and-references" class="table-of-contents__link toc-highlight">Resources and References</a><ul><li><a href="#simulation-platform-documentation" class="table-of-contents__link toc-highlight">Simulation Platform Documentation</a></li><li><a href="#recommended-reading" class="table-of-contents__link toc-highlight">Recommended Reading</a></li><li><a href="#validation-techniques" class="table-of-contents__link toc-highlight">Validation Techniques</a></li></ul></li><li><a href="#academic-integrity" class="table-of-contents__link toc-highlight">Academic Integrity</a></li><li><a href="#questions-and-support" class="table-of-contents__link toc-highlight">Questions and Support</a></li><li><a href="#instructor-feedback" class="table-of-contents__link toc-highlight">Instructor Feedback</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-1-the-robotic-nervous-system/module-1-intro">Module 1 – The Robotic Nervous System</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-2-the-digital-twin/module-2-intro">Module 2 – The Digital Twin</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-3-the-ai-robot-brain/module-3-intro">Module 3 – The AI-Robot Brain</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-4-vision-language-action-systems/module-4-intro">Module 4 – Vision-Language-Action Systems</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-overview">Capstone: The Autonomous Humanoid</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/appendices/hardware-requirements">Appendices</a></li><li class="footer__item"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics — AI Systems in the Physical World. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

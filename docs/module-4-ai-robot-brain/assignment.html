@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-4-ai-robot-brain/assignment" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Module 4: Assignment - Isaac Platform for Perception and Control | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rizsheik.github.io/humanoid-robotics-course/docs/module-4-ai-robot-brain/assignment"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Module 4: Assignment - Isaac Platform for Perception and Control | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World"><meta data-rh="true" name="description" content="Assignment Overview"><meta data-rh="true" property="og:description" content="Assignment Overview"><link data-rh="true" rel="icon" href="/humanoid-robotics-course/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-4-ai-robot-brain/assignment"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-4-ai-robot-brain/assignment" hreflang="en"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-4-ai-robot-brain/assignment" hreflang="x-default"><link rel="stylesheet" href="/humanoid-robotics-course/assets/css/styles.50e26d9c.css">
+<script src="/humanoid-robotics-course/assets/js/runtime~main.29b207dd.js" defer="defer"></script>
+<script src="/humanoid-robotics-course/assets/js/main.b8200acf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/humanoid-robotics-course/img/robot-head.svg"><link rel="preload" as="image" href="../../../img/book-image/Leonardo_Lightning_XL_Assignment_Isaac_Platform_for_Perceptio_1.jpg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/humanoid-robotics-course/"><div class="navbar__logo"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/humanoid-robotics-course/docs/intro">Textbook Modules</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Module 4: Assignment - Isaac Platform for Perception and Control</h1></header>
+<div class="robotDiagram"><img src="../../../img/book-image/Leonardo_Lightning_XL_Assignment_Isaac_Platform_for_Perceptio_1.jpg" alt="Humanoid Robot" style="border-radius:50px;width:900px;height:350px;margin:10px auto;display:block"></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-overview">Assignment Overview<a href="#assignment-overview" class="hash-link" aria-label="Direct link to Assignment Overview" title="Direct link to Assignment Overview" translate="no">​</a></h2>
+<p>This assignment challenges students to design and implement a complete AI-powered robotic system using NVIDIA Isaac Platform. Students will create an integrated solution combining Isaac Sim for training, Isaac ROS for perception and control, and deploy an end-to-end system for a specific robotics application.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-objectives">Learning Objectives<a href="#learning-objectives" class="hash-link" aria-label="Direct link to Learning Objectives" title="Direct link to Learning Objectives" translate="no">​</a></h3>
+<p>After completing this assignment, students will be able to:</p>
+<ol>
+<li class="">Design and implement a complete AI-powered robotic system using Isaac Platform</li>
+<li class="">Integrate Isaac Sim, Isaac ROS, and Isaac Applications for real-world deployment</li>
+<li class="">Optimize AI models for edge deployment using Isaac&#x27;s GPU acceleration</li>
+<li class="">Validate and benchmark AI robotics systems for performance and accuracy</li>
+<li class="">Document and present complex AI robotics implementations</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-components">Assignment Components<a href="#assignment-components" class="hash-link" aria-label="Direct link to Assignment Components" title="Direct link to Assignment Components" translate="no">​</a></h3>
+<p>This assignment consists of four main components:</p>
+<ol>
+<li class=""><strong>System Design Document</strong> (20%): Comprehensive design document outlining the integrated AI robotics system</li>
+<li class=""><strong>Implementation</strong> (60%): Complete implementation of the Isaac-based system</li>
+<li class=""><strong>Validation and Benchmarking Report</strong> (15%): Analysis of system performance and validation</li>
+<li class=""><strong>Presentation</strong> (5%): Summary presentation of the implementation and results</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-brief">Assignment Brief<a href="#assignment-brief" class="hash-link" aria-label="Direct link to Assignment Brief" title="Direct link to Assignment Brief" translate="no">​</a></h2>
+<p>Design and implement a complete AI-powered robotic system using NVIDIA Isaac Platform that includes:</p>
+<ol>
+<li class="">A perception system using Isaac ROS packages</li>
+<li class="">A control system with AI integration</li>
+<li class="">Training in Isaac Sim for at least one component</li>
+<li class="">Deployment and optimization for edge robotics platform</li>
+<li class="">Integration of perception and control for a complete autonomous task</li>
+</ol>
+<p>Your system should demonstrate proficiency with Isaac Sim, Isaac ROS, and Isaac deployment tools while solving a meaningful robotics problem.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-design-document-requirements">System Design Document Requirements<a href="#system-design-document-requirements" class="hash-link" aria-label="Direct link to System Design Document Requirements" title="Direct link to System Design Document Requirements" translate="no">​</a></h2>
+<p>Your design document should include the following sections:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-system-overview-and-requirements-10-of-design-document">1. System Overview and Requirements (10% of Design Document)<a href="#1-system-overview-and-requirements-10-of-design-document" class="hash-link" aria-label="Direct link to 1. System Overview and Requirements (10% of Design Document)" title="Direct link to 1. System Overview and Requirements (10% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Problem statement and application scenario</li>
+<li class="">System requirements and specifications</li>
+<li class="">Technology stack selection and justification</li>
+<li class="">Architecture overview with Isaac Platform components</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-isaac-sim-environment-design-15-of-design-document">2. Isaac Sim Environment Design (15% of Design Document)<a href="#2-isaac-sim-environment-design-15-of-design-document" class="hash-link" aria-label="Direct link to 2. Isaac Sim Environment Design (15% of Design Document)" title="Direct link to 2. Isaac Sim Environment Design (15% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Simulation environment design</li>
+<li class="">Robot model configuration in Isaac Sim</li>
+<li class="">Scene setup for training and testing</li>
+<li class="">Domain randomization strategy</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-isaac-ros-perception-pipeline-design-20-of-design-document">3. Isaac ROS Perception Pipeline Design (20% of Design Document)<a href="#3-isaac-ros-perception-pipeline-design-20-of-design-document" class="hash-link" aria-label="Direct link to 3. Isaac ROS Perception Pipeline Design (20% of Design Document)" title="Direct link to 3. Isaac ROS Perception Pipeline Design (20% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Perception system architecture</li>
+<li class="">Sensor fusion design</li>
+<li class="">Object detection and tracking algorithms</li>
+<li class="">GPU acceleration strategies</li>
+<li class="">Integration with Isaac ROS packages</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-isaac-ros-control-system-design-20-of-design-document">4. Isaac ROS Control System Design (20% of Design Document)<a href="#4-isaac-ros-control-system-design-20-of-design-document" class="hash-link" aria-label="Direct link to 4. Isaac ROS Control System Design (20% of Design Document)" title="Direct link to 4. Isaac ROS Control System Design (20% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Navigation and motion planning approach</li>
+<li class="">Control algorithms and trajectory generation</li>
+<li class="">Integration with perception system</li>
+<li class="">Safety and fail-safe mechanisms</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-ai-model-design-and-training-plan-15-of-design-document">5. AI Model Design and Training Plan (15% of Design Document)<a href="#5-ai-model-design-and-training-plan-15-of-design-document" class="hash-link" aria-label="Direct link to 5. AI Model Design and Training Plan (15% of Design Document)" title="Direct link to 5. AI Model Design and Training Plan (15% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">AI model architectures for perception and control</li>
+<li class="">Training methodology and datasets</li>
+<li class="">Model optimization strategies</li>
+<li class="">Deployment considerations</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-implementation-plan-and-timeline-10-of-design-document">6. Implementation Plan and Timeline (10% of Design Document)<a href="#6-implementation-plan-and-timeline-10-of-design-document" class="hash-link" aria-label="Direct link to 6. Implementation Plan and Timeline (10% of Design Document)" title="Direct link to 6. Implementation Plan and Timeline (10% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Development phases and milestones</li>
+<li class="">Required tools and dependencies</li>
+<li class="">Testing and validation strategy</li>
+<li class="">Risk mitigation plan</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-success-metrics-and-evaluation-10-of-design-document">7. Success Metrics and Evaluation (10% of Design Document)<a href="#7-success-metrics-and-evaluation-10-of-design-document" class="hash-link" aria-label="Direct link to 7. Success Metrics and Evaluation (10% of Design Document)" title="Direct link to 7. Success Metrics and Evaluation (10% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Performance benchmarks</li>
+<li class="">Accuracy requirements</li>
+<li class="">Real-time constraints</li>
+<li class="">Validation methodology</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-requirements">Implementation Requirements<a href="#implementation-requirements" class="hash-link" aria-label="Direct link to Implementation Requirements" title="Direct link to Implementation Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="code-structure">Code Structure<a href="#code-structure" class="hash-link" aria-label="Direct link to Code Structure" title="Direct link to Code Structure" translate="no">​</a></h3>
+<p>Your implementation should follow the recommended structure:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">isaac-robotics-system/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── sim/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── configs/              # Isaac Sim configurations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── scenes/               # Simulation scenes and assets</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── training/             # Training scripts and data</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── models/               # Trained models</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── perception/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── launch/               # ROS 2 launch files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── config/               # Isaac ROS configuration files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── src/                  # Perception node implementations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── scripts/              # Helper scripts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── tests/                # Perception system tests</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── control/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── launch/               # ROS 2 launch files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── config/               # Control configuration files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── src/                  # Control node implementations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── scripts/              # Control helper scripts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── deployment/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── configs/              # Deployment configurations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── models_optimized/     # Optimized models for deployment</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── scripts/              # Deployment scripts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── integration/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── launch/               # Integrated system launch files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── config/               # Integration configurations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── scripts/              # Integration test scripts</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── docs/                     # Documentation</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── tests/                    # System tests</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── docker/                   # Docker configurations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── README.md                 # Main project documentation</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── package.xml               # ROS 2 package manifest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── requirements.txt          # Python dependencies</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-components">Required Components<a href="#required-components" class="hash-link" aria-label="Direct link to Required Components" title="Direct link to Required Components" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-isaac-sim-environment">1. Isaac Sim Environment<a href="#1-isaac-sim-environment" class="hash-link" aria-label="Direct link to 1. Isaac Sim Environment" title="Direct link to 1. Isaac Sim Environment" translate="no">​</a></h4>
+<ul>
+<li class="">Create a simulation environment with realistic robot and physics</li>
+<li class="">Implement domain randomization for robust training</li>
+<li class="">Design training scenarios for AI model learning</li>
+<li class="">Validate simulation accuracy</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-perception-pipeline">2. Perception Pipeline<a href="#2-perception-pipeline" class="hash-link" aria-label="Direct link to 2. Perception Pipeline" title="Direct link to 2. Perception Pipeline" translate="no">​</a></h4>
+<ul>
+<li class="">Implement Isaac ROS-based perception pipeline</li>
+<li class="">Include sensor fusion and multi-modal processing</li>
+<li class="">Use GPU acceleration for real-time processing</li>
+<li class="">Validate perception accuracy</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-control-system">3. Control System<a href="#3-control-system" class="hash-link" aria-label="Direct link to 3. Control System" title="Direct link to 3. Control System" translate="no">​</a></h4>
+<ul>
+<li class="">Implement navigation and motion planning</li>
+<li class="">Design AI-powered control algorithms</li>
+<li class="">Integrate perception and control</li>
+<li class="">Implement safety mechanisms</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-model-training-and-optimization">4. Model Training and Optimization<a href="#4-model-training-and-optimization" class="hash-link" aria-label="Direct link to 4. Model Training and Optimization" title="Direct link to 4. Model Training and Optimization" translate="no">​</a></h4>
+<ul>
+<li class="">Train at least one AI model using Isaac Sim</li>
+<li class="">Optimize models for edge deployment</li>
+<li class="">Validate model performance and accuracy</li>
+<li class="">Document optimization techniques used</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-system-integration">5. System Integration<a href="#5-system-integration" class="hash-link" aria-label="Direct link to 5. System Integration" title="Direct link to 5. System Integration" translate="no">​</a></h4>
+<ul>
+<li class="">Combine perception and control into complete system</li>
+<li class="">Implement end-to-end autonomous behavior</li>
+<li class="">Validate system performance in simulation</li>
+<li class="">Prepare for deployment on edge platform</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-implementation-requirements">Technical Implementation Requirements<a href="#technical-implementation-requirements" class="hash-link" aria-label="Direct link to Technical Implementation Requirements" title="Direct link to Technical Implementation Requirements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="isaac-sim-implementation">Isaac Sim Implementation<a href="#isaac-sim-implementation" class="hash-link" aria-label="Direct link to Isaac Sim Implementation" title="Direct link to Isaac Sim Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Use USD for 3D asset representation</li>
+<li class="">Implement realistic physics properties</li>
+<li class="">Include accurate sensor models</li>
+<li class="">Use domain randomization techniques</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="isaac-ros-implementation">Isaac ROS Implementation<a href="#isaac-ros-implementation" class="hash-link" aria-label="Direct link to Isaac ROS Implementation" title="Direct link to Isaac ROS Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Follow ROS 2 best practices</li>
+<li class="">Use Isaac ROS packages for perception</li>
+<li class="">Implement GPU-accelerated processing</li>
+<li class="">Include proper message structures and QoS</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-requirements">Performance Requirements<a href="#performance-requirements" class="hash-link" aria-label="Direct link to Performance Requirements" title="Direct link to Performance Requirements" translate="no">​</a></h4>
+<ul>
+<li class="">Real-time perception at minimum 20 FPS</li>
+<li class="">Navigation planning within 100ms</li>
+<li class="">Control loop at minimum 50 Hz</li>
+<li class="">Model inference under 50ms for edge deployment</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="documentation-and-code-quality">Documentation and Code Quality<a href="#documentation-and-code-quality" class="hash-link" aria-label="Direct link to Documentation and Code Quality" title="Direct link to Documentation and Code Quality" translate="no">​</a></h3>
+<ul>
+<li class="">Comprehensive inline documentation</li>
+<li class="">Well-structured code with clear modules</li>
+<li class="">Configuration files with clear comments</li>
+<li class="">Proper error handling and logging</li>
+<li class="">Unit tests for critical components</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-and-benchmarking-report-requirements">Validation and Benchmarking Report Requirements<a href="#validation-and-benchmarking-report-requirements" class="hash-link" aria-label="Direct link to Validation and Benchmarking Report Requirements" title="Direct link to Validation and Benchmarking Report Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-implementation-summary-20-of-report">1. Implementation Summary (20% of Report)<a href="#1-implementation-summary-20-of-report" class="hash-link" aria-label="Direct link to 1. Implementation Summary (20% of Report)" title="Direct link to 1. Implementation Summary (20% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Summary of implemented features and components</li>
+<li class="">Challenges faced and solutions implemented</li>
+<li class="">Key design decisions and their rationale</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-performance-analysis-30-of-report">2. Performance Analysis (30% of Report)<a href="#2-performance-analysis-30-of-report" class="hash-link" aria-label="Direct link to 2. Performance Analysis (30% of Report)" title="Direct link to 2. Performance Analysis (30% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Benchmarking results for all system components</li>
+<li class="">Comparison with baseline implementations</li>
+<li class="">Resource utilization analysis (CPU, GPU, memory)</li>
+<li class="">Real-time performance metrics</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-accuracy-and-robustness-analysis-25-of-report">3. Accuracy and Robustness Analysis (25% of Report)<a href="#3-accuracy-and-robustness-analysis-25-of-report" class="hash-link" aria-label="Direct link to 3. Accuracy and Robustness Analysis (25% of Report)" title="Direct link to 3. Accuracy and Robustness Analysis (25% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Perception accuracy metrics (IoU, mAP, etc.)</li>
+<li class="">Control precision and stability analysis</li>
+<li class="">Robustness to environmental variations</li>
+<li class="">Sim-to-real transfer evaluation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-deployment-and-optimization-analysis-25-of-report">4. Deployment and Optimization Analysis (25% of Report)<a href="#4-deployment-and-optimization-analysis-25-of-report" class="hash-link" aria-label="Direct link to 4. Deployment and Optimization Analysis (25% of Report)" title="Direct link to 4. Deployment and Optimization Analysis (25% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Model optimization techniques applied</li>
+<li class="">Performance improvements achieved</li>
+<li class="">Edge deployment challenges and solutions</li>
+<li class="">Power consumption and efficiency analysis</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grading-rubric">Grading Rubric<a href="#grading-rubric" class="hash-link" aria-label="Direct link to Grading Rubric" title="Direct link to Grading Rubric" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-design-document-20-points-total">System Design Document (20 points total)<a href="#system-design-document-20-points-total" class="hash-link" aria-label="Direct link to System Design Document (20 points total)" title="Direct link to System Design Document (20 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">System Overview: 2 points</li>
+<li class="">Isaac Sim Design: 3 points</li>
+<li class="">Perception Pipeline Design: 4 points</li>
+<li class="">Control System Design: 4 points</li>
+<li class="">AI Model Design: 3 points</li>
+<li class="">Implementation Plan: 2 points</li>
+<li class="">Success Metrics: 2 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-60-points-total">Implementation (60 points total)<a href="#implementation-60-points-total" class="hash-link" aria-label="Direct link to Implementation (60 points total)" title="Direct link to Implementation (60 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">Isaac Sim Environment: 12 points</li>
+<li class="">Perception Pipeline: 15 points</li>
+<li class="">Control System: 15 points</li>
+<li class="">AI Model Training: 10 points</li>
+<li class="">System Integration: 8 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-and-benchmarking-report-15-points-total">Validation and Benchmarking Report (15 points total)<a href="#validation-and-benchmarking-report-15-points-total" class="hash-link" aria-label="Direct link to Validation and Benchmarking Report (15 points total)" title="Direct link to Validation and Benchmarking Report (15 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">Implementation Summary: 3 points</li>
+<li class="">Performance Analysis: 4.5 points</li>
+<li class="">Accuracy and Robustness Analysis: 3.75 points</li>
+<li class="">Deployment Analysis: 3.75 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="presentation-5-points-total">Presentation (5 points total)<a href="#presentation-5-points-total" class="hash-link" aria-label="Direct link to Presentation (5 points total)" title="Direct link to Presentation (5 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">Technical clarity and completeness: 2 points</li>
+<li class="">Key findings presentation: 2 points</li>
+<li class="">Quality of demonstration: 1 point</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-requirements">Technical Requirements<a href="#technical-requirements" class="hash-link" aria-label="Direct link to Technical Requirements" title="Direct link to Technical Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="software-requirements">Software Requirements<a href="#software-requirements" class="hash-link" aria-label="Direct link to Software Requirements" title="Direct link to Software Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Isaac Sim 2023.1 or later</li>
+<li class="">Isaac ROS packages with GPU acceleration</li>
+<li class="">ROS 2 Humble Hawksbill</li>
+<li class="">NVIDIA GPU with CUDA 11.8 or later</li>
+<li class="">Python 3.11+ and appropriate libraries</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware-requirements">Hardware Requirements<a href="#hardware-requirements" class="hash-link" aria-label="Direct link to Hardware Requirements" title="Direct link to Hardware Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">NVIDIA GPU (RTX 4070 or equivalent)</li>
+<li class="">32GB+ RAM recommended</li>
+<li class="">Multi-core CPU (16+ threads)</li>
+<li class="">Storage for datasets and models</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-requirements">Architecture Requirements<a href="#architecture-requirements" class="hash-link" aria-label="Direct link to Architecture Requirements" title="Direct link to Architecture Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Modular design for maintainability</li>
+<li class="">Proper separation of concerns</li>
+<li class="">Scalable system architecture</li>
+<li class="">Error handling and fault tolerance</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="submission-requirements">Submission Requirements<a href="#submission-requirements" class="hash-link" aria-label="Direct link to Submission Requirements" title="Direct link to Submission Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deadline">Deadline<a href="#deadline" class="hash-link" aria-label="Direct link to Deadline" title="Direct link to Deadline" translate="no">​</a></h3>
+<p>The assignment is due 5 weeks from the assignment date. Late submissions will be penalized at 5% per day.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-to-submit">What to Submit<a href="#what-to-submit" class="hash-link" aria-label="Direct link to What to Submit" title="Direct link to What to Submit" translate="no">​</a></h3>
+<ol>
+<li class="">System Design Document (PDF format)</li>
+<li class="">Complete source code in a Git repository</li>
+<li class="">Validation and Benchmarking Report (PDF format)</li>
+<li class="">Video demonstration of system functionality (10-15 minutes)</li>
+<li class="">Presentation slides (PDF format)</li>
+<li class="">README with setup and execution instructions</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="code-submission">Code Submission<a href="#code-submission" class="hash-link" aria-label="Direct link to Code Submission" title="Direct link to Code Submission" translate="no">​</a></h3>
+<ul>
+<li class="">Host code in a publicly accessible Git repository</li>
+<li class="">Include comprehensive README with setup instructions</li>
+<li class="">Tag the final submission as &quot;module4-assignment&quot;</li>
+<li class="">Ensure the repository includes all required files and dependencies</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-project-autonomous-warehouse-robot">Example Project: Autonomous Warehouse Robot<a href="#example-project-autonomous-warehouse-robot" class="hash-link" aria-label="Direct link to Example Project: Autonomous Warehouse Robot" title="Direct link to Example Project: Autonomous Warehouse Robot" translate="no">​</a></h2>
+<p>To illustrate requirements, here&#x27;s an example project:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-components">System Components:<a href="#system-components" class="hash-link" aria-label="Direct link to System Components:" title="Direct link to System Components:" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Isaac Sim Environment</strong>: Warehouse simulation with dynamic obstacles</li>
+<li class=""><strong>Perception System</strong>: Object detection and pose estimation for inventory tracking</li>
+<li class=""><strong>Navigation System</strong>: Path planning and obstacle avoidance</li>
+<li class=""><strong>AI Models</strong>: Inventory detection and navigation policy</li>
+<li class=""><strong>Control System</strong>: Integration of perception and navigation</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-architecture">Implementation Architecture:<a href="#implementation-architecture" class="hash-link" aria-label="Direct link to Implementation Architecture:" title="Direct link to Implementation Architecture:" translate="no">​</a></h3>
+<ul>
+<li class="">Isaac Sim for training navigation and perception systems</li>
+<li class="">Isaac ROS for GPU-accelerated perception</li>
+<li class="">Isaac Navigation for path planning</li>
+<li class="">Deployment to Jetson edge computer</li>
+</ul>
+<p>This project demonstrates all required components while solving a practical robotics problem.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-and-references">Resources and References<a href="#resources-and-references" class="hash-link" aria-label="Direct link to Resources and References" title="Direct link to Resources and References" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isaac-platform-documentation">Isaac Platform Documentation<a href="#isaac-platform-documentation" class="hash-link" aria-label="Direct link to Isaac Platform Documentation" title="Direct link to Isaac Platform Documentation" translate="no">​</a></h3>
+<ul>
+<li class="">Isaac Sim Documentation: <a href="https://docs.omniverse.nvidia.com/isaacsim/" target="_blank" rel="noopener noreferrer" class="">https://docs.omniverse.nvidia.com/isaacsim/</a></li>
+<li class="">Isaac ROS Documentation: <a href="https://docs.nvidia.com/isaac/ros/" target="_blank" rel="noopener noreferrer" class="">https://docs.nvidia.com/isaac/ros/</a></li>
+<li class="">Isaac Navigation Documentation</li>
+<li class="">Isaac Manipulation Documentation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="relevant-papers">Relevant Papers<a href="#relevant-papers" class="hash-link" aria-label="Direct link to Relevant Papers" title="Direct link to Relevant Papers" translate="no">​</a></h3>
+<ul>
+<li class="">GPU-Accelerated Perception in Robotics</li>
+<li class="">Sim-to-Real Transfer Techniques</li>
+<li class="">Isaac Platform Research Papers</li>
+<li class="">Real-time AI for Robotics</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-tools">Evaluation Tools<a href="#evaluation-tools" class="hash-link" aria-label="Direct link to Evaluation Tools" title="Direct link to Evaluation Tools" translate="no">​</a></h3>
+<ul>
+<li class="">Isaac Sim Synthetic Data Generation Tools</li>
+<li class="">Isaac ROS Performance Benchmarks</li>
+<li class="">TensorRT Profiling Tools</li>
+<li class="">ROS 2 System Monitoring Tools</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="academic-integrity">Academic Integrity<a href="#academic-integrity" class="hash-link" aria-label="Direct link to Academic Integrity" title="Direct link to Academic Integrity" translate="no">​</a></h2>
+<p>This assignment must be completed individually. All code must be your own work, properly documented and cited. You may use existing libraries and frameworks but must clearly indicate what you implemented versus what you used from existing sources.</p>
+<p>Plagiarism will result in a zero for the assignment and may lead to additional academic sanctions.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="questions-and-support">Questions and Support<a href="#questions-and-support" class="hash-link" aria-label="Direct link to Questions and Support" title="Direct link to Questions and Support" translate="no">​</a></h2>
+<p>If you have questions about the assignment:</p>
+<ol>
+<li class="">Check the course discussion forum</li>
+<li class="">Attend office hours</li>
+<li class="">Contact the instructor via email</li>
+<li class="">Form study groups to discuss concepts (but write code individually)</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructor-feedback">Instructor Feedback<a href="#instructor-feedback" class="hash-link" aria-label="Direct link to Instructor Feedback" title="Direct link to Instructor Feedback" translate="no">​</a></h2>
+<p>The instructor will provide feedback on:</p>
+<ul>
+<li class="">System design document (within 1 week of submission)</li>
+<li class="">Implementation progress (mid-assignment check-in)</li>
+<li class="">Final submission (within 2 weeks of deadline)</li>
+</ul>
+<p>This assignment is designed to give you comprehensive experience with Isaac Platform for developing complete AI-powered robotics systems, emphasizing practical implementation skills that are essential for advanced robotics applications.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/RizSheik/humanoid-robotics-course/edit/main/docs/module-4-ai-robot-brain/assignment.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#assignment-overview" class="table-of-contents__link toc-highlight">Assignment Overview</a><ul><li><a href="#learning-objectives" class="table-of-contents__link toc-highlight">Learning Objectives</a></li><li><a href="#assignment-components" class="table-of-contents__link toc-highlight">Assignment Components</a></li></ul></li><li><a href="#assignment-brief" class="table-of-contents__link toc-highlight">Assignment Brief</a></li><li><a href="#system-design-document-requirements" class="table-of-contents__link toc-highlight">System Design Document Requirements</a><ul><li><a href="#1-system-overview-and-requirements-10-of-design-document" class="table-of-contents__link toc-highlight">1. System Overview and Requirements (10% of Design Document)</a></li><li><a href="#2-isaac-sim-environment-design-15-of-design-document" class="table-of-contents__link toc-highlight">2. Isaac Sim Environment Design (15% of Design Document)</a></li><li><a href="#3-isaac-ros-perception-pipeline-design-20-of-design-document" class="table-of-contents__link toc-highlight">3. Isaac ROS Perception Pipeline Design (20% of Design Document)</a></li><li><a href="#4-isaac-ros-control-system-design-20-of-design-document" class="table-of-contents__link toc-highlight">4. Isaac ROS Control System Design (20% of Design Document)</a></li><li><a href="#5-ai-model-design-and-training-plan-15-of-design-document" class="table-of-contents__link toc-highlight">5. AI Model Design and Training Plan (15% of Design Document)</a></li><li><a href="#6-implementation-plan-and-timeline-10-of-design-document" class="table-of-contents__link toc-highlight">6. Implementation Plan and Timeline (10% of Design Document)</a></li><li><a href="#7-success-metrics-and-evaluation-10-of-design-document" class="table-of-contents__link toc-highlight">7. Success Metrics and Evaluation (10% of Design Document)</a></li></ul></li><li><a href="#implementation-requirements" class="table-of-contents__link toc-highlight">Implementation Requirements</a><ul><li><a href="#code-structure" class="table-of-contents__link toc-highlight">Code Structure</a></li><li><a href="#required-components" class="table-of-contents__link toc-highlight">Required Components</a></li><li><a href="#technical-implementation-requirements" class="table-of-contents__link toc-highlight">Technical Implementation Requirements</a></li><li><a href="#documentation-and-code-quality" class="table-of-contents__link toc-highlight">Documentation and Code Quality</a></li></ul></li><li><a href="#validation-and-benchmarking-report-requirements" class="table-of-contents__link toc-highlight">Validation and Benchmarking Report Requirements</a><ul><li><a href="#1-implementation-summary-20-of-report" class="table-of-contents__link toc-highlight">1. Implementation Summary (20% of Report)</a></li><li><a href="#2-performance-analysis-30-of-report" class="table-of-contents__link toc-highlight">2. Performance Analysis (30% of Report)</a></li><li><a href="#3-accuracy-and-robustness-analysis-25-of-report" class="table-of-contents__link toc-highlight">3. Accuracy and Robustness Analysis (25% of Report)</a></li><li><a href="#4-deployment-and-optimization-analysis-25-of-report" class="table-of-contents__link toc-highlight">4. Deployment and Optimization Analysis (25% of Report)</a></li></ul></li><li><a href="#grading-rubric" class="table-of-contents__link toc-highlight">Grading Rubric</a><ul><li><a href="#system-design-document-20-points-total" class="table-of-contents__link toc-highlight">System Design Document (20 points total)</a></li><li><a href="#implementation-60-points-total" class="table-of-contents__link toc-highlight">Implementation (60 points total)</a></li><li><a href="#validation-and-benchmarking-report-15-points-total" class="table-of-contents__link toc-highlight">Validation and Benchmarking Report (15 points total)</a></li><li><a href="#presentation-5-points-total" class="table-of-contents__link toc-highlight">Presentation (5 points total)</a></li></ul></li><li><a href="#technical-requirements" class="table-of-contents__link toc-highlight">Technical Requirements</a><ul><li><a href="#software-requirements" class="table-of-contents__link toc-highlight">Software Requirements</a></li><li><a href="#hardware-requirements" class="table-of-contents__link toc-highlight">Hardware Requirements</a></li><li><a href="#architecture-requirements" class="table-of-contents__link toc-highlight">Architecture Requirements</a></li></ul></li><li><a href="#submission-requirements" class="table-of-contents__link toc-highlight">Submission Requirements</a><ul><li><a href="#deadline" class="table-of-contents__link toc-highlight">Deadline</a></li><li><a href="#what-to-submit" class="table-of-contents__link toc-highlight">What to Submit</a></li><li><a href="#code-submission" class="table-of-contents__link toc-highlight">Code Submission</a></li></ul></li><li><a href="#example-project-autonomous-warehouse-robot" class="table-of-contents__link toc-highlight">Example Project: Autonomous Warehouse Robot</a><ul><li><a href="#system-components" class="table-of-contents__link toc-highlight">System Components:</a></li><li><a href="#implementation-architecture" class="table-of-contents__link toc-highlight">Implementation Architecture:</a></li></ul></li><li><a href="#resources-and-references" class="table-of-contents__link toc-highlight">Resources and References</a><ul><li><a href="#isaac-platform-documentation" class="table-of-contents__link toc-highlight">Isaac Platform Documentation</a></li><li><a href="#relevant-papers" class="table-of-contents__link toc-highlight">Relevant Papers</a></li><li><a href="#evaluation-tools" class="table-of-contents__link toc-highlight">Evaluation Tools</a></li></ul></li><li><a href="#academic-integrity" class="table-of-contents__link toc-highlight">Academic Integrity</a></li><li><a href="#questions-and-support" class="table-of-contents__link toc-highlight">Questions and Support</a></li><li><a href="#instructor-feedback" class="table-of-contents__link toc-highlight">Instructor Feedback</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-1-the-robotic-nervous-system/module-1-intro">Module 1 – The Robotic Nervous System</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-2-the-digital-twin/module-2-intro">Module 2 – The Digital Twin</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-3-the-ai-robot-brain/module-3-intro">Module 3 – The AI-Robot Brain</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-4-vision-language-action-systems/module-4-intro">Module 4 – Vision-Language-Action Systems</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-overview">Capstone: The Autonomous Humanoid</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/appendices/hardware-requirements">Appendices</a></li><li class="footer__item"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics — AI Systems in the Physical World. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

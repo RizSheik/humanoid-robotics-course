@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-2-ros-2-fundamentals/assignment" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Module 2: Assignment - ROS 2 Communication Architecture for Humanoid Robotics | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rizsheik.github.io/humanoid-robotics-course/docs/module-2-ros-2-fundamentals/assignment"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Module 2: Assignment - ROS 2 Communication Architecture for Humanoid Robotics | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World"><meta data-rh="true" name="description" content="Assignment Overview"><meta data-rh="true" property="og:description" content="Assignment Overview"><link data-rh="true" rel="icon" href="/humanoid-robotics-course/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-2-ros-2-fundamentals/assignment"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-2-ros-2-fundamentals/assignment" hreflang="en"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-2-ros-2-fundamentals/assignment" hreflang="x-default"><link rel="stylesheet" href="/humanoid-robotics-course/assets/css/styles.50e26d9c.css">
+<script src="/humanoid-robotics-course/assets/js/runtime~main.29b207dd.js" defer="defer"></script>
+<script src="/humanoid-robotics-course/assets/js/main.b8200acf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/humanoid-robotics-course/img/robot-head.svg"><link rel="preload" as="image" href="../../../img/book-image/Architecture_diagram_cloud_workstation_A_0.jpg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/humanoid-robotics-course/"><div class="navbar__logo"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/humanoid-robotics-course/docs/intro">Textbook Modules</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Module 2: Assignment - ROS 2 Communication Architecture for Humanoid Robotics</h1></header>
+<div class="robotDiagram"><img src="../../../img/book-image/Architecture_diagram_cloud_workstation_A_0.jpg" alt="Humanoid Robot" style="border-radius:50px;width:900px;height:350px;margin:10px auto;display:block"></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-overview">Assignment Overview<a href="#assignment-overview" class="hash-link" aria-label="Direct link to Assignment Overview" title="Direct link to Assignment Overview" translate="no">​</a></h2>
+<p>This assignment challenges students to design and implement a complete ROS 2 communication architecture for a humanoid robot system. Students will create a distributed system using topics, services, and actions to coordinate multiple robot subsystems, with a focus on the specific needs of humanoid robots.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-objectives">Learning Objectives<a href="#learning-objectives" class="hash-link" aria-label="Direct link to Learning Objectives" title="Direct link to Learning Objectives" translate="no">​</a></h3>
+<p>After completing this assignment, students will be able to:</p>
+<ol>
+<li class="">Design a comprehensive communication architecture for a humanoid robot</li>
+<li class="">Implement nodes using all three ROS 2 communication patterns (topics, services, actions)</li>
+<li class="">Configure Quality of Service settings appropriately for different subsystems</li>
+<li class="">Implement safety mechanisms and error handling in the communication system</li>
+<li class="">Test and evaluate the communication system under various conditions</li>
+<li class="">Document and present the design and implementation of the system</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-components">Assignment Components<a href="#assignment-components" class="hash-link" aria-label="Direct link to Assignment Components" title="Direct link to Assignment Components" translate="no">​</a></h3>
+<p>This assignment consists of three main components:</p>
+<ol>
+<li class=""><strong>Architecture Design Document</strong> (25%): A detailed document outlining the communication architecture</li>
+<li class=""><strong>Implementation</strong> (55%): Implementation of the ROS 2 system with simulation</li>
+<li class=""><strong>Testing and Evaluation Report</strong> (20%): Analysis of the system&#x27;s performance and reliability</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assignment-brief">Assignment Brief<a href="#assignment-brief" class="hash-link" aria-label="Direct link to Assignment Brief" title="Direct link to Assignment Brief" translate="no">​</a></h2>
+<p>Design and implement a ROS 2-based communication architecture for a humanoid robot system that includes:</p>
+<ol>
+<li class=""><strong>Sensor Integration</strong>: Handling of multiple sensor types (IMU, joint encoders, cameras, force/torque sensors)</li>
+<li class=""><strong>Control Systems</strong>: Coordination of joint control, balance control, and motion planning</li>
+<li class=""><strong>Safety Features</strong>: Emergency stop, collision avoidance, and error handling</li>
+<li class=""><strong>Task Execution</strong>: Complex actions like walking patterns, manipulation tasks, or coordinated movements</li>
+</ol>
+<p>Your system should demonstrate proper use of topics for streaming data, services for configuration and control operations, and actions for long-running tasks that require feedback.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-design-document-requirements">Architecture Design Document Requirements<a href="#architecture-design-document-requirements" class="hash-link" aria-label="Direct link to Architecture Design Document Requirements" title="Direct link to Architecture Design Document Requirements" translate="no">​</a></h2>
+<p>Your design document should include the following sections:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-system-overview-10-of-design-document">1. System Overview (10% of Design Document)<a href="#1-system-overview-10-of-design-document" class="hash-link" aria-label="Direct link to 1. System Overview (10% of Design Document)" title="Direct link to 1. System Overview (10% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">High-level description of the humanoid robot system</li>
+<li class="">List of robot subsystems that need to communicate</li>
+<li class="">Communication requirements for each subsystem</li>
+<li class="">Overview of the overall communication architecture</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-topic-architecture-20-of-design-document">2. Topic Architecture (20% of Design Document)<a href="#2-topic-architecture-20-of-design-document" class="hash-link" aria-label="Direct link to 2. Topic Architecture (20% of Design Document)" title="Direct link to 2. Topic Architecture (20% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Detailed design of topic-based communication</li>
+<li class="">List of all topics with message types and QoS settings</li>
+<li class="">Justification for chosen QoS settings</li>
+<li class="">Data flow diagrams showing topic connections</li>
+<li class="">Frequency requirements for different topics</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-service-architecture-20-of-design-document">3. Service Architecture (20% of Design Document)<a href="#3-service-architecture-20-of-design-document" class="hash-link" aria-label="Direct link to 3. Service Architecture (20% of Design Document)" title="Direct link to 3. Service Architecture (20% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Design of service-based communication</li>
+<li class="">List of all services with request/response types</li>
+<li class="">Use cases and scenarios for each service</li>
+<li class="">Safety considerations for service design</li>
+<li class="">Error handling and recovery mechanisms</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-action-architecture-20-of-design-document">4. Action Architecture (20% of Design Document)<a href="#4-action-architecture-20-of-design-document" class="hash-link" aria-label="Direct link to 4. Action Architecture (20% of Design Document)" title="Direct link to 4. Action Architecture (20% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Design of action-based communication</li>
+<li class="">List of all actions with goal/feedback/result types</li>
+<li class="">Scenarios requiring action-based communication</li>
+<li class="">Implementation of cancellation and preemption</li>
+<li class="">Feedback mechanisms and progress reporting</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-safety-and-reliability-design-20-of-design-document">5. Safety and Reliability Design (20% of Design Document)<a href="#5-safety-and-reliability-design-20-of-design-document" class="hash-link" aria-label="Direct link to 5. Safety and Reliability Design (20% of Design Document)" title="Direct link to 5. Safety and Reliability Design (20% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Safety mechanisms integrated into the communication system</li>
+<li class="">Error detection and handling strategies</li>
+<li class="">Emergency procedures and communication</li>
+<li class="">Redundancy and fault tolerance approaches</li>
+<li class="">Performance monitoring and diagnostic capabilities</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-implementation-plan-10-of-design-document">6. Implementation Plan (10% of Design Document)<a href="#6-implementation-plan-10-of-design-document" class="hash-link" aria-label="Direct link to 6. Implementation Plan (10% of Design Document)" title="Direct link to 6. Implementation Plan (10% of Design Document)" translate="no">​</a></h3>
+<ul>
+<li class="">Step-by-step implementation approach</li>
+<li class="">Required tools and dependencies</li>
+<li class="">Testing strategy</li>
+<li class="">Success metrics and evaluation methods</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-requirements">Implementation Requirements<a href="#implementation-requirements" class="hash-link" aria-label="Direct link to Implementation Requirements" title="Direct link to Implementation Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="code-structure">Code Structure<a href="#code-structure" class="hash-link" aria-label="Direct link to Code Structure" title="Direct link to Code Structure" translate="no">​</a></h3>
+<p>Your implementation should follow the ROS 2 package structure:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">robot_communication_system/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── src/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── sensor_nodes/           # Nodes for sensor data processing</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── control_nodes/          # Nodes for robot control</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── safety_nodes/           # Nodes for safety systems</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── action_servers/         # Action server implementations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── action_clients/         # Action client implementations</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── utils/                  # Utility functions and helpers</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── launch/                     # Launch files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── config/                     # Configuration files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── test/                       # Test files</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── worlds/                     # Simulation environments (if applicable)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── CMakeLists.txt              # Build configuration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── package.xml                 # Package manifest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── README.md                   # Package documentation</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── doc/                        # Additional documentation</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="required-nodes">Required Nodes<a href="#required-nodes" class="hash-link" aria-label="Direct link to Required Nodes" title="Direct link to Required Nodes" translate="no">​</a></h3>
+<p>Your implementation must include:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-sensor-fusion-node">1. Sensor Fusion Node<a href="#1-sensor-fusion-node" class="hash-link" aria-label="Direct link to 1. Sensor Fusion Node" title="Direct link to 1. Sensor Fusion Node" translate="no">​</a></h4>
+<ul>
+<li class="">Subscribes to multiple sensor topics</li>
+<li class="">Fuses sensor data to estimate robot state</li>
+<li class="">Publishes combined state information</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-motion-planning-node">2. Motion Planning Node<a href="#2-motion-planning-node" class="hash-link" aria-label="Direct link to 2. Motion Planning Node" title="Direct link to 2. Motion Planning Node" translate="no">​</a></h4>
+<ul>
+<li class="">Provides services for path planning</li>
+<li class="">Implements action servers for motion execution</li>
+<li class="">Handles trajectory generation and execution</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-safety-manager-node">3. Safety Manager Node<a href="#3-safety-manager-node" class="hash-link" aria-label="Direct link to 3. Safety Manager Node" title="Direct link to 3. Safety Manager Node" translate="no">​</a></h4>
+<ul>
+<li class="">Monitors robot state and sensor data</li>
+<li class="">Provides emergency stop service</li>
+<li class="">Implements safety checks and constraints</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-behavior-manager-node">4. Behavior Manager Node<a href="#4-behavior-manager-node" class="hash-link" aria-label="Direct link to 4. Behavior Manager Node" title="Direct link to 4. Behavior Manager Node" translate="no">​</a></h4>
+<ul>
+<li class="">Coordinates high-level robot behaviors</li>
+<li class="">Uses services and actions to control the robot</li>
+<li class="">Manages state transitions between behaviors</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="communication-implementation">Communication Implementation<a href="#communication-implementation" class="hash-link" aria-label="Direct link to Communication Implementation" title="Direct link to Communication Implementation" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="topics-implementation">Topics Implementation<a href="#topics-implementation" class="hash-link" aria-label="Direct link to Topics Implementation" title="Direct link to Topics Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Implement at least 8 different topics with appropriate QoS configurations</li>
+<li class="">Include topics for: joint states, IMU data, camera feeds, robot state, etc.</li>
+<li class="">Demonstrate proper use of namespaces and message definitions</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="services-implementation">Services Implementation<a href="#services-implementation" class="hash-link" aria-label="Direct link to Services Implementation" title="Direct link to Services Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Implement at least 4 services for robot configuration and control</li>
+<li class="">Include services for: mode switching, calibration, emergency stop, etc.</li>
+<li class="">Include proper error handling and validation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="actions-implementation">Actions Implementation<a href="#actions-implementation" class="hash-link" aria-label="Direct link to Actions Implementation" title="Direct link to Actions Implementation" translate="no">​</a></h4>
+<ul>
+<li class="">Implement at least 2 actions for long-running tasks</li>
+<li class="">Include actions for: motion execution, complex manipulation, etc.</li>
+<li class="">Implement proper feedback and cancellation mechanisms</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="simulation-environment">Simulation Environment<a href="#simulation-environment" class="hash-link" aria-label="Direct link to Simulation Environment" title="Direct link to Simulation Environment" translate="no">​</a></h3>
+<p>Include a simulation environment that demonstrates the communication system:</p>
+<ul>
+<li class="">Humanoid robot model with appropriate sensors</li>
+<li class="">Physics simulation for realistic robot behavior</li>
+<li class="">Visualization tools to monitor communication</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-and-evaluation-report-requirements">Testing and Evaluation Report Requirements<a href="#testing-and-evaluation-report-requirements" class="hash-link" aria-label="Direct link to Testing and Evaluation Report Requirements" title="Direct link to Testing and Evaluation Report Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-implementation-summary-20-of-report">1. Implementation Summary (20% of Report)<a href="#1-implementation-summary-20-of-report" class="hash-link" aria-label="Direct link to 1. Implementation Summary (20% of Report)" title="Direct link to 1. Implementation Summary (20% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Summary of what was implemented</li>
+<li class="">Challenges faced and how they were addressed</li>
+<li class="">Key design decisions and their rationale</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-communication-performance-analysis-30-of-report">2. Communication Performance Analysis (30% of Report)<a href="#2-communication-performance-analysis-30-of-report" class="hash-link" aria-label="Direct link to 2. Communication Performance Analysis (30% of Report)" title="Direct link to 2. Communication Performance Analysis (30% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Analysis of message latencies and throughput</li>
+<li class="">Evaluation of QoS settings effectiveness</li>
+<li class="">Impact of network load on communication</li>
+<li class="">Comparison of different communication patterns</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-safety-and-reliability-analysis-30-of-report">3. Safety and Reliability Analysis (30% of Report)<a href="#3-safety-and-reliability-analysis-30-of-report" class="hash-link" aria-label="Direct link to 3. Safety and Reliability Analysis (30% of Report)" title="Direct link to 3. Safety and Reliability Analysis (30% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">Testing of safety mechanisms</li>
+<li class="">Error handling effectiveness</li>
+<li class="">System recovery from failures</li>
+<li class="">Performance under stress conditions</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-scalability-and-optimization-analysis-20-of-report">4. Scalability and Optimization Analysis (20% of Report)<a href="#4-scalability-and-optimization-analysis-20-of-report" class="hash-link" aria-label="Direct link to 4. Scalability and Optimization Analysis (20% of Report)" title="Direct link to 4. Scalability and Optimization Analysis (20% of Report)" translate="no">​</a></h3>
+<ul>
+<li class="">How the system performs with increasing complexity</li>
+<li class="">Optimization techniques applied</li>
+<li class="">Potential bottlenecks and solutions</li>
+<li class="">Future scalability considerations</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grading-rubric">Grading Rubric<a href="#grading-rubric" class="hash-link" aria-label="Direct link to Grading Rubric" title="Direct link to Grading Rubric" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-design-document-25-points-total">Architecture Design Document (25 points total)<a href="#architecture-design-document-25-points-total" class="hash-link" aria-label="Direct link to Architecture Design Document (25 points total)" title="Direct link to Architecture Design Document (25 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">System Overview: 3 points</li>
+<li class="">Topic Architecture: 5 points</li>
+<li class="">Service Architecture: 5 points</li>
+<li class="">Action Architecture: 5 points</li>
+<li class="">Safety and Reliability Design: 5 points</li>
+<li class="">Implementation Plan: 2 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="implementation-55-points-total">Implementation (55 points total)<a href="#implementation-55-points-total" class="hash-link" aria-label="Direct link to Implementation (55 points total)" title="Direct link to Implementation (55 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">Code Quality and Structure: 10 points</li>
+<li class="">Topic Implementation: 15 points</li>
+<li class="">Service Implementation: 15 points</li>
+<li class="">Action Implementation: 10 points</li>
+<li class="">Simulation Environment: 5 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-and-evaluation-report-20-points-total">Testing and Evaluation Report (20 points total)<a href="#testing-and-evaluation-report-20-points-total" class="hash-link" aria-label="Direct link to Testing and Evaluation Report (20 points total)" title="Direct link to Testing and Evaluation Report (20 points total)" translate="no">​</a></h3>
+<ul>
+<li class="">Implementation Summary: 4 points</li>
+<li class="">Communication Performance Analysis: 6 points</li>
+<li class="">Safety and Reliability Analysis: 6 points</li>
+<li class="">Scalability Analysis: 4 points</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-requirements">Technical Requirements<a href="#technical-requirements" class="hash-link" aria-label="Direct link to Technical Requirements" title="Direct link to Technical Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="software">Software<a href="#software" class="hash-link" aria-label="Direct link to Software" title="Direct link to Software" translate="no">​</a></h3>
+<ul>
+<li class="">ROS 2 Humble Hawksbill or later</li>
+<li class="">Gazebo Harmonic or equivalent simulation environment</li>
+<li class="">Python 3.11+ or C++17 for implementation</li>
+<li class="">Git for version control</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="architecture-requirements">Architecture Requirements<a href="#architecture-requirements" class="hash-link" aria-label="Direct link to Architecture Requirements" title="Direct link to Architecture Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Use proper ROS 2 design patterns</li>
+<li class="">Implement appropriate QoS settings for each communication type</li>
+<li class="">Include safety mechanisms and error handling</li>
+<li class="">Follow ROS 2 coding standards and best practices</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-requirements">Performance Requirements<a href="#performance-requirements" class="hash-link" aria-label="Direct link to Performance Requirements" title="Direct link to Performance Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Topics should maintain appropriate frequencies for robot control</li>
+<li class="">Services should respond within acceptable time limits (typically &lt; 100ms)</li>
+<li class="">Actions should provide feedback at reasonable intervals</li>
+<li class="">Overall system should maintain real-time performance characteristics</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="submission-requirements">Submission Requirements<a href="#submission-requirements" class="hash-link" aria-label="Direct link to Submission Requirements" title="Direct link to Submission Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="deadline">Deadline<a href="#deadline" class="hash-link" aria-label="Direct link to Deadline" title="Direct link to Deadline" translate="no">​</a></h3>
+<p>The assignment is due 4 weeks from the assignment date. Late submissions will be penalized at 5% per day.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-to-submit">What to Submit<a href="#what-to-submit" class="hash-link" aria-label="Direct link to What to Submit" title="Direct link to What to Submit" translate="no">​</a></h3>
+<ol>
+<li class="">Architecture Design Document (PDF format)</li>
+<li class="">Complete source code in a Git repository</li>
+<li class="">Testing and Evaluation Report (PDF format)</li>
+<li class="">Video demonstration of the system working (3-5 minutes)</li>
+<li class="">README with setup and execution instructions</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="code-submission">Code Submission<a href="#code-submission" class="hash-link" aria-label="Direct link to Code Submission" title="Direct link to Code Submission" translate="no">​</a></h3>
+<ul>
+<li class="">Host code in a publicly accessible Git repository</li>
+<li class="">Include comprehensive README with setup instructions</li>
+<li class="">Tag the final submission as &quot;module2-assignment&quot;</li>
+<li class="">Ensure the repository includes all required files and dependencies</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-scenario-humanoid-walking-controller">Example Scenario: Humanoid Walking Controller<a href="#example-scenario-humanoid-walking-controller" class="hash-link" aria-label="Direct link to Example Scenario: Humanoid Walking Controller" title="Direct link to Example Scenario: Humanoid Walking Controller" translate="no">​</a></h2>
+<p>To clarify expectations, here&#x27;s an outline of a potential project:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-components">System Components:<a href="#system-components" class="hash-link" aria-label="Direct link to System Components:" title="Direct link to System Components:" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>Sensor Processing Node</strong>: Processes IMU, joint encoders, and force sensors</li>
+<li class=""><strong>Walking Pattern Generator</strong>: Creates walking trajectories using action-based communication</li>
+<li class=""><strong>Balance Controller</strong>: Uses service-based communication for balance adjustments</li>
+<li class=""><strong>High-level Controller</strong>: Coordinates walking behavior using topics and services</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="communication-architecture">Communication Architecture:<a href="#communication-architecture" class="hash-link" aria-label="Direct link to Communication Architecture:" title="Direct link to Communication Architecture:" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Topics</strong>: Joint states (100Hz), IMU data (200Hz), robot state (10Hz)</li>
+<li class=""><strong>Services</strong>: Start walking, stop walking, adjust walking parameters</li>
+<li class=""><strong>Actions</strong>: Execute walking pattern, perform balance recovery maneuver</li>
+</ul>
+<p>This design demonstrates all three communication patterns while addressing the specific needs of a humanoid robot.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-and-references">Resources and References<a href="#resources-and-references" class="hash-link" aria-label="Direct link to Resources and References" title="Direct link to Resources and References" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ros-2-documentation">ROS 2 Documentation<a href="#ros-2-documentation" class="hash-link" aria-label="Direct link to ROS 2 Documentation" title="Direct link to ROS 2 Documentation" translate="no">​</a></h3>
+<ul>
+<li class="">ROS 2 Concepts: <a href="https://docs.ros.org/en/humble/Concepts.html" target="_blank" rel="noopener noreferrer" class="">https://docs.ros.org/en/humble/Concepts.html</a></li>
+<li class="">Quality of Service: <a href="https://docs.ros.org/en/humble/Concepts/About-Quality-of-Service-Settings.html" target="_blank" rel="noopener noreferrer" class="">https://docs.ros.org/en/humble/Concepts/About-Quality-of-Service-Settings.html</a></li>
+<li class="">Actions: <a href="https://docs.ros.org/en/humble/Tutorials/Actions.html" target="_blank" rel="noopener noreferrer" class="">https://docs.ros.org/en/humble/Tutorials/Actions.html</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recommended-reading">Recommended Reading<a href="#recommended-reading" class="hash-link" aria-label="Direct link to Recommended Reading" title="Direct link to Recommended Reading" translate="no">​</a></h3>
+<ul>
+<li class="">Siciliano, B., &amp; Khatib, O. (2016). Springer Handbook of Robotics.</li>
+<li class="">Quigley, M., Gerkey, B., &amp; Smart, W. D. (2015). Programming robots with ROS.</li>
+<li class="">ROS 2 Design Papers on communication architecture</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluation-tools">Evaluation Tools<a href="#evaluation-tools" class="hash-link" aria-label="Direct link to Evaluation Tools" title="Direct link to Evaluation Tools" translate="no">​</a></h3>
+<ul>
+<li class=""><code>ros2 topic hz</code>: Measure message frequency</li>
+<li class=""><code>ros2 topic delay</code>: Measure message delay</li>
+<li class=""><code>rqt_graph</code>: Visualize node connections</li>
+<li class=""><code>ros2 bag</code>: Record and analyze data</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="academic-integrity">Academic Integrity<a href="#academic-integrity" class="hash-link" aria-label="Direct link to Academic Integrity" title="Direct link to Academic Integrity" translate="no">​</a></h2>
+<p>This assignment must be completed individually. All code must be your own work, properly documented and cited. You may use existing libraries and frameworks but must clearly indicate what you implemented versus what you used from existing sources.</p>
+<p>Plagiarism will result in a zero for the assignment and may lead to additional academic sanctions.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="questions-and-support">Questions and Support<a href="#questions-and-support" class="hash-link" aria-label="Direct link to Questions and Support" title="Direct link to Questions and Support" translate="no">​</a></h2>
+<p>If you have questions about the assignment:</p>
+<ol>
+<li class="">Check the course discussion forum</li>
+<li class="">Attend office hours</li>
+<li class="">Contact the instructor via email</li>
+<li class="">Form study groups to discuss concepts (but write code individually)</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="instructor-feedback">Instructor Feedback<a href="#instructor-feedback" class="hash-link" aria-label="Direct link to Instructor Feedback" title="Direct link to Instructor Feedback" translate="no">​</a></h2>
+<p>The instructor will provide feedback on:</p>
+<ul>
+<li class="">Architecture design document (within 1 week of submission)</li>
+<li class="">Implementation progress (mid-assignment check-in)</li>
+<li class="">Final submission (within 2 weeks of deadline)</li>
+</ul>
+<p>This assignment is designed to give you comprehensive experience with ROS 2 communication patterns in the context of humanoid robotics. The project should demonstrate your understanding of when and how to use topics, services, and actions appropriately in complex robotic systems.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/RizSheik/humanoid-robotics-course/edit/main/docs/module-2-ros-2-fundamentals/assignment.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#assignment-overview" class="table-of-contents__link toc-highlight">Assignment Overview</a><ul><li><a href="#learning-objectives" class="table-of-contents__link toc-highlight">Learning Objectives</a></li><li><a href="#assignment-components" class="table-of-contents__link toc-highlight">Assignment Components</a></li></ul></li><li><a href="#assignment-brief" class="table-of-contents__link toc-highlight">Assignment Brief</a></li><li><a href="#architecture-design-document-requirements" class="table-of-contents__link toc-highlight">Architecture Design Document Requirements</a><ul><li><a href="#1-system-overview-10-of-design-document" class="table-of-contents__link toc-highlight">1. System Overview (10% of Design Document)</a></li><li><a href="#2-topic-architecture-20-of-design-document" class="table-of-contents__link toc-highlight">2. Topic Architecture (20% of Design Document)</a></li><li><a href="#3-service-architecture-20-of-design-document" class="table-of-contents__link toc-highlight">3. Service Architecture (20% of Design Document)</a></li><li><a href="#4-action-architecture-20-of-design-document" class="table-of-contents__link toc-highlight">4. Action Architecture (20% of Design Document)</a></li><li><a href="#5-safety-and-reliability-design-20-of-design-document" class="table-of-contents__link toc-highlight">5. Safety and Reliability Design (20% of Design Document)</a></li><li><a href="#6-implementation-plan-10-of-design-document" class="table-of-contents__link toc-highlight">6. Implementation Plan (10% of Design Document)</a></li></ul></li><li><a href="#implementation-requirements" class="table-of-contents__link toc-highlight">Implementation Requirements</a><ul><li><a href="#code-structure" class="table-of-contents__link toc-highlight">Code Structure</a></li><li><a href="#required-nodes" class="table-of-contents__link toc-highlight">Required Nodes</a></li><li><a href="#communication-implementation" class="table-of-contents__link toc-highlight">Communication Implementation</a></li><li><a href="#simulation-environment" class="table-of-contents__link toc-highlight">Simulation Environment</a></li></ul></li><li><a href="#testing-and-evaluation-report-requirements" class="table-of-contents__link toc-highlight">Testing and Evaluation Report Requirements</a><ul><li><a href="#1-implementation-summary-20-of-report" class="table-of-contents__link toc-highlight">1. Implementation Summary (20% of Report)</a></li><li><a href="#2-communication-performance-analysis-30-of-report" class="table-of-contents__link toc-highlight">2. Communication Performance Analysis (30% of Report)</a></li><li><a href="#3-safety-and-reliability-analysis-30-of-report" class="table-of-contents__link toc-highlight">3. Safety and Reliability Analysis (30% of Report)</a></li><li><a href="#4-scalability-and-optimization-analysis-20-of-report" class="table-of-contents__link toc-highlight">4. Scalability and Optimization Analysis (20% of Report)</a></li></ul></li><li><a href="#grading-rubric" class="table-of-contents__link toc-highlight">Grading Rubric</a><ul><li><a href="#architecture-design-document-25-points-total" class="table-of-contents__link toc-highlight">Architecture Design Document (25 points total)</a></li><li><a href="#implementation-55-points-total" class="table-of-contents__link toc-highlight">Implementation (55 points total)</a></li><li><a href="#testing-and-evaluation-report-20-points-total" class="table-of-contents__link toc-highlight">Testing and Evaluation Report (20 points total)</a></li></ul></li><li><a href="#technical-requirements" class="table-of-contents__link toc-highlight">Technical Requirements</a><ul><li><a href="#software" class="table-of-contents__link toc-highlight">Software</a></li><li><a href="#architecture-requirements" class="table-of-contents__link toc-highlight">Architecture Requirements</a></li><li><a href="#performance-requirements" class="table-of-contents__link toc-highlight">Performance Requirements</a></li></ul></li><li><a href="#submission-requirements" class="table-of-contents__link toc-highlight">Submission Requirements</a><ul><li><a href="#deadline" class="table-of-contents__link toc-highlight">Deadline</a></li><li><a href="#what-to-submit" class="table-of-contents__link toc-highlight">What to Submit</a></li><li><a href="#code-submission" class="table-of-contents__link toc-highlight">Code Submission</a></li></ul></li><li><a href="#example-scenario-humanoid-walking-controller" class="table-of-contents__link toc-highlight">Example Scenario: Humanoid Walking Controller</a><ul><li><a href="#system-components" class="table-of-contents__link toc-highlight">System Components:</a></li><li><a href="#communication-architecture" class="table-of-contents__link toc-highlight">Communication Architecture:</a></li></ul></li><li><a href="#resources-and-references" class="table-of-contents__link toc-highlight">Resources and References</a><ul><li><a href="#ros-2-documentation" class="table-of-contents__link toc-highlight">ROS 2 Documentation</a></li><li><a href="#recommended-reading" class="table-of-contents__link toc-highlight">Recommended Reading</a></li><li><a href="#evaluation-tools" class="table-of-contents__link toc-highlight">Evaluation Tools</a></li></ul></li><li><a href="#academic-integrity" class="table-of-contents__link toc-highlight">Academic Integrity</a></li><li><a href="#questions-and-support" class="table-of-contents__link toc-highlight">Questions and Support</a></li><li><a href="#instructor-feedback" class="table-of-contents__link toc-highlight">Instructor Feedback</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-1-the-robotic-nervous-system/module-1-intro">Module 1 – The Robotic Nervous System</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-2-the-digital-twin/module-2-intro">Module 2 – The Digital Twin</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-3-the-ai-robot-brain/module-3-intro">Module 3 – The AI-Robot Brain</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-4-vision-language-action-systems/module-4-intro">Module 4 – Vision-Language-Action Systems</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-overview">Capstone: The Autonomous Humanoid</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/appendices/hardware-requirements">Appendices</a></li><li class="footer__item"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics — AI Systems in the Physical World. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

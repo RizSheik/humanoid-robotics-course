@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-2-ros-2-fundamentals/quiz" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Module 2: Quiz - ROS 2 Fundamentals: Topics, Services, and Actions | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rizsheik.github.io/humanoid-robotics-course/docs/module-2-ros-2-fundamentals/quiz"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Module 2: Quiz - ROS 2 Fundamentals: Topics, Services, and Actions | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World"><meta data-rh="true" name="description" content="Quiz Information"><meta data-rh="true" property="og:description" content="Quiz Information"><link data-rh="true" rel="icon" href="/humanoid-robotics-course/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-2-ros-2-fundamentals/quiz"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-2-ros-2-fundamentals/quiz" hreflang="en"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-2-ros-2-fundamentals/quiz" hreflang="x-default"><link rel="stylesheet" href="/humanoid-robotics-course/assets/css/styles.50e26d9c.css">
+<script src="/humanoid-robotics-course/assets/js/runtime~main.29b207dd.js" defer="defer"></script>
+<script src="/humanoid-robotics-course/assets/js/main.b8200acf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/humanoid-robotics-course/img/robot-head.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/humanoid-robotics-course/"><div class="navbar__logo"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/humanoid-robotics-course/docs/intro">Textbook Modules</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Module 2: Quiz - ROS 2 Fundamentals: Topics, Services, and Actions</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quiz-information">Quiz Information<a href="#quiz-information" class="hash-link" aria-label="Direct link to Quiz Information" title="Direct link to Quiz Information" translate="no">​</a></h2>
+<p><strong>Duration</strong>: 75 minutes<br>
+<strong>Format</strong>: Multiple choice, short answer, and scenario-based questions<br>
+<strong>Topics Covered</strong>: All material from Module 2<br>
+<strong>Resources Allowed</strong>: Lecture notes and textbooks only; no internet resources during quiz</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-a-multiple-choice-questions-30-points-3-points-each">Section A: Multiple Choice Questions (30 points, 3 points each)<a href="#section-a-multiple-choice-questions-30-points-3-points-each" class="hash-link" aria-label="Direct link to Section A: Multiple Choice Questions (30 points, 3 points each)" title="Direct link to Section A: Multiple Choice Questions (30 points, 3 points each)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-1">Question 1<a href="#question-1" class="hash-link" aria-label="Direct link to Question 1" title="Direct link to Question 1" translate="no">​</a></h3>
+<p>What is the primary difference between ROS 2 topics and ROS 2 services?
+a) Topics are asynchronous while services are synchronous
+b) Topics use TCP while services use UDP
+c) Topics are for robot control while services are for sensor data
+d) There is no difference; they are interchangeable</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-2">Question 2<a href="#question-2" class="hash-link" aria-label="Direct link to Question 2" title="Direct link to Question 2" translate="no">​</a></h3>
+<p>Which Quality of Service (QoS) policy determines how many samples are kept in the history?
+a) Reliability policy
+b) Durability policy
+c) History policy
+d) Deadline policy</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-3">Question 3<a href="#question-3" class="hash-link" aria-label="Direct link to Question 3" title="Direct link to Question 3" translate="no">​</a></h3>
+<p>In ROS 2, what does DDS stand for?
+a) Distributed Data System
+b) Data Distribution Service
+c) Dynamic Discovery System
+d) Distributed Discovery Service</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-4">Question 4<a href="#question-4" class="hash-link" aria-label="Direct link to Question 4" title="Direct link to Question 4" translate="no">​</a></h3>
+<p>What are the three components of a ROS 2 action?
+a) Request, response, feedback
+b) Goal, feedback, result
+c) Start, progress, end
+d) Command, status, outcome</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-5">Question 5<a href="#question-5" class="hash-link" aria-label="Direct link to Question 5" title="Direct link to Question 5" translate="no">​</a></h3>
+<p>Which QoS durability setting ensures that late-joining subscribers receive the most recent data?
+a) Volatile
+b) Transient Local
+c) System Default
+d) Best Effort</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-6">Question 6<a href="#question-6" class="hash-link" aria-label="Direct link to Question 6" title="Direct link to Question 6" translate="no">​</a></h3>
+<p>What is the purpose of a lifecycle node in ROS 2?
+a) To manage robot movement patterns
+b) To provide a structured way to manage node state transitions
+c) To handle robot navigation tasks
+d) To implement robot learning algorithms</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-7">Question 7<a href="#question-7" class="hash-link" aria-label="Direct link to Question 7" title="Direct link to Question 7" translate="no">​</a></h3>
+<p>What happens when a ROS 2 action goal is canceled?
+a) The action stops immediately and returns an error
+b) The action completes normally and then reports cancellation
+c) The action server may complete the current operation but won&#x27;t start new ones
+d) The action is paused until resumed by the client</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-8">Question 8<a href="#question-8" class="hash-link" aria-label="Direct link to Question 8" title="Direct link to Question 8" translate="no">​</a></h3>
+<p>Which of the following is NOT a standard message type in ROS 2?
+a) std_msgs/msg/String
+b) geometry_msgs/msg/Twist
+c) robot_msgs/msg/JointState
+d) sensor_msgs/msg/Image</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-9">Question 9<a href="#question-9" class="hash-link" aria-label="Direct link to Question 9" title="Direct link to Question 9" translate="no">​</a></h3>
+<p>In ROS 2, what is the main advantage of node composition?
+a) It reduces memory usage
+b) It allows multiple nodes to run in a single process, reducing communication overhead
+c) It increases the number of available topics
+d) It simplifies the build system</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-10">Question 10<a href="#question-10" class="hash-link" aria-label="Direct link to Question 10" title="Direct link to Question 10" translate="no">​</a></h3>
+<p>Which communication pattern is most appropriate for a long-running task that requires feedback and can be canceled?
+a) Topic
+b) Service
+c) Action
+d) Parameter</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-b-short-answer-questions-40-points-10-points-each">Section B: Short Answer Questions (40 points, 10 points each)<a href="#section-b-short-answer-questions-40-points-10-points-each" class="hash-link" aria-label="Direct link to Section B: Short Answer Questions (40 points, 10 points each)" title="Direct link to Section B: Short Answer Questions (40 points, 10 points each)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-11">Question 11<a href="#question-11" class="hash-link" aria-label="Direct link to Question 11" title="Direct link to Question 11" translate="no">​</a></h3>
+<p>Explain the differences between ROS 1 and ROS 2 architectures with specific emphasis on communication. What are the main advantages of the ROS 2 approach?</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-12">Question 12<a href="#question-12" class="hash-link" aria-label="Direct link to Question 12" title="Direct link to Question 12" translate="no">​</a></h3>
+<p>Describe Quality of Service (QoS) settings in ROS 2. Provide examples of when you would use &quot;reliable&quot; vs &quot;best effort&quot; reliability policies in a humanoid robot system.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-13">Question 13<a href="#question-13" class="hash-link" aria-label="Direct link to Question 13" title="Direct link to Question 13" translate="no">​</a></h3>
+<p>What are the key characteristics of ROS 2 actions, and how do they differ from services? Provide a specific example of when you would use an action instead of a service in a humanoid robot application.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-14">Question 14<a href="#question-14" class="hash-link" aria-label="Direct link to Question 14" title="Direct link to Question 14" translate="no">​</a></h3>
+<p>Explain the concept of namespaces in ROS 2 and why they are important in multi-robot systems. Provide an example of how you would organize topics for a system with two humanoid robots.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-c-scenario-based-questions-30-points-15-points-each">Section C: Scenario-Based Questions (30 points, 15 points each)<a href="#section-c-scenario-based-questions-30-points-15-points-each" class="hash-link" aria-label="Direct link to Section C: Scenario-Based Questions (30 points, 15 points each)" title="Direct link to Section C: Scenario-Based Questions (30 points, 15 points each)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-15">Question 15<a href="#question-15" class="hash-link" aria-label="Direct link to Question 15" title="Direct link to Question 15" translate="no">​</a></h3>
+<p>You are designing the communication architecture for a humanoid robot with the following subsystems:</p>
+<ul>
+<li class="">Joint control (20 joints with encoder feedback)</li>
+<li class="">Inertial measurement unit (IMU)</li>
+<li class="">Stereo cameras</li>
+<li class="">Force/torque sensors in both feet</li>
+<li class="">High-level motion planner</li>
+<li class="">Balance controller</li>
+</ul>
+<p>Design the communication system using appropriate ROS 2 patterns. Specify:</p>
+<ul>
+<li class="">Which communication pattern (topic/service/action) you would use for each interaction</li>
+<li class="">At least 3 specific QoS configurations and justification for each</li>
+<li class="">How the components would be connected to coordinate walking behavior</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="question-16">Question 16<a href="#question-16" class="hash-link" aria-label="Direct link to Question 16" title="Direct link to Question 16" translate="no">​</a></h3>
+<p>A humanoid robot needs to perform a complex manipulation task where it must:</p>
+<ol>
+<li class="">Navigate to a specific location</li>
+<li class="">Locate and grasp an object</li>
+<li class="">Move the object to a new location</li>
+<li class="">Release the object</li>
+</ol>
+<p>Design an appropriate ROS 2 communication system to coordinate this task. Address:</p>
+<ul>
+<li class="">Which parts of the task would use topics vs services vs actions</li>
+<li class="">How error handling and recovery would be implemented</li>
+<li class="">How the system would handle interruption or cancellation of the task</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="answer-key">Answer Key<a href="#answer-key" class="hash-link" aria-label="Direct link to Answer Key" title="Direct link to Answer Key" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-a-answers">Section A Answers:<a href="#section-a-answers" class="hash-link" aria-label="Direct link to Section A Answers:" title="Direct link to Section A Answers:" translate="no">​</a></h3>
+<ol>
+<li class="">a) Topics are asynchronous while services are synchronous</li>
+<li class="">c) History policy</li>
+<li class="">b) Data Distribution Service</li>
+<li class="">b) Goal, feedback, result</li>
+<li class="">b) Transient Local</li>
+<li class="">b) To provide a structured way to manage node state transitions</li>
+<li class="">c) The action server may complete the current operation but won&#x27;t start new ones</li>
+<li class="">c) robot_msgs/msg/JointState (sensor_msgs/msg/JointState is the correct type)</li>
+<li class="">b) It allows multiple nodes to run in a single process, reducing communication overhead</li>
+<li class="">c) Action</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-b-expected-answers">Section B Expected Answers:<a href="#section-b-expected-answers" class="hash-link" aria-label="Direct link to Section B Expected Answers:" title="Direct link to Section B Expected Answers:" translate="no">​</a></h3>
+<p><strong>Question 11</strong>: ROS 1 used a centralized master architecture with TCPROS/UDPROS for communication, creating a single point of failure. ROS 2 uses DDS with a distributed architecture and no single point of failure. ROS 2 includes built-in security, real-time capabilities, and improved support for multi-robot systems. The advantages include better reliability, security, real-time performance, and production readiness.</p>
+<p><strong>Question 12</strong>: QoS (Quality of Service) settings allow fine-tuning of communication behavior in ROS 2. For joint control in a humanoid robot, use RELIABLE policy for critical commands to ensure delivery. For camera feeds, use BEST_EFFORT policy to maintain frame rate even with occasional packet loss. For IMU data, RELIABLE with bounded deadline is appropriate for safety-critical balance control.</p>
+<p><strong>Question 13</strong>: Actions are for long-running tasks that require feedback and can be canceled. Unlike services, they support continuous feedback and preemption. An action would be used for humanoid walking, where you need to monitor progress, potentially cancel mid-stride, and get feedback about balance status during the walking sequence.</p>
+<p><strong>Question 14</strong>: Namespaces in ROS 2 provide logical grouping of topics, services, and actions. For two humanoid robots, use namespaces like &quot;/robot1/joint_states&quot; and &quot;/robot2/joint_states&quot; to separate the communication for each robot and avoid naming conflicts in multi-robot systems.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-c-expected-answers">Section C Expected Answers:<a href="#section-c-expected-answers" class="hash-link" aria-label="Direct link to Section C Expected Answers:" title="Direct link to Section C Expected Answers:" translate="no">​</a></h3>
+<p><strong>Question 15</strong>:</p>
+<ul>
+<li class="">Joint commands: Topic with reliable QoS for control (100Hz)</li>
+<li class="">Joint feedback: Topic for encoder readings (100Hz)</li>
+<li class="">IMU: Topic with reliable/volatile QoS (200Hz)</li>
+<li class="">Camera: Topic with best-effort QoS (30Hz)</li>
+<li class="">Motion planner: Action for trajectory generation with feedback</li>
+<li class="">Balance controller: Service for emergency corrections + topics for continuous data</li>
+<li class="">QoS examples:<!-- -->
+<ol>
+<li class="">Joint commands: RELIABLE, DEADLINE 10ms (safety-critical)</li>
+<li class="">Camera: BEST_EFFORT, VOLATILE (performance over reliability)</li>
+<li class="">IMU: RELIABLE, DURABILITY TRANSIENT_LOCAL (for recovery)</li>
+</ol>
+</li>
+</ul>
+<p><strong>Question 16</strong>:</p>
+<ul>
+<li class="">Navigation: Action (MoveToLocation) with progress feedback</li>
+<li class="">Object detection: Service (DetectObject) for on-demand processing</li>
+<li class="">Grasp planning: Action (PlanGrasp) with feedback</li>
+<li class="">Object carrying: Topic for continuous state monitoring</li>
+<li class="">Error handling: Each component reports errors to a central service manager that can initiate recovery behaviors</li>
+<li class="">Cancellation: Action clients can cancel ongoing tasks, with each component having an emergency stop behavior</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="grading-criteria">Grading Criteria<a href="#grading-criteria" class="hash-link" aria-label="Direct link to Grading Criteria" title="Direct link to Grading Criteria" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-a-multiple-choice">Section A (Multiple Choice):<a href="#section-a-multiple-choice" class="hash-link" aria-label="Direct link to Section A (Multiple Choice):" title="Direct link to Section A (Multiple Choice):" translate="no">​</a></h3>
+<ul>
+<li class="">3 points per question</li>
+<li class="">No partial credit</li>
+<li class="">Only the best answer receives full credit</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-b-short-answer">Section B (Short Answer):<a href="#section-b-short-answer" class="hash-link" aria-label="Direct link to Section B (Short Answer):" title="Direct link to Section B (Short Answer):" translate="no">​</a></h3>
+<ul>
+<li class="">Technical understanding: 5 points</li>
+<li class="">Accuracy of information: 3 points</li>
+<li class="">Clarity and completeness: 2 points</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="section-c-scenario-based">Section C (Scenario-Based):<a href="#section-c-scenario-based" class="hash-link" aria-label="Direct link to Section C (Scenario-Based):" title="Direct link to Section C (Scenario-Based):" translate="no">​</a></h3>
+<ul>
+<li class="">Appropriate use of communication patterns: 6 points</li>
+<li class="">Technical feasibility and understanding: 6 points</li>
+<li class="">Clarity and completeness: 3 points</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="academic-integrity-notice">Academic Integrity Notice<a href="#academic-integrity-notice" class="hash-link" aria-label="Direct link to Academic Integrity Notice" title="Direct link to Academic Integrity Notice" translate="no">​</a></h2>
+<p>This quiz is to be completed individually. You may reference your course materials, but you may not discuss quiz content with other students or receive assistance during the quiz period. All work must be your own.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="preparation-tips">Preparation Tips<a href="#preparation-tips" class="hash-link" aria-label="Direct link to Preparation Tips" title="Direct link to Preparation Tips" translate="no">​</a></h2>
+<ol>
+<li class="">Review all four chapters of Module 2</li>
+<li class="">Understand the differences between topics, services, and actions</li>
+<li class="">Know how to configure QoS settings appropriately for different scenarios</li>
+<li class="">Practice designing communication architectures for robotic systems</li>
+<li class="">Understand the practical applications of each communication pattern</li>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/RizSheik/humanoid-robotics-course/edit/main/docs/module-2-ros-2-fundamentals/quiz.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#quiz-information" class="table-of-contents__link toc-highlight">Quiz Information</a></li><li><a href="#section-a-multiple-choice-questions-30-points-3-points-each" class="table-of-contents__link toc-highlight">Section A: Multiple Choice Questions (30 points, 3 points each)</a><ul><li><a href="#question-1" class="table-of-contents__link toc-highlight">Question 1</a></li><li><a href="#question-2" class="table-of-contents__link toc-highlight">Question 2</a></li><li><a href="#question-3" class="table-of-contents__link toc-highlight">Question 3</a></li><li><a href="#question-4" class="table-of-contents__link toc-highlight">Question 4</a></li><li><a href="#question-5" class="table-of-contents__link toc-highlight">Question 5</a></li><li><a href="#question-6" class="table-of-contents__link toc-highlight">Question 6</a></li><li><a href="#question-7" class="table-of-contents__link toc-highlight">Question 7</a></li><li><a href="#question-8" class="table-of-contents__link toc-highlight">Question 8</a></li><li><a href="#question-9" class="table-of-contents__link toc-highlight">Question 9</a></li><li><a href="#question-10" class="table-of-contents__link toc-highlight">Question 10</a></li></ul></li><li><a href="#section-b-short-answer-questions-40-points-10-points-each" class="table-of-contents__link toc-highlight">Section B: Short Answer Questions (40 points, 10 points each)</a><ul><li><a href="#question-11" class="table-of-contents__link toc-highlight">Question 11</a></li><li><a href="#question-12" class="table-of-contents__link toc-highlight">Question 12</a></li><li><a href="#question-13" class="table-of-contents__link toc-highlight">Question 13</a></li><li><a href="#question-14" class="table-of-contents__link toc-highlight">Question 14</a></li></ul></li><li><a href="#section-c-scenario-based-questions-30-points-15-points-each" class="table-of-contents__link toc-highlight">Section C: Scenario-Based Questions (30 points, 15 points each)</a><ul><li><a href="#question-15" class="table-of-contents__link toc-highlight">Question 15</a></li><li><a href="#question-16" class="table-of-contents__link toc-highlight">Question 16</a></li></ul></li><li><a href="#answer-key" class="table-of-contents__link toc-highlight">Answer Key</a><ul><li><a href="#section-a-answers" class="table-of-contents__link toc-highlight">Section A Answers:</a></li><li><a href="#section-b-expected-answers" class="table-of-contents__link toc-highlight">Section B Expected Answers:</a></li><li><a href="#section-c-expected-answers" class="table-of-contents__link toc-highlight">Section C Expected Answers:</a></li></ul></li><li><a href="#grading-criteria" class="table-of-contents__link toc-highlight">Grading Criteria</a><ul><li><a href="#section-a-multiple-choice" class="table-of-contents__link toc-highlight">Section A (Multiple Choice):</a></li><li><a href="#section-b-short-answer" class="table-of-contents__link toc-highlight">Section B (Short Answer):</a></li><li><a href="#section-c-scenario-based" class="table-of-contents__link toc-highlight">Section C (Scenario-Based):</a></li></ul></li><li><a href="#academic-integrity-notice" class="table-of-contents__link toc-highlight">Academic Integrity Notice</a></li><li><a href="#preparation-tips" class="table-of-contents__link toc-highlight">Preparation Tips</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-1-the-robotic-nervous-system/module-1-intro">Module 1 – The Robotic Nervous System</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-2-the-digital-twin/module-2-intro">Module 2 – The Digital Twin</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-3-the-ai-robot-brain/module-3-intro">Module 3 – The AI-Robot Brain</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-4-vision-language-action-systems/module-4-intro">Module 4 – Vision-Language-Action Systems</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-overview">Capstone: The Autonomous Humanoid</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/appendices/hardware-requirements">Appendices</a></li><li class="footer__item"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics — AI Systems in the Physical World. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

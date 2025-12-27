@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module-4-ai-robot-brain/chapter-1" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Chapter 1: Introduction to NVIDIA Isaac Platform and AI Robotics | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rizsheik.github.io/humanoid-robotics-course/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rizsheik.github.io/humanoid-robotics-course/docs/module-4-ai-robot-brain/chapter-1"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Chapter 1: Introduction to NVIDIA Isaac Platform and AI Robotics | Physical AI &amp; Humanoid Robotics — AI Systems in the Physical World"><meta data-rh="true" name="description" content="Learning Objectives"><meta data-rh="true" property="og:description" content="Learning Objectives"><link data-rh="true" rel="icon" href="/humanoid-robotics-course/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-4-ai-robot-brain/chapter-1"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-4-ai-robot-brain/chapter-1" hreflang="en"><link data-rh="true" rel="alternate" href="https://rizsheik.github.io/humanoid-robotics-course/docs/module-4-ai-robot-brain/chapter-1" hreflang="x-default"><link rel="stylesheet" href="/humanoid-robotics-course/assets/css/styles.50e26d9c.css">
+<script src="/humanoid-robotics-course/assets/js/runtime~main.29b207dd.js" defer="defer"></script>
+<script src="/humanoid-robotics-course/assets/js/main.b8200acf.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/humanoid-robotics-course/img/robot-head.svg"><link rel="preload" as="image" href="../../../img/book-image/NVIDIA_Jetson_Orin_Nano_kit_on_a_desk_Re_1.jpg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/humanoid-robotics-course/"><div class="navbar__logo"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/humanoid-robotics-course/img/robot-head.svg" alt="Humanoid Robotics Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a class="navbar__item navbar__link" href="/humanoid-robotics-course/docs/intro">Textbook Modules</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Chapter 1: Introduction to NVIDIA Isaac Platform and AI Robotics</h1></header>
+<div class="robotDiagram"><img src="../../../img/book-image/NVIDIA_Jetson_Orin_Nano_kit_on_a_desk_Re_1.jpg" alt="Humanoid Robot" style="border-radius:50px;width:900px;height:350px;margin:10px auto;display:block"></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-objectives">Learning Objectives<a href="#learning-objectives" class="hash-link" aria-label="Direct link to Learning Objectives" title="Direct link to Learning Objectives" translate="no">​</a></h2>
+<p>After completing this chapter, students will be able to:</p>
+<ul>
+<li class="">Explain the architecture and components of NVIDIA Isaac Platform</li>
+<li class="">Describe the advantages of GPU acceleration for robotics applications</li>
+<li class="">Identify appropriate use cases for different Isaac Platform components</li>
+<li class="">Understand the integration between Isaac Sim, Isaac ROS, and Isaac Applications</li>
+<li class="">Compare Isaac Platform with other robotics AI frameworks</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="11-overview-of-nvidia-isaac-platform">1.1 Overview of NVIDIA Isaac Platform<a href="#11-overview-of-nvidia-isaac-platform" class="hash-link" aria-label="Direct link to 1.1 Overview of NVIDIA Isaac Platform" title="Direct link to 1.1 Overview of NVIDIA Isaac Platform" translate="no">​</a></h2>
+<p>The NVIDIA Isaac Platform is a comprehensive software stack designed specifically for developing, simulating, and deploying AI-powered robotic applications. Built on NVIDIA&#x27;s CUDA platform and leveraging the power of GPU computing, Isaac provides tools and frameworks that accelerate the development of intelligent robotic systems.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="111-core-components">1.1.1 Core Components<a href="#111-core-components" class="hash-link" aria-label="Direct link to 1.1.1 Core Components" title="Direct link to 1.1.1 Core Components" translate="no">​</a></h3>
+<p>The Isaac Platform consists of several interconnected components:</p>
+<p><strong>Isaac Sim</strong>: A high-fidelity simulation environment built on NVIDIA&#x27;s Omniverse platform, designed for generating synthetic training data and testing AI algorithms in photorealistic environments.</p>
+<p><strong>Isaac ROS</strong>: A collection of hardware-accelerated perception and navigation packages that integrate with the Robot Operating System, providing accelerated processing for perception, mapping, and planning tasks.</p>
+<p><strong>Isaac Applications</strong>: Pre-built, optimized applications for common robotics tasks such as navigation, manipulation, and inspection, serving as reference implementations and starting points for custom applications.</p>
+<p><strong>Isaac SDK</strong>: A software development kit that provides APIs and tools for building custom AI-powered robotics applications, featuring optimized libraries for perception, planning, and control.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="112-hardware-ecosystem">1.1.2 Hardware Ecosystem<a href="#112-hardware-ecosystem" class="hash-link" aria-label="Direct link to 1.1.2 Hardware Ecosystem" title="Direct link to 1.1.2 Hardware Ecosystem" translate="no">​</a></h3>
+<p>Isaac Platform leverages NVIDIA&#x27;s hardware ecosystem:</p>
+<ul>
+<li class=""><strong>Jetson Platform</strong>: Edge AI computers for robotics applications (Jetson Orin, Jetson AGX Xavier, etc.)</li>
+<li class=""><strong>Data Center GPUs</strong>: For training and simulation in data center environments</li>
+<li class=""><strong>Professional RTX</strong>: For development workstations and visualization</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="12-gpu-acceleration-in-robotics">1.2 GPU Acceleration in Robotics<a href="#12-gpu-acceleration-in-robotics" class="hash-link" aria-label="Direct link to 1.2 GPU Acceleration in Robotics" title="Direct link to 1.2 GPU Acceleration in Robotics" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="121-advantages-of-gpu-computing-for-robotics">1.2.1 Advantages of GPU Computing for Robotics<a href="#121-advantages-of-gpu-computing-for-robotics" class="hash-link" aria-label="Direct link to 1.2.1 Advantages of GPU Computing for Robotics" title="Direct link to 1.2.1 Advantages of GPU Computing for Robotics" translate="no">​</a></h3>
+<p>GPU acceleration provides significant performance improvements for robotics applications:</p>
+<p><strong>Parallel Processing</strong>: GPUs excel at processing parallel workloads typical in robotics, such as image processing, sensor fusion, and deep learning inference.</p>
+<p><strong>Real-time Performance</strong>: The parallel architecture of GPUs enables real-time processing of high-frequency sensor data and complex AI algorithms.</p>
+<p><strong>Deep Learning Acceleration</strong>: GPUs provide orders-of-magnitude speedup for neural network inference and training, essential for perception and decision-making in robotics.</p>
+<p><strong>Energy Efficiency</strong>: Modern GPU architectures provide high performance per watt, crucial for mobile robotics applications.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="122-robotics-specific-acceleration">1.2.2 Robotics-Specific Acceleration<a href="#122-robotics-specific-acceleration" class="hash-link" aria-label="Direct link to 1.2.2 Robotics-Specific Acceleration" title="Direct link to 1.2.2 Robotics-Specific Acceleration" translate="no">​</a></h3>
+<p>Isaac Platform provides acceleration for robotics-specific operations:</p>
+<p><strong>Computer Vision</strong>: Hardware-accelerated image processing, feature detection, and object recognition.</p>
+<p><strong>Sensor Processing</strong>: Accelerated processing of LIDAR, depth cameras, and other sensor data streams.</p>
+<p><strong>Path Planning</strong>: GPU-accelerated algorithms for motion planning and trajectory optimization.</p>
+<p><strong>SLAM</strong>: Accelerated Simultaneous Localization and Mapping algorithms for environment mapping and robot localization.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="13-isaac-platform-architecture">1.3 Isaac Platform Architecture<a href="#13-isaac-platform-architecture" class="hash-link" aria-label="Direct link to 1.3 Isaac Platform Architecture" title="Direct link to 1.3 Isaac Platform Architecture" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="131-software-stack">1.3.1 Software Stack<a href="#131-software-stack" class="hash-link" aria-label="Direct link to 1.3.1 Software Stack" title="Direct link to 1.3.1 Software Stack" translate="no">​</a></h3>
+<p>The Isaac Platform software stack includes:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Applications Layer</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── Isaac Applications (Navigation, Manipulation, Inspection)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── Isaac SDK</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── Isaac Helpers</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Framework Layer</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── Isaac ROS (Hardware-accelerated ROS packages)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── Isaac Sim (Simulation and Synthetic Data Generation)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── Isaac Gym (Reinforcement Learning)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Runtime Layer</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── CUDA</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── OptiX (Ray Tracing)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── TensorRT (Inference)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── RTX Rendering</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">System Layer</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── Linux OS</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── NVIDIA GPU Drivers</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="132-integration-with-ros-ecosystem">1.3.2 Integration with ROS Ecosystem<a href="#132-integration-with-ros-ecosystem" class="hash-link" aria-label="Direct link to 1.3.2 Integration with ROS Ecosystem" title="Direct link to 1.3.2 Integration with ROS Ecosystem" translate="no">​</a></h3>
+<p>Isaac Platform maintains compatibility with ROS/ROS 2:</p>
+<ul>
+<li class="">Isaac ROS packages integrate directly with ROS 2 ecosystem</li>
+<li class="">Standard message formats and communication patterns</li>
+<li class="">Bridge tools for connecting Isaac components with existing ROS systems</li>
+<li class="">Support for ROS 2 launch files and tooling</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="14-isaac-sim-ai-training-and-validation">1.4 Isaac Sim: AI Training and Validation<a href="#14-isaac-sim-ai-training-and-validation" class="hash-link" aria-label="Direct link to 1.4 Isaac Sim: AI Training and Validation" title="Direct link to 1.4 Isaac Sim: AI Training and Validation" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="141-key-features">1.4.1 Key Features<a href="#141-key-features" class="hash-link" aria-label="Direct link to 1.4.1 Key Features" title="Direct link to 1.4.1 Key Features" translate="no">​</a></h3>
+<p>Isaac Sim provides:</p>
+<ul>
+<li class="">Photorealistic rendering using RTX technology</li>
+<li class="">Accurate physics simulation with PhysX</li>
+<li class="">Synthetic data generation for training AI models</li>
+<li class="">Domain randomization for robust model training</li>
+<li class="">Integration with reinforcement learning frameworks</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="142-synthetic-data-generation">1.4.2 Synthetic Data Generation<a href="#142-synthetic-data-generation" class="hash-link" aria-label="Direct link to 1.4.2 Synthetic Data Generation" title="Direct link to 1.4.2 Synthetic Data Generation" translate="no">​</a></h3>
+<p>Isaac Sim can generate diverse, labeled datasets:</p>
+<ul>
+<li class="">Ground truth annotations for training perception models</li>
+<li class="">Sensor data from multiple modalities (cameras, LIDAR, IMU)</li>
+<li class="">Physical interactions and dynamics modeling</li>
+<li class="">Large-scale synthetic datasets for AI training</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="15-isaac-ros-perception-and-control-pipelines">1.5 Isaac ROS: Perception and Control Pipelines<a href="#15-isaac-ros-perception-and-control-pipelines" class="hash-link" aria-label="Direct link to 1.5 Isaac ROS: Perception and Control Pipelines" title="Direct link to 1.5 Isaac ROS: Perception and Control Pipelines" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="151-hardware-accelerated-packages">1.5.1 Hardware-Accelerated Packages<a href="#151-hardware-accelerated-packages" class="hash-link" aria-label="Direct link to 1.5.1 Hardware-Accelerated Packages" title="Direct link to 1.5.1 Hardware-Accelerated Packages" translate="no">​</a></h3>
+<p>Isaac ROS includes packages with GPU acceleration:</p>
+<ul>
+<li class=""><strong>Isaac ROS Image Pipeline</strong>: Hardware-accelerated image preprocessing</li>
+<li class=""><strong>Isaac ROS Apriltag</strong>: GPU-accelerated AprilTag detection</li>
+<li class=""><strong>Isaac ROS Stereo DNN</strong>: Neural network-based stereo processing</li>
+<li class=""><strong>Isaac ROS Visual SLAM</strong>: GPU-accelerated simultaneous localization and mapping</li>
+<li class=""><strong>Isaac ROS DNN Inference</strong>: TensorRT-accelerated deep learning inference</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="152-performance-benefits">1.5.2 Performance Benefits<a href="#152-performance-benefits" class="hash-link" aria-label="Direct link to 1.5.2 Performance Benefits" title="Direct link to 1.5.2 Performance Benefits" translate="no">​</a></h3>
+<p>Hardware acceleration provides significant performance gains:</p>
+<div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic"># Example of Isaac ROS performance improvement</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># Traditional approach: 10-20 FPS for object detection on CPU</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># Isaac ROS approach: 60+ FPS for same task on GPU</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="16-isaac-applications-pre-built-solutions">1.6 Isaac Applications: Pre-built Solutions<a href="#16-isaac-applications-pre-built-solutions" class="hash-link" aria-label="Direct link to 1.6 Isaac Applications: Pre-built Solutions" title="Direct link to 1.6 Isaac Applications: Pre-built Solutions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="161-navigation-application">1.6.1 Navigation Application<a href="#161-navigation-application" class="hash-link" aria-label="Direct link to 1.6.1 Navigation Application" title="Direct link to 1.6.1 Navigation Application" translate="no">​</a></h3>
+<p>The Isaac Navigation application provides:</p>
+<ul>
+<li class="">GPU-accelerated mapping and localization</li>
+<li class="">Obstacle-aware path planning</li>
+<li class="">Adaptive motion control</li>
+<li class="">Integration with various sensor configurations</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="162-manipulation-application">1.6.2 Manipulation Application<a href="#162-manipulation-application" class="hash-link" aria-label="Direct link to 1.6.2 Manipulation Application" title="Direct link to 1.6.2 Manipulation Application" translate="no">​</a></h3>
+<p>The Isaac Manipulation application offers:</p>
+<ul>
+<li class="">3D object detection and pose estimation</li>
+<li class="">GPU-accelerated motion planning</li>
+<li class="">Force control for precise manipulation</li>
+<li class="">Grasp planning and execution</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="17-ai-robotics-development-workflow">1.7 AI Robotics Development Workflow<a href="#17-ai-robotics-development-workflow" class="hash-link" aria-label="Direct link to 1.7 AI Robotics Development Workflow" title="Direct link to 1.7 AI Robotics Development Workflow" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="171-development-phases">1.7.1 Development Phases<a href="#171-development-phases" class="hash-link" aria-label="Direct link to 1.7.1 Development Phases" title="Direct link to 1.7.1 Development Phases" translate="no">​</a></h3>
+<p>The typical workflow for Isaac-based development includes:</p>
+<ol>
+<li class=""><strong>Simulation</strong>: Develop and test algorithms in Isaac Sim</li>
+<li class=""><strong>Training</strong>: Use synthetic data to train AI models</li>
+<li class=""><strong>Integration</strong>: Combine perception and control in simulation</li>
+<li class=""><strong>Validation</strong>: Test in realistic simulated environments</li>
+<li class=""><strong>Deployment</strong>: Deploy to physical robots with Isaac SDK</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="172-iterative-development">1.7.2 Iterative Development<a href="#172-iterative-development" class="hash-link" aria-label="Direct link to 1.7.2 Iterative Development" title="Direct link to 1.7.2 Iterative Development" translate="no">​</a></h3>
+<p>Isaac Platform supports rapid iteration:</p>
+<ul>
+<li class="">Quick simulation-to-deployment cycles</li>
+<li class="">Easy configuration and testing of different approaches</li>
+<li class="">A/B testing of different algorithms</li>
+<li class="">Continuous integration and validation</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="18-comparison-with-other-frameworks">1.8 Comparison with Other Frameworks<a href="#18-comparison-with-other-frameworks" class="hash-link" aria-label="Direct link to 1.8 Comparison with Other Frameworks" title="Direct link to 1.8 Comparison with Other Frameworks" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="181-isaac-vs-traditional-robotics-frameworks">1.8.1 Isaac vs. Traditional Robotics Frameworks<a href="#181-isaac-vs-traditional-robotics-frameworks" class="hash-link" aria-label="Direct link to 1.8.1 Isaac vs. Traditional Robotics Frameworks" title="Direct link to 1.8.1 Isaac vs. Traditional Robotics Frameworks" translate="no">​</a></h3>
+<table><thead><tr><th>Aspect</th><th>Isaac Platform</th><th>Traditional Approaches</th></tr></thead><tbody><tr><td>GPU Acceleration</td><td>Native support</td><td>Limited or plugin-based</td></tr><tr><td>Simulation</td><td>Photorealistic with synthetic data</td><td>Basic physics simulation</td></tr><tr><td>AI Integration</td><td>Deeply integrated</td><td>External tools required</td></tr><tr><td>Performance</td><td>GPU-optimized</td><td>CPU-focused</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="182-isaac-vs-cloud-robotics-platforms">1.8.2 Isaac vs. Cloud Robotics Platforms<a href="#182-isaac-vs-cloud-robotics-platforms" class="hash-link" aria-label="Direct link to 1.8.2 Isaac vs. Cloud Robotics Platforms" title="Direct link to 1.8.2 Isaac vs. Cloud Robotics Platforms" translate="no">​</a></h3>
+<p>Isaac Platform focuses on edge computing:</p>
+<ul>
+<li class="">Processing happens on robot or local edge device</li>
+<li class="">Reduced latency for real-time applications</li>
+<li class="">Operates without constant network connectivity</li>
+<li class="">Optimized for resource-constrained environments</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="19-getting-started-with-isaac-platform">1.9 Getting Started with Isaac Platform<a href="#19-getting-started-with-isaac-platform" class="hash-link" aria-label="Direct link to 1.9 Getting Started with Isaac Platform" title="Direct link to 1.9 Getting Started with Isaac Platform" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="191-hardware-requirements">1.9.1 Hardware Requirements<a href="#191-hardware-requirements" class="hash-link" aria-label="Direct link to 1.9.1 Hardware Requirements" title="Direct link to 1.9.1 Hardware Requirements" translate="no">​</a></h3>
+<p>To use Isaac Platform effectively:</p>
+<ul>
+<li class="">NVIDIA GPU with CUDA support (recommended: RTX series)</li>
+<li class="">Compatible CPU (x86-64 or ARM64)</li>
+<li class="">Sufficient RAM (16GB+ recommended)</li>
+<li class="">Compatible operating system (Ubuntu 18.04/20.04/22.04)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="192-software-installation">1.9.2 Software Installation<a href="#192-software-installation" class="hash-link" aria-label="Direct link to 1.9.2 Software Installation" title="Direct link to 1.9.2 Software Installation" translate="no">​</a></h3>
+<p>Isaac Platform can be installed in several ways:</p>
+<ul>
+<li class="">Docker containers for easy deployment</li>
+<li class="">Native installation for development</li>
+<li class="">SDK packages for specific use cases</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="110-use-cases-and-applications">1.10 Use Cases and Applications<a href="#110-use-cases-and-applications" class="hash-link" aria-label="Direct link to 1.10 Use Cases and Applications" title="Direct link to 1.10 Use Cases and Applications" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1101-industrial-robotics">1.10.1 Industrial Robotics<a href="#1101-industrial-robotics" class="hash-link" aria-label="Direct link to 1.10.1 Industrial Robotics" title="Direct link to 1.10.1 Industrial Robotics" translate="no">​</a></h3>
+<p>Isaac Platform is well-suited for industrial applications:</p>
+<ul>
+<li class="">Warehouse automation</li>
+<li class="">Manufacturing inspection</li>
+<li class="">Autonomous mobile robots (AMRs)</li>
+<li class="">Quality control systems</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1102-service-robotics">1.10.2 Service Robotics<a href="#1102-service-robotics" class="hash-link" aria-label="Direct link to 1.10.2 Service Robotics" title="Direct link to 1.10.2 Service Robotics" translate="no">​</a></h3>
+<p>Service robotics applications benefit from Isaac&#x27;s AI capabilities:</p>
+<ul>
+<li class="">Navigation in complex environments</li>
+<li class="">Human-robot interaction</li>
+<li class="">Object recognition and manipulation</li>
+<li class="">Customer service robots</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1103-research-applications">1.10.3 Research Applications<a href="#1103-research-applications" class="hash-link" aria-label="Direct link to 1.10.3 Research Applications" title="Direct link to 1.10.3 Research Applications" translate="no">​</a></h3>
+<p>Isaac Platform supports robotics research:</p>
+<ul>
+<li class="">Reinforcement learning for robotics</li>
+<li class="">Multi-robot systems</li>
+<li class="">Advanced perception research</li>
+<li class="">Humanoid robotics applications</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="111-challenges-and-considerations">1.11 Challenges and Considerations<a href="#111-challenges-and-considerations" class="hash-link" aria-label="Direct link to 1.11 Challenges and Considerations" title="Direct link to 1.11 Challenges and Considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1111-hardware-dependencies">1.11.1 Hardware Dependencies<a href="#1111-hardware-dependencies" class="hash-link" aria-label="Direct link to 1.11.1 Hardware Dependencies" title="Direct link to 1.11.1 Hardware Dependencies" translate="no">​</a></h3>
+<p>Isaac Platform requires NVIDIA hardware:</p>
+<ul>
+<li class="">GPU dependency may limit deployment options</li>
+<li class="">Hardware cost considerations</li>
+<li class="">Power consumption in mobile applications</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1112-learning-curve">1.11.2 Learning Curve<a href="#1112-learning-curve" class="hash-link" aria-label="Direct link to 1.11.2 Learning Curve" title="Direct link to 1.11.2 Learning Curve" translate="no">​</a></h3>
+<p>Advanced robotics platform requires:</p>
+<ul>
+<li class="">Understanding of GPU computing</li>
+<li class="">Deep learning knowledge</li>
+<li class="">Robotics systems integration skills</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="112-future-of-isaac-platform">1.12 Future of Isaac Platform<a href="#112-future-of-isaac-platform" class="hash-link" aria-label="Direct link to 1.12 Future of Isaac Platform" title="Direct link to 1.12 Future of Isaac Platform" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1121-planned-enhancements">1.12.1 Planned Enhancements<a href="#1121-planned-enhancements" class="hash-link" aria-label="Direct link to 1.12.1 Planned Enhancements" title="Direct link to 1.12.1 Planned Enhancements" translate="no">​</a></h3>
+<p>NVIDIA continues to enhance Isaac Platform:</p>
+<ul>
+<li class="">Improved simulation fidelity</li>
+<li class="">More hardware-optimized packages</li>
+<li class="">Enhanced AI training capabilities</li>
+<li class="">Expanded robot platform support</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1122-integration-trends">1.12.2 Integration Trends<a href="#1122-integration-trends" class="hash-link" aria-label="Direct link to 1.12.2 Integration Trends" title="Direct link to 1.12.2 Integration Trends" translate="no">​</a></h3>
+<p>Future developments include:</p>
+<ul>
+<li class="">Enhanced integration with autonomous vehicle platforms</li>
+<li class="">Multi-modal AI capabilities</li>
+<li class="">Federated learning for robotics</li>
+<li class="">Advanced simulation-to-reality transfer techniques</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="chapter-summary">Chapter Summary<a href="#chapter-summary" class="hash-link" aria-label="Direct link to Chapter Summary" title="Direct link to Chapter Summary" translate="no">​</a></h2>
+<p>This chapter introduced the NVIDIA Isaac Platform as a comprehensive solution for AI-powered robotics. We explored its architecture, components, and advantages for robotics applications. The chapter highlighted the importance of GPU acceleration in modern robotics and outlined the development workflow using Isaac technologies. Students should now understand the key components of Isaac Platform and its applications in real-world robotics systems.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-terms">Key Terms<a href="#key-terms" class="hash-link" aria-label="Direct link to Key Terms" title="Direct link to Key Terms" translate="no">​</a></h2>
+<ul>
+<li class="">NVIDIA Isaac Platform</li>
+<li class="">GPU Acceleration in Robotics</li>
+<li class="">Isaac Sim</li>
+<li class="">Isaac ROS</li>
+<li class="">Isaac Applications</li>
+<li class="">Isaac SDK</li>
+<li class="">Synthetic Data Generation</li>
+<li class="">Domain Randomization</li>
+<li class="">Hardware-Accelerated Perception</li>
+<li class="">Edge AI Computing</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="discussion-questions">Discussion Questions<a href="#discussion-questions" class="hash-link" aria-label="Direct link to Discussion Questions" title="Direct link to Discussion Questions" translate="no">​</a></h2>
+<ol>
+<li class="">How does GPU acceleration change the capabilities of robotic systems?</li>
+<li class="">What are the advantages of synthetic data generation for robotics?</li>
+<li class="">How does the Isaac Platform approach to robotics differ from traditional methods?</li>
+<li class="">What are the main challenges in deploying Isaac-based systems?</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
+<ul>
+<li class="">NVIDIA Isaac Platform Documentation: <a href="https://developer.nvidia.com/isaac-platform" target="_blank" rel="noopener noreferrer" class="">https://developer.nvidia.com/isaac-platform</a></li>
+<li class="">Isaac Sim Documentation: <a href="https://docs.omniverse.nvidia.com/isaacsim/" target="_blank" rel="noopener noreferrer" class="">https://docs.omniverse.nvidia.com/isaacsim/</a></li>
+<li class="">Isaac ROS Documentation: <a href="https://docs.nvidia.com/isaac/ros/" target="_blank" rel="noopener noreferrer" class="">https://docs.nvidia.com/isaac/ros/</a></li>
+<li class="">CUDA Documentation: <a href="https://docs.nvidia.com/cuda/" target="_blank" rel="noopener noreferrer" class="">https://docs.nvidia.com/cuda/</a></li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/RizSheik/humanoid-robotics-course/edit/main/docs/module-4-ai-robot-brain/chapter-1.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#learning-objectives" class="table-of-contents__link toc-highlight">Learning Objectives</a></li><li><a href="#11-overview-of-nvidia-isaac-platform" class="table-of-contents__link toc-highlight">1.1 Overview of NVIDIA Isaac Platform</a><ul><li><a href="#111-core-components" class="table-of-contents__link toc-highlight">1.1.1 Core Components</a></li><li><a href="#112-hardware-ecosystem" class="table-of-contents__link toc-highlight">1.1.2 Hardware Ecosystem</a></li></ul></li><li><a href="#12-gpu-acceleration-in-robotics" class="table-of-contents__link toc-highlight">1.2 GPU Acceleration in Robotics</a><ul><li><a href="#121-advantages-of-gpu-computing-for-robotics" class="table-of-contents__link toc-highlight">1.2.1 Advantages of GPU Computing for Robotics</a></li><li><a href="#122-robotics-specific-acceleration" class="table-of-contents__link toc-highlight">1.2.2 Robotics-Specific Acceleration</a></li></ul></li><li><a href="#13-isaac-platform-architecture" class="table-of-contents__link toc-highlight">1.3 Isaac Platform Architecture</a><ul><li><a href="#131-software-stack" class="table-of-contents__link toc-highlight">1.3.1 Software Stack</a></li><li><a href="#132-integration-with-ros-ecosystem" class="table-of-contents__link toc-highlight">1.3.2 Integration with ROS Ecosystem</a></li></ul></li><li><a href="#14-isaac-sim-ai-training-and-validation" class="table-of-contents__link toc-highlight">1.4 Isaac Sim: AI Training and Validation</a><ul><li><a href="#141-key-features" class="table-of-contents__link toc-highlight">1.4.1 Key Features</a></li><li><a href="#142-synthetic-data-generation" class="table-of-contents__link toc-highlight">1.4.2 Synthetic Data Generation</a></li></ul></li><li><a href="#15-isaac-ros-perception-and-control-pipelines" class="table-of-contents__link toc-highlight">1.5 Isaac ROS: Perception and Control Pipelines</a><ul><li><a href="#151-hardware-accelerated-packages" class="table-of-contents__link toc-highlight">1.5.1 Hardware-Accelerated Packages</a></li><li><a href="#152-performance-benefits" class="table-of-contents__link toc-highlight">1.5.2 Performance Benefits</a></li></ul></li><li><a href="#16-isaac-applications-pre-built-solutions" class="table-of-contents__link toc-highlight">1.6 Isaac Applications: Pre-built Solutions</a><ul><li><a href="#161-navigation-application" class="table-of-contents__link toc-highlight">1.6.1 Navigation Application</a></li><li><a href="#162-manipulation-application" class="table-of-contents__link toc-highlight">1.6.2 Manipulation Application</a></li></ul></li><li><a href="#17-ai-robotics-development-workflow" class="table-of-contents__link toc-highlight">1.7 AI Robotics Development Workflow</a><ul><li><a href="#171-development-phases" class="table-of-contents__link toc-highlight">1.7.1 Development Phases</a></li><li><a href="#172-iterative-development" class="table-of-contents__link toc-highlight">1.7.2 Iterative Development</a></li></ul></li><li><a href="#18-comparison-with-other-frameworks" class="table-of-contents__link toc-highlight">1.8 Comparison with Other Frameworks</a><ul><li><a href="#181-isaac-vs-traditional-robotics-frameworks" class="table-of-contents__link toc-highlight">1.8.1 Isaac vs. Traditional Robotics Frameworks</a></li><li><a href="#182-isaac-vs-cloud-robotics-platforms" class="table-of-contents__link toc-highlight">1.8.2 Isaac vs. Cloud Robotics Platforms</a></li></ul></li><li><a href="#19-getting-started-with-isaac-platform" class="table-of-contents__link toc-highlight">1.9 Getting Started with Isaac Platform</a><ul><li><a href="#191-hardware-requirements" class="table-of-contents__link toc-highlight">1.9.1 Hardware Requirements</a></li><li><a href="#192-software-installation" class="table-of-contents__link toc-highlight">1.9.2 Software Installation</a></li></ul></li><li><a href="#110-use-cases-and-applications" class="table-of-contents__link toc-highlight">1.10 Use Cases and Applications</a><ul><li><a href="#1101-industrial-robotics" class="table-of-contents__link toc-highlight">1.10.1 Industrial Robotics</a></li><li><a href="#1102-service-robotics" class="table-of-contents__link toc-highlight">1.10.2 Service Robotics</a></li><li><a href="#1103-research-applications" class="table-of-contents__link toc-highlight">1.10.3 Research Applications</a></li></ul></li><li><a href="#111-challenges-and-considerations" class="table-of-contents__link toc-highlight">1.11 Challenges and Considerations</a><ul><li><a href="#1111-hardware-dependencies" class="table-of-contents__link toc-highlight">1.11.1 Hardware Dependencies</a></li><li><a href="#1112-learning-curve" class="table-of-contents__link toc-highlight">1.11.2 Learning Curve</a></li></ul></li><li><a href="#112-future-of-isaac-platform" class="table-of-contents__link toc-highlight">1.12 Future of Isaac Platform</a><ul><li><a href="#1121-planned-enhancements" class="table-of-contents__link toc-highlight">1.12.1 Planned Enhancements</a></li><li><a href="#1122-integration-trends" class="table-of-contents__link toc-highlight">1.12.2 Integration Trends</a></li></ul></li><li><a href="#chapter-summary" class="table-of-contents__link toc-highlight">Chapter Summary</a></li><li><a href="#key-terms" class="table-of-contents__link toc-highlight">Key Terms</a></li><li><a href="#discussion-questions" class="table-of-contents__link toc-highlight">Discussion Questions</a></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Textbook</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-1-the-robotic-nervous-system/module-1-intro">Module 1 – The Robotic Nervous System</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-2-the-digital-twin/module-2-intro">Module 2 – The Digital Twin</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-3-the-ai-robot-brain/module-3-intro">Module 3 – The AI-Robot Brain</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/module-4-vision-language-action-systems/module-4-intro">Module 4 – Vision-Language-Action Systems</a></li><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/capstone-the-autonomous-humanoid/capstone-overview">Capstone: The Autonomous Humanoid</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Resources</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/humanoid-robotics-course/docs/appendices/hardware-requirements">Appendices</a></li><li class="footer__item"><a href="https://github.com/RizSheik/humanoid-robotics-course" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics — AI Systems in the Physical World. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
