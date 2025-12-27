@@ -1,0 +1,636 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Premium robotics color palette */
+:root {
+  --ifm-color-primary: #01C9C9; /* Electric Teal */
+  --ifm-color-primary-dark: #00B8B8;
+  --ifm-color-primary-darker: #00A7A7;
+  --ifm-color-primary-darkest: #008A8A;
+  --ifm-color-primary-light: #02DADA;
+  --ifm-color-primary-lighter: #02EAEA;
+  --ifm-color-primary-lightest: #02FBFB;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Custom robotics palette */
+  --robotics-neon-cyan: #04F6F0;
+  --robotics-electric-teal: #01C9C9;
+  --robotics-deep-space-navy: #071521;
+  --robotics-soft-sky-white: #E9FBFF;
+  --robotics-accent-purple: #7C4DFF;
+  --robotics-card-bg: rgba(7, 21, 33, 0.85);
+  --robotics-card-border: rgba(4, 246, 240, 0.3);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: var(--robotics-electric-teal);
+  --ifm-color-primary-dark: #00B8B8;
+  --ifm-color-primary-darker: #00A7A7;
+  --ifm-color-primary-darkest: #008A8A;
+  --ifm-color-primary-light: #02DADA;
+  --ifm-color-primary-lighter: #02EAEA;
+  --ifm-color-primary-lightest: #02FBFB;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Dark mode specific overrides */
+  --ifm-background-color: var(--robotics-deep-space-navy);
+  --ifm-hero-background-color: linear-gradient(to right, var(--robotics-deep-space-navy), var(--robotics-electric-teal), var(--robotics-neon-cyan));
+  --ifm-hero-text-color: var(--robotics-soft-sky-white);
+  --ifm-card-background-color: var(--robotics-card-bg);
+  --ifm-card-border-color: var(--robotics-card-border);
+}
+
+/* Light mode overrides */
+[data-theme='light'] {
+  --ifm-background-color: #f8fbff;
+  --ifm-hero-background-color: linear-gradient(to right, #071521, #01c9c9, #04f6f0);
+  --ifm-hero-text-color: var(--robotics-soft-sky-white);
+  --ifm-card-background-color: rgba(255, 255, 255, 0.9);
+  --ifm-card-border-color: rgba(7, 21, 33, 0.1);
+  --ifm-font-color-base: var(--robotics-deep-space-navy);
+}
+
+/* Navbar robot head styling */
+.navbar__logo {
+  width: 36px;
+  height: 36px;
+  transition: all 0.3s ease;
+}
+
+.navbar__logo:hover {
+  filter: drop-shadow(0 0 8px var(--robotics-neon-cyan));
+  transform: scale(1.1);
+}
+
+/* Hero banner styles */
+.heroBanner {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--robotics-deep-space-navy) 0%, var(--robotics-electric-teal) 50%, var(--robotics-neon-cyan) 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--robotics-soft-sky-white);
+}
+
+/* Split layout container for hero section */
+.heroSplitContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.heroTextContent {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.heroImageContent {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: flex-end; /* Align image to the right side */
+  align-items: center;
+  z-index: 2;
+}
+
+/* Ensure proper vertical alignment */
+@media screen and (min-width: 997px) {
+  .heroBanner {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .heroSplitContainer {
+    min-height: 60vh;
+    align-items: center;
+  }
+}
+
+.heroTextContent h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(4, 246, 240, 0.5);
+  text-align: left;
+  line-height: 1.2;
+}
+
+.heroTextContent p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--robotics-soft-sky-white);
+  opacity: 0.9;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.heroTextContent .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Stacked layout for mobile */
+@media screen and (max-width: 996px) {
+  .heroSplitContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1.5rem;
+    align-items: center; /* Center content on mobile */
+  }
+
+  .heroTextContent {
+    max-width: 100%;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .heroImageContent {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center; /* Center image on mobile */
+  }
+
+  .heroTextContent h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .heroTextContent p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .heroTextContent .buttons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    padding: 3rem 0;
+  }
+
+  .heroTextContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroTextContent p {
+    font-size: 1.1rem;
+  }
+
+  .heroSplitContainer {
+    gap: 1.5rem;
+  }
+
+  .heroImageContent .imageSlider {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    min-height: 200px;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Enhanced animated background elements for hero */
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(4, 246, 240, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(124, 77, 255, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 50% 30%, rgba(1, 201, 201, 0.1) 0%, transparent 30%);
+  animation: float 25s infinite linear;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 15px);
+  }
+  50% {
+    transform: translate(0, 20px);
+  }
+  75% {
+    transform: translate(-10px, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Additional circuit pattern animation */
+.heroBanner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(4, 246, 240, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(4, 246, 240, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+  animation: circuitMove 30s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes circuitMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+/* Hero header styles */
+.heroBanner > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(4, 246, 240, 0.5);
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--robotics-soft-sky-white);
+  opacity: 0.9;
+}
+
+/* Button styles */
+.button--secondary {
+  background-color: transparent;
+  border: 2px solid var(--robotics-neon-cyan);
+  color: var(--robotics-neon-cyan);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(4, 246, 240, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.button--secondary:hover {
+  background-color: rgba(4, 246, 240, 0.1);
+  color: var(--robotics-soft-sky-white);
+  box-shadow: 0 0 20px rgba(4, 246, 240, 0.6);
+  transform: translateY(-3px);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(4, 246, 240, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(4, 246, 240, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(4, 246, 240, 0.3);
+  }
+}
+
+/* Features section styles */
+.features {
+  padding: 4rem 0;
+  background-color: var(--robotics-deep-space-navy);
+  position: relative;
+}
+
+.features::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(4, 246, 240, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(4, 246, 240, 0.05) 0%, transparent 20%),
+    linear-gradient(to bottom, var(--robotics-deep-space-navy) 0%, var(--robotics-deep-space-navy) 100%);
+  z-index: 0;
+}
+
+.features > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.features h2 {
+  color: var(--robotics-soft-sky-white);
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.features h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, transparent, var(--robotics-neon-cyan), transparent);
+  margin: 10px auto 0;
+}
+
+/* Feature card styles */
+.featureCard {
+  background: var(--robotics-card-bg);
+  border: 1px solid var(--robotics-card-border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg,
+    var(--robotics-neon-cyan),
+    var(--robotics-electric-teal),
+    var(--robotics-accent-purple),
+    var(--robotics-neon-cyan));
+  z-index: -1;
+  border-radius: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+}
+
+.featureCard:hover {
+  transform: scale(1.02);
+  border: 1px solid var(--robotics-neon-cyan);
+  box-shadow: 0 0 25px rgba(4, 246, 240, 0.4);
+}
+
+.featureCard h3 {
+  color: var(--robotics-neon-cyan);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.featureCard p {
+  color: var(--robotics-soft-sky-white);
+  text-align: center;
+  opacity: 0.9;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Feature SVG styles */
+.featureSvg {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(4, 246, 240, 0.5));
+  z-index: 1;
+}
+
+/* Container adjustments */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Circuit background elements */
+.circuitPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Image slider styles */
+.imageSlider {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(4, 246, 240, 0.3);
+  border: 1px solid rgba(4, 246, 240, 0.2);
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+/* Adjust image slider for split layout */
+.heroImageContent .imageSlider {
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  min-height: 300px; /* Ensure minimum height for consistency */
+}
+
+.imageSlider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageSlider .slide.active {
+  opacity: 1;
+}
+
+/* Enhanced robot-themed animations */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0.5deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(4, 246, 240, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(4, 246, 240, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(4, 246, 240, 0.5);
+  }
+}
+
+.robotFloating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.robotGlowing {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 0;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .imageSlider {
+    width: 250px;
+    height: 250px;
+    margin: 1.5rem auto;
+  }
+
+  .features {
+    padding: 3rem 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .imageSlider {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Doc page header banner */
+.docPageHeader {
+  background: linear-gradient(135deg, var(--robotics-deep-space-navy) 0%, var(--robotics-electric-teal) 50%, var(--robotics-neon-cyan) 100%);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  color: var(--robotics-soft-sky-white);
+}
+
+.docPageHeader h1 {
+  color: var(--robotics-soft-sky-white);
+  text-shadow: 0 0 10px rgba(4, 246, 240, 0.5);
+}
+
+/* Robot-themed elements in docs */
+.robotDiagram {
+  border: 1px solid var(--robotics-card-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background-color: rgba(7, 21, 33, 0.1);
+  box-shadow: 0 0 15px rgba(4, 246, 240, 0.1);
+}
+
+.robotIcon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin: 0 5px;
+  filter: drop-shadow(0 0 4px var(--robotics-neon-cyan));
+}
+
+/* Highlight important sections */
+.admonition--note {
+  border-left-color: var(--robotics-neon-cyan);
+}
+
+.admonition--note .admonition-icon {
+  color: var(--robotics-neon-cyan);
+}
+
+/* Custom code block styling */
+.prism-code {
+  border-radius: 8px;
+  background-color: rgba(7, 21, 33, 0.2) !important;
+  border: 1px solid var(--robotics-card-border);
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--robotics-deep-space-navy);
+}
+
+.footer__title {
+  color: var(--robotics-neon-cyan);
+}
+
+.footer__link-item:hover {
+  color: var(--robotics-neon-cyan);
+}

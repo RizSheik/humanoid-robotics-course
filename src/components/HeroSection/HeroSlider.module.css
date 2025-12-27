@@ -1,0 +1,140 @@
+.heroSection {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a2a6c, #2a4d8e, #3a6ea5);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.sliderContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  box-sizing: border-box;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* LEFT SIDE — TEXT */
+.textContent {
+  flex: 1;
+  max-width: 50%;
+  z-index: 2;
+}
+
+.textContent h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.primaryButton {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #ff6b35;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.primaryButton:hover {
+  background-color: #e55a2b;
+}
+
+/* RIGHT SIDE — IMAGE SLIDER */
+.imageContent {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 2;
+}
+
+.imageContent img {
+  max-height: 80%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* SLIDER INDICATORS */
+.indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: white;
+}
+
+/* 📱 RESPONSIVE (MOBILE) */
+@media (max-width: 996px) {
+  .heroSection {
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .slide {
+    position: static;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .textContent,
+  .imageContent {
+    max-width: 100%;
+  }
+
+  .imageContent {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .textContent h1 {
+    font-size: 2rem;
+  }
+
+  .textContent p {
+    font-size: 1rem;
+  }
+}

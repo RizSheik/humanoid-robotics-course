@@ -1,0 +1,10 @@
+{
+  "label": "Module 5: Humanoid Robotics",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "Module 5: Humanoid Robotics",
+    "description": "Specialized module on humanoid robot development, kinematics, and control systems.",
+    "slug": "/module-5-humanoid-robotics"
+  }
+}

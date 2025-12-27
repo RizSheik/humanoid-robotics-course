@@ -1,0 +1,10 @@
+{
+  "label": "Module 3: Digital Twin Simulation",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "Module 3: Digital Twin Simulation",
+    "description": "Focuses on simulation environments including Gazebo and Unity for robotics development.",
+    "slug": "/module-3-digital-twin-simulation"
+  }
+}
