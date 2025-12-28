@@ -1,5 +1,8 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 
+// ✅ Detect GitHub Pages build
+const isGithubPages = process.env.GITHUB_ACTIONS === 'true';
+
 const config = {
   title: 'Physical AI & Humanoid Robotics — AI Systems in the Physical World',
   tagline: 'Advanced Robotics Textbook — From Theory to Practice',
@@ -9,25 +12,23 @@ const config = {
     v4: true,
   },
 
-  // Production URL
+  // Production URL (GitHub Pages domain)
   url: 'https://rizsheik.github.io',
 
-  // Base URL for GitHub Pages
-  baseUrl: '/humanoid-robotics-course/',
+  // ✅ AUTO baseUrl (GitHub Pages vs Vercel)
+  baseUrl: isGithubPages ? '/humanoid-robotics-course/' : '/',
   trailingSlash: false,
 
   // GitHub pages deployment configuration
   organizationName: 'RizSheik',
   projectName: 'humanoid-robotics-course',
 
-  onBrokenLinks: 'warn',  // ok
-  // Removed deprecated field:
-  // onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'warn',
 
-  // ✅ New v4 compatible way
+  // ✅ Docusaurus v4 compatible markdown config
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn', // or 'throw' if you want stricter behavior
+      onBrokenMarkdownLinks: 'warn',
     },
   },
 

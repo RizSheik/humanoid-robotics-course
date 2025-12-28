@@ -2,7 +2,7 @@
 
 
 <div className="robotDiagram">
-  <img src="../../../img/book-image/Highquality_infographic_of_ROS_2_archite_1.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+  <img src="/static/img/book-image/Highquality_infographic_of_ROS_2_archite_1.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
 </div>
 
 

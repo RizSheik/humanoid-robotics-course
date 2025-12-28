@@ -2,7 +2,7 @@
 
 
 <div className="robotDiagram">
-  <img src="../../../img/book-image/Realistic_render_of_Unitree_Go2_quadrupe_0.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+  <img src="/static/img/book-image/Realistic_render_of_Unitree_Go2_quadrupe_0.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
 </div>
 
 ## Learning Objectives

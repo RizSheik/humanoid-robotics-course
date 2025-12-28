@@ -2,7 +2,7 @@
 
 
 <div className="robotDiagram">
-  <img src="../../../img/book-image/Leonardo_Lightning_XL_Isaac_Sim_for_AI_Training_and_Validatio_1.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+  <img src="/static/img/book-image/Leonardo_Lightning_XL_Ultrarealistic_NVIDIA_Isaac_Sim_interfac_0.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
 </div>
 
 

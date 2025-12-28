@@ -10,10 +10,10 @@ import Heading from '@theme/Heading';
 function ImageSlider() {
   const images = [
     { src: 'img/hero/Hero Section Cover The_Course_DetailsPhysical_AI_Humanoid_0.jpg', alt: 'Humanoid Robot Standing' },
-    { src: 'img/Architecture_diagram_cloud_workstation_A_0.jpg', alt: 'ROS 2 Architecture' },
-    { src: 'img/Closeup_illustration_of_humanoid_robot_h_0.jpg', alt: 'AI Brain Neural Network' },
-    { src: 'img/Ultrarealistic_Gazebo_simulation_scene_w_0.jpg', alt: 'Vision-Language-Action System' },
-    { src: 'img/Ultrarealistic_textbook_cover_design_for_0.jpg', alt: 'Vision-Language-Action System' },
+    { src: 'img/hero/Architecture_diagram_cloud_workstation_A_0.jpg', alt: 'ROS 2 Architecture' },
+    { src: 'img/hero/Closeup_illustration_of_humanoid_robot_h_0.jpg', alt: 'AI Brain Neural Network' },
+    { src: 'img/hero/Ultrarealistic_Gazebo_simulation_scene_w_0.jpg', alt: 'Vision-Language-Action System' },
+    { src: 'img/hero/Ultrarealistic_textbook_cover_design_for_0.jpg', alt: 'Vision-Language-Action System' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

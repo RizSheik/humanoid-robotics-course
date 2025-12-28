@@ -2,7 +2,7 @@
 
 
 <div className="robotDiagram">
-  <img src="/static/img/book-image/Leonardo_Lightning_XL_Full_architecture_overview_workstation_e_0.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+  <img src="/static/img/book-image/Architecture_diagram_cloud_workstation_A_0.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
 </div>
 
 

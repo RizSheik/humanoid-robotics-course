@@ -1,7 +1,7 @@
 # Chapter 3: Services and Synchronous Communication
 
 <div className="robotDiagram">
-  <img src="../../../img/book-image/Flowchart_showing_ROS_2_nodes_communicat_1.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+  <img src="/static/img/book-image/Flowchart_showing_ROS_2_nodes_communicat_1.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
 </div>
 
 

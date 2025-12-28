@@ -8,7 +8,7 @@ title: "Introduction to Humanoid Robotics"
 Welcome to the comprehensive textbook on Physical AI and Humanoid Robotics. This course will take you through the fundamental concepts, technologies, and implementation strategies required to build and understand humanoid robots.
 
 <div className="robotDiagram">
-  <img src="/img/module/humanoid-robot-ros2.svg" alt="Humanoid Robot" style={{borderRadius:"12px", width: '300px', margin: '10px auto', display: 'block'}} />
+  <img src="/static/img/book-image/Humanoid_robot_in_a_Unity_highfidelity_3_0.jpg" alt="Humanoid Robot" style={{borderRadius:"12px", width: '300px', margin: '10px auto', display: 'block'}} />
   <p style={{textAlign: 'center'}}><em>Modern Humanoid Robotics Platform</em></p>
 </div>
 
