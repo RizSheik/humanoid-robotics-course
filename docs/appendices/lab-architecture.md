@@ -11,6 +11,10 @@ sidebar_position: 2
 
 This appendix details the recommended laboratory architecture for implementing and testing humanoid robotics systems. The architecture encompasses both physical infrastructure and computational resources needed to support the development, testing, and demonstration of humanoid robots across all modules of this textbook.
 
+<div className="robotDiagram">
+  <img src="../..//img/book-image/Architecture_diagram_cloud_workstation_A_0.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+</div>
+
 ## Physical Lab Space Requirements
 
 ### Basic Lab Layout
@@ -29,6 +33,10 @@ This appendix details the recommended laboratory architecture for implementing a
 - **Safety Equipment**: Emergency stop buttons, safety curtains, protective gear
 - **Storage**: Dedicated areas for robot components, spare parts, and tools
 - **Workstations**: Multiple workbenches for robot assembly and maintenance
+
+<div className="robotDiagram">
+  <img src="../..//img/book-image/Illustration_explaining_Physical_AI_huma_1.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+</div>
 
 ## Network Infrastructure
 
@@ -126,6 +134,10 @@ This appendix details the recommended laboratory architecture for implementing a
 - **3D Visualization**: For complex robot state representation
 - **Interactive Interfaces**: For human-robot interaction research
 
+<div className="robotDiagram">
+  <img src="../..//img/book-image/Full_architecture_overview_workstation_e_0.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+</div>
+
 ## Laboratory Zones
 
 ### Development Zone
@@ -198,6 +210,10 @@ This appendix details the recommended laboratory architecture for implementing a
 - **Cost Range**: $500,000 - $1,500,000
 - **Best Use**: Advanced research and commercial development
 - **Full Capability**: All features and redundancy included
+
+<div className="robotDiagram">
+  <img src="../..//img/book-image/Educational_infographic_showing_13week_c_1.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+</div>
 
 ## Operations and Maintenance
 

@@ -11,6 +11,11 @@ sidebar_position: 3
 
 This appendix provides a comprehensive comparison between cloud-based and on-premises deployment strategies for humanoid robotics systems. The decision between cloud and on-premises deployment has significant implications for performance, security, cost, and operational capabilities. This analysis covers considerations relevant to all modules in the textbook, from basic robot control (Module 1) to advanced Vision-Language-Action systems (Module 4).
 
+<div className="robotDiagram">
+  <img src="../..//img/book-image/Illustration_explaining_Physical_AI_huma_1 (1).jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+</div>
+
+
 ## Cloud Deployment
 
 ### Advantages
@@ -46,6 +51,10 @@ This appendix provides a comprehensive comparison between cloud-based and on-pre
 - **Compliance Issues**: May not meet certain regulatory requirements for sensitive data
 - **Third-party Access**: Cloud provider has access to data and systems
 - **Security Breaches**: Potential for cyber attacks on cloud infrastructure
+
+<div className="robotDiagram">
+  <img src="../..//img/book-image/Humanoid_robot_performing_path_planning_0.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+</div>
 
 #### Cost Considerations
 - **Ongoing Expenses**: Continuous operational costs which increase with usage
@@ -102,6 +111,10 @@ This appendix provides a comprehensive comparison between cloud-based and on-pre
 - **Integration**: Need for seamless integration between cloud and on-premises components
 - **Data Synchronization**: Ensuring data consistency between different deployment environments
 - **Skill Requirements**: Need for expertise in both cloud and on-premises technologies
+
+<div className="robotDiagram">
+  <img src="../..//img/book-image/Flowchart_showing_ROS_2_nodes_communicat_1.jpg" alt="Humanoid Robot" style={{borderRadius:"50px", width: '900px', height: '350px', margin: '10px auto', display: 'block'}} />
+</div>
 
 ## Recommendations by Module
 

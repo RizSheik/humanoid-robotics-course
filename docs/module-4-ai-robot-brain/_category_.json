@@ -3,7 +3,6 @@
   "position": 4,
   "link": {
     "type": "generated-index",
-    "title": "Module 4: AI Robot Brain",
     "description": "Explores AI algorithms and NVIDIA Isaac Platform for robot decision-making and intelligence.",
     "slug": "/module-4-ai-robot-brain"
   }

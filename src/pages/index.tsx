@@ -55,56 +55,56 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Module 1 – Robotic Nervous System (ROS 2)',
+    title: 'Module 1: Physical AI Foundations',
     Svg: () => (
-      <img src="img/robotic-nervous-system.svg" className="featureSvg" alt="Robotic Nervous System" />
+      <img src="img/robotic-nervous-system.svg" className="featureSvg" alt="Physical AI Foundations" />
     ),
     description: (
       <>
-        Learn about Robot Operating System 2 (ROS 2) - the middleware that enables communication between
-        different components of a robot system.
+        Learn about the foundational elements of Physical AI and embodied intelligence concepts
+        that form the basis of humanoid robotics.
       </>
     ),
-    to: '/docs/module-1-the-robotic-nervous-system/module-1-intro'
+    to: '/docs/module-1-physical-ai-foundations/overview'
   },
   {
-    title: 'Module 2 – Digital Twin (Gazebo & Unity)',
+    title: 'Module 2: ROS 2 Fundamentals',
     Svg: () => (
-      <img src="img/digital-twin.svg" className="featureSvg" alt="Digital Twin" />
+      <img src="img/digital-twin.svg" className="featureSvg" alt="ROS 2 Fundamentals" />
     ),
     description: (
       <>
-        Explore digital twin technologies using Gazebo and Unity for simulating and testing robotic systems
-        in virtual environments.
+        Explore Robot Operating System 2 (ROS 2) fundamentals including topics, services,
+        actions, and distributed systems for robotic communication.
       </>
     ),
-    to: '/docs/module-2-the-digital-twin/module-2-intro'
+    to: '/docs/module-2-ros-2-fundamentals/overview'
   },
   {
-    title: 'Module 3 – AI Robot Brain (NVIDIA Isaac)',
+    title: 'Module 3: Digital Twin Simulation',
     Svg: () => (
-      <img src="img/ai-robot-brain.svg" className="featureSvg" alt="AI Robot Brain" />
+      <img src="img/ai-robot-brain.svg" className="featureSvg" alt="Digital Twin Simulation" />
     ),
     description: (
       <>
-        Discover AI and machine learning frameworks for robotic perception, planning, and control
-        using NVIDIA Isaac platform.
+        Discover simulation environments including Gazebo and Unity for robotics development
+        and testing in virtual environments.
       </>
     ),
-    to: '/docs/module-3-the-ai-robot-brain/module-3-intro'
+    to: '/docs/module-3-digital-twin-simulation/overview'
   },
   {
-    title: 'Module 4 – Vision-Language-Action (VLA)',
+    title: 'Module 4: AI Robot Brain',
     Svg: () => (
-      <img src="img/vision-language-action.svg" className="featureSvg" alt="Vision-Language-Action" />
+      <img src="img/vision-language-action.svg" className="featureSvg" alt="AI Robot Brain" />
     ),
     description: (
       <>
-        Understand Vision-Language-Action models that enable robots to perceive, understand,
-        and interact with the world through multimodal AI.
+        Understand AI algorithms and NVIDIA Isaac Platform for robot decision-making
+        and intelligence in autonomous systems.
       </>
     ),
-    to: '/docs/module-4-vision-language-action-systems/module-4-intro'
+    to: '/docs/module-4-ai-robot-brain/overview'
   },
 ];
 

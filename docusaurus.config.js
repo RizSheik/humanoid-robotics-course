@@ -20,8 +20,16 @@ const config = {
   organizationName: 'RizSheik',
   projectName: 'humanoid-robotics-course',
 
-  onBrokenLinks: 'warn',  // Changed from 'throw' to 'warn' to allow build to continue with broken links
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'warn',  // ok
+  // Removed deprecated field:
+  // onBrokenMarkdownLinks: 'warn',
+
+  // ✅ New v4 compatible way
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn', // or 'throw' if you want stricter behavior
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -34,8 +42,6 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
-
-          // FIXED: correct edit URL for your repo
           editUrl:
             'https://github.com/RizSheik/humanoid-robotics-course/edit/main/',
         },
@@ -84,21 +90,20 @@ const config = {
           title: 'Textbook',
           items: [
             {
-              label: 'Module 1 – The Robotic Nervous System',
-              to: '/docs/module-1-the-robotic-nervous-system/module-1-intro',
+              label: 'Module 1: Physical AI Foundations',
+              to: '/docs/module-1-physical-ai-foundations/overview',
             },
             {
-              label: 'Module 2 – The Digital Twin',
-              to: '/docs/module-2-the-digital-twin/module-2-intro',
+              label: 'Module 2: ROS 2 Fundamentals',
+              to: '/docs/module-2-ros-2-fundamentals/overview',
             },
             {
-              label: 'Module 3 – The AI-Robot Brain',
-              to: '/docs/module-3-the-ai-robot-brain/module-3-intro',
+              label: 'Module 3: Digital Twin Simulation',
+              to: '/docs/module-3-digital-twin-simulation/overview',
             },
             {
-              label:
-                'Module 4 – Vision-Language-Action Systems',
-              to: '/docs/module-4-vision-language-action-systems/module-4-intro',
+              label: 'Module 4: AI Robot Brain',
+              to: '/docs/module-4-ai-robot-brain/overview',
             },
             {
               label: 'Capstone: The Autonomous Humanoid',

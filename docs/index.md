@@ -11,4 +11,4 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {Redirect} from '@docusaurus/router';
 
-<Redirect to="/docs/module-1-foundational/chapter-1-intro" />
+<Redirect to="/docs/intro" />
