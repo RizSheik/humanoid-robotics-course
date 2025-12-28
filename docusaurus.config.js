@@ -13,7 +13,7 @@ const config = {
   url: 'https://rizsheik.github.io',
 
   // Base URL for GitHub Pages
-  baseUrl: '/humanoid-robotics-course/',
+  baseUrl: '/',
   trailingSlash: false,
 
   // GitHub pages deployment configuration
